@@ -1,0 +1,57 @@
+/*
+ *
+ * Genesis Classes
+ *
+ */
+
+/*----------  Archive/Author Box  ----------*/
+
+.archive-description,
+.author-box {
+	border-bottom: 1px solid $gray-light;
+	border-top: 1px solid $gray-light;
+ 	padding: 3rem 0;
+	p:last-child {
+	 	margin-bottom: 0;
+	}
+}
+
+.author-box {
+	font-size: $font-size-sm;
+	margin: 1.5rem 0 3rem;
+
+	.avatar {
+		margin: 0 0 24px 24px;
+		max-width: 70px;
+	}
+}
+
+.archive-description {
+	margin: 0 0 3rem;
+}
+
+/*----------  Breadcrumbs  ----------*/
+
+.breadcrumb {
+	font-size: $font-size-sm;
+	margin-bottom: 1.5rem;
+}
+
+
+/*=====================================
+=            Media Queries            =
+=====================================*/
+
+// /*----------  768  ----------*/
+//
+// @media screen and (min-width: 768px) {
+//
+// 	.author-box {
+// 		font-size: 1.8rem;
+//
+// 		.avatar {
+// 			max-width: 100%;
+// 		}
+// 	}
+//
+// }

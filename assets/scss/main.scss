@@ -1,0 +1,41 @@
+/**
+ * Moare Sample.
+ *
+ * This file adds styles.
+ *
+ * @package Moare Sample
+ * @author  Antonio
+ * @license GPL-2.0+
+ * @link    https://studiomoare.com
+ */
+
+@import 'variables';
+
+// Dependencies
+// @import 'lib/normalize-scss/normalize';
+
+// Genesis
+@import 'lib/genesis/structure';
+@import 'lib/genesis/defaults';
+@import 'lib/genesis/type';
+@import 'lib/genesis/objects';
+@import 'lib/genesis/tables';
+@import 'lib/genesis/forms';
+@import 'lib/genesis/accessibility';
+@import 'lib/genesis/navigation';
+@import 'lib/genesis/content';
+@import 'lib/genesis/sidebars';
+@import 'lib/genesis/widgets';
+@import 'lib/genesis/genesis';
+@import 'lib/genesis/genesis';
+@import 'lib/genesis/footer';
+
+
+// Custom
+@import "plugins/fonts";
+@import "plugins/mixins";
+@import "plugins/html";
+@import "plugins/layout";
+@import "plugins/classes";
+@import "plugins/pages";
+@import "plugins/classes-wordpress";

@@ -1,0 +1,32 @@
+/*
+ *
+ * Tables
+ *
+ */
+
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 3rem;
+	width: 100%;
+}
+
+tbody {
+	border-bottom: 1px solid $gray-light;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid $gray-light;
+	padding: .75rem 0;
+}
+
+th {
+	font-weight: 400;
+}

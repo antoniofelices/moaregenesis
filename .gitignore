@@ -1,0 +1,9 @@
+# Sass cache
+.sass-cache/
+
+# Node modules
+node_modules/
+
+# Others
+.DS_Store
+.Icon

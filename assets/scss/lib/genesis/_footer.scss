@@ -1,0 +1,28 @@
+/*
+ *
+ * Footer
+ *
+ */
+
+ .site-footer {
+ 	clear: both;
+ 	font-size: $font-size-sm;
+ 	overflow: hidden;
+ 	padding: .75rem 10px;
+
+ 	p {
+ 		margin-bottom: 0;
+ 	}
+ }
+
+ /*----------  Widgets  ----------*/
+
+ .footer-widgets {
+ 	clear: both;
+ 	overflow: hidden;
+ 	padding: 3rem 10px;
+
+ 	.widget {
+ 		margin-bottom: 3rem;
+ 	}
+ }

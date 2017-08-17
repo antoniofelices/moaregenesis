@@ -1,0 +1,219 @@
+/*
+ *
+ * Type
+ *
+ */
+
+
+
+/*----------  Typography  ----------*/
+
+html {
+    font-size: 100%; /* Set the default browser size to 10px */
+}
+
+a {
+	border-bottom: 1px solid $link-color;
+	color: $link-color;
+	text-decoration: $link-decoration;
+
+	&:hover,
+	&:focus {
+        color: $link-hover-color;
+		border-bottom: 0;
+	}
+}
+
+p {
+	margin: 0 0 1.5rem 0;
+	padding: 0;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+.entry-content,
+.footer-widgets {
+
+	ol,
+	ul {
+		margin-bottom: 1.5rem;
+		margin-left: 40px;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid $gray-lighter;
+	clear: both;
+	margin: 1.5rem 0;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left: 3px solid $black;
+	color: #000;
+	margin: 1.5rem 0;
+	padding-left: 10px;
+}
+
+small,
+cite {
+	font-size: $font-size-xs;
+}
+
+/*----------  Headings  ----------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $headings-color;
+	font-family: $headings-font-family;
+	margin: 1.5rem 0 0.75rem;
+}
+
+h1 {
+	font-size: $font-size-h1;
+    line-height: $headings-line-height;
+}
+
+h2 {
+	font-size: $font-size-h2;
+	line-height: $headings-line-height;
+}
+
+h3 {
+	font-size: $font-size-h3;
+	line-height: $headings-line-height;
+}
+
+h4{
+	font-size: $font-size-h4;
+    line-height: $headings-line-height;
+}
+
+h5{
+	font-size: $font-size-h5;
+    line-height: $headings-line-height;
+}
+
+h6 {
+	font-size: $font-size-h6;
+	line-height: $headings-line-height;
+}
+
+/*----------  Site Header  ----------*/
+
+.site-title {
+	font-size: $font-size-h2;
+	margin: 0;
+}
+
+.site-description {
+	display: none;
+}
+
+/*----------  Widgets  ----------*/
+
+.widget-title,
+.footer-widgets .widget-title,
+.sidebar .entry-title {
+	font-size: $font-size-lg;
+	margin-top: 0;
+}
+
+.footer-widgets .widget-title {
+	margin-top: 0;
+}
+
+/*----------  Author Box  ----------*/
+
+.author-box-title {
+	font-size:  $font-size-lg;
+	margin-top: 0;
+}
+
+/*----------  Archive Description  ----------*/
+
+.archive-title {
+	margin: 0;
+}
+
+/*=====================================
+=            Media Queries            =
+=====================================*/
+
+/*----------  768  ----------*/
+
+@media screen and (min-width: 768px) {
+
+	h1,
+	.entry-title {
+        font-size: $font-size-h2;
+	}
+
+	h2 {
+        font-size: $font-size-h3;
+	}
+
+	h3 {
+        font-size: $font-size-h4;
+	}
+
+	h4,
+	h5{
+        font-size: $font-size-h5;
+    }
+
+	h6 {
+        font-size: $font-size-sm;
+	}
+
+	blockquote {
+		padding-left: .75rem;
+	}
+
+}
+
+/*----------  1200  ----------*/
+
+@media screen and (min-width: 1200px) {
+
+
+
+}
