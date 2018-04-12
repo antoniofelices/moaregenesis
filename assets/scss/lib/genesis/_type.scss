@@ -29,23 +29,13 @@ p {
 	padding: 0;
 }
 
-ol,
-ul {
-	margin: 0;
-	padding: 0;
-}
-
-li {
-	list-style-type: none;
-}
-
 .entry-content,
 .footer-widgets {
 
 	ol,
 	ul {
 		margin-bottom: 1.5rem;
-		margin-left: 40px;
+		margin-left: 20px;
 	}
 
 	ol > li {

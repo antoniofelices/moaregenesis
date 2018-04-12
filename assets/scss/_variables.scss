@@ -10,100 +10,95 @@
  */
 
 
- // Table of Contents
- //
- // Colors
- // Body
- // Links
- // Fonts
- // Medias
+// Table of Contents
+//
+// Colors
+// Body
+// Links
+// Fonts
+// Medias
 
 
- // Colors
- //
- // Grayscale and brand colors for use across.
- $white:  #fff !default;
- $black:  #000 !default;
+// Colors
+// Grayscale and brand colors for use across.
+$white:  #fff !default;
+$black:  #000 !default;
 
- // Create grayscale
- $gray-dark:                 #292b2c !default;
- $gray:                      #464a4c !default;
- $gray-light:                #636c72 !default;
- $gray-lighter:              #eceeef !default;
- $gray-lightest:             #f7f7f9 !default;
+// Create grayscale
+$gray-dark:                 #3d3d3d !default;
+$gray:                      #8e8e8e !default;
+$gray-light:                #d1d1d1 !default;
+$gray-lighter:              #e5e5e5 !default;
+$gray-lightest:             #f9f9f9 !default;
 
- // Reassign color vars to semantic color scheme
- $brand-primary:             blue !default;
- $brand-success:             black !default;
- $brand-info:                blue !default;
+// Reassign color vars to semantic color scheme 8d3422 893e2d a36c87
+$brand-primary:             blue !default;
+$brand-success:             black !default;
+$brand-info:                blue !default;
 
+// Body
+// Settings for the `<body>` element.
+$body-bg:                   darken( $white, 3% ) !default;
+$body-color:                $black !default;
+$inverse-bg:                $gray-dark !default;
+$inverse-color:             $gray-lighter !default;
 
- // Body
- //
- // Settings for the `<body>` element.
- $body-bg:                   $white !default;
- $body-color:                $gray-dark !default;
- $inverse-bg:                $gray-dark !default;
- $inverse-color:             $gray-lighter !default;
+// Links
+// Style anchor elements.
+$link-color:                $brand-primary !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
 
+// Fonts
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: sans-serif !default;
+$font-family-serif: serif !default;
+$font-family-icons: 'icomoon' !default;
+$font-family-monospace: monospace !default;
+$font-family-base: $font-family-sans-serif !default;
 
- // Links
- //
- // Style anchor elements.
- $link-color:                $brand-primary !default;
- $link-decoration:           none !default;
- $link-hover-color:          darken($link-color, 15%) !default;
- $link-hover-decoration:     underline !default;
+$font-size-base: 1rem !default;
+$font-size-lg:   1.333rem !default;
+$font-size-sm:   .75rem !default;
+$font-size-xs:   0.563rem !default;
 
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
 
- // Fonts
- //
- // Font, line-height, and color for body text, headings, and more.
- $font-family-sans-serif: sans-serif !default;
- $font-family-serif: serif !default;
- $font-family-monospace:  monospace !default;
- $font-family-base:       $font-family-sans-serif !default;
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+$magic-number: 1.5rem !default;
 
- $font-size-base: 1rem !default;
- $font-size-lg:   1.25rem !default;
- $font-size-sm:   .875rem !default;
- $font-size-xs:   .75rem !default;
+$font-size-enourmos: 7.594rem !default;
+$font-size-semienourmos: 4.209rem !default;
+$font-size-h1: 3.157rem !default;
+$font-size-h2: 2.369rem !default;
+$font-size-h3: 1.777rem !default;
+$font-size-h4: 1.333rem !default;
+$font-size-h5: 1rem !default;
+$font-size-h6: 1rem !default;
 
- $font-weight-normal: normal !default;
- $font-weight-bold: bold !default;
+$headings-margin-bottom: ($line-height-base / 2) !default;
+$headings-font-family:   $font-family-sans-serif !default;
+$headings-font-weight:   $font-weight-normal !default;
+$headings-line-height:   1.1 !default;
+$headings-color:         $body-color !default;
 
- $font-weight-base: $font-weight-normal !default;
- $line-height-base: 1.5 !default;
+$lead-font-size:   1.777rem !default;
+$lead-font-weight: $font-weight-bold !default;
 
- $font-size-h1: 2.5rem !default;
- $font-size-h2: 2rem !default;
- $font-size-h3: 1.75rem !default;
- $font-size-h4: 1.5rem !default;
- $font-size-h5: 1.25rem !default;
- $font-size-h6: 1rem !default;
+$small-font-size: $font-size-sm !default;
 
- $headings-margin-bottom: ($line-height-base / 2) !default;
- $headings-font-family:   inherit !default;
- $headings-font-weight:   500 !default;
- $headings-line-height:   1.1 !default;
- $headings-color:         inherit !default;
+//Medias
+//
+$screen-xxl: 1440px !default;
+$screen-xl:  1340px !default;
+$screen-lg:  1200px !default;
+$screen-md:  1023px !default;
+$screen-sm:  860px !default;
+$screen-xs:  600px !default;
 
- $lead-font-size:   1.25rem !default;
- $lead-font-weight: 300 !default;
+$responsive-menu-break: $screen-sm !default;
 
- $small-font-size: 80% !default;
-
- //Medias
- //
- $screen-xlg: 1440px !default;
- $screen-lg:  1200px !default;
- $screen-md:  980px !default;
- $screen-sm:  800px !default;
- $screen-xs:  680px !default;
-
- $responsive-menu-break: $screen-sm !default;
- // @media screen and (min-width: $screen-xlg)
- // @media screen and (min-width: $screen-lg)
- // @media screen and (min-width: $screen-md)
- // @media screen and (min-width: $screen-sm)
- // @media screen and (min-width: $screen-xs)
+$breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px);

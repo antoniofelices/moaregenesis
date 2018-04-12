@@ -3,3 +3,133 @@
  * MIXINS
  *
  */
+
+// Media Queries
+@mixin breakpoint( $breakpoint ) {
+    @if map-has-key( $breakpoints, $breakpoint) {
+        @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) }) {
+            @content;
+        }
+    }
+    @else if type_of( $breakpoint)==number and unit( $breakpoint)==px or unit( $breakpoint)==em or unit( $breakpoint)==rem {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately no value could be retrieved from `#{$breakpoint}`. "+"Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+    }
+}
+
+// Boders
+@mixin borderB($width: 1px, $style: solid, $color: $brand-primary){
+  border: $width $style $color;
+}
+
+@mixin borderBT($width: 1px, $style: solid, $color: $brand-primary){
+  border-top: $width $style $color;
+}
+
+@mixin borderBR($width: 1px, $style: solid, $color: $brand-primary){
+  border-right: $width $style $color;
+}
+
+@mixin borderBB($width: 1px, $style: solid, $color: $brand-primary){
+  border-bottom: $width $style $color;
+}
+
+@mixin borderBL($width: 1px, $style: solid, $color: $brand-primary){
+  border-left: $width $style $color;
+}
+
+// Flex
+@mixin flex( $justifycontent: center, $alignitems: center ) {
+  display: flex;
+  justify-content: $justifycontent;
+  align-items: $alignitems;
+}
+
+// Vertical rhythms
+@mixin padding-vertical( $top: $magic-number, $bottom: $magic-number ) {
+  padding: ( $top / 2 ) 0;
+  @include breakpoint(md) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+  }
+  @include breakpoint(xxl) {
+    padding-top: ( $top * 2 );
+    padding-bottom: ( $bottom * 2 );
+  }
+}
+
+@mixin margin-vertical( $top: $magic-number, $bottom: $magic-number ) {
+  margin: ( $top/2 ) 0;
+  @include breakpoint(md) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+  }
+  @include breakpoint(xxl) {
+    margin-top: ( $top * 2 );
+    margin-bottom: ( $bottom * 2 );
+  }
+}
+
+// Grafic resourses
+@mixin border-after($width: 10%, $height: 4px, $color: darken($gray-lighter,5%), $marginsm: $magic-number){
+  &:after{
+    content: ' ';
+    display: block;
+    width: $width;
+    height: $height;
+    margin: ( $magic-number / 2 ) 0;
+    background-color: $color;
+    @include breakpoint(sm){
+      margin: $marginsm 0;
+    }
+  }
+}
+
+// Don't show
+%dontshow{
+  position: absolute;
+  top: -9999rem;
+  left: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Clearfix
+%clearfix{
+  *zoom: 1;
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+// List unstyled
+%list-unstyled{
+  margin-left: 0;
+  padding-left: 0;
+  li{
+    list-style: none;
+  }
+}
+
+// List inline
+%list-inline{
+  margin: 0;
+  padding: 0;
+  li{
+    display: inline-block;
+    list-style: none;
+    +li{
+      margin-left: 5px;
+    }
+  }
+}
