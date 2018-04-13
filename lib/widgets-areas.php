@@ -16,6 +16,10 @@
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
 
+// Only if use sidebar-alt, reposition this inside content-sidebar-wrap
+// remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+// add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
+
 // Register widget areas.
 genesis_register_widget_area( array(
 	'id'          => 'footer',
