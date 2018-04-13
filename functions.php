@@ -46,8 +46,8 @@ add_theme_support( 'html5', array(
  * @since 	1.0.0
  */
 add_theme_support( 'genesis-structural-wraps', array(
-    'header',
-    'menu-primary',
+    // 'header',
+    // 'menu-primary',
     'menu-secondary',
     'footer-widgets',
     'footer'

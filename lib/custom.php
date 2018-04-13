@@ -13,6 +13,37 @@
  */
 
 /**
+ * Header: reposition primary menu navigation, add widget area
+ *
+ * @since 	1.0.0
+ */
+remove_action( 'genesis_header', 'genesis_do_header' );
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'mg_all_custom_header', 10 );
+function mg_all_custom_header(){
+
+	// Site title
+	echo '<div class="title-area">';
+	do_action( 'genesis_site_title' );
+	echo '</div>';
+
+	// Site navbar
+	if ( ! genesis_nav_menu_supported( 'primary' ) ){
+
+		return;
+
+	} else{
+
+		genesis_nav_menu( array(
+			'theme_location' => 'primary',
+			'menu_class'     => 'menu genesis-nav-menu',
+		) );
+
+	}
+
+}
+
+/**
  * Custom Footer. All.
  *
  * @since 	1.0.0
