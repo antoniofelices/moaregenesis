@@ -112,6 +112,13 @@
   }
 }
 
+// Wrap
+%wrap{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
 // List unstyled
 %list-unstyled{
   margin-left: 0;

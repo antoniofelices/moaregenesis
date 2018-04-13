@@ -9,30 +9,22 @@
 	clear: both;
 	line-height: 1;
 
-	@media screen and (min-width: $screen-lg) {
-		clear: both;
-		line-height: 1;
-		text-align: left;
-	}
+	// TODO: move
+	margin: 0;
+	padding: 0;
 
 	.menu-item {
 		display: block;
 		position: relative;
-		text-align: right;
-
 		@media screen and (min-width: $screen-lg) {
 			display: inline-block;
-			position: relative;
-			text-align: left;
 		}
-
 		> a {
-			padding: 1.5rem;
+			padding: $magic-number;
 		}
 	}
 
 	a {
-		border-bottom: 1px solid $gray-light;
 		display: block;
 		padding: 1.5rem 10px;
 		text-align: left;
@@ -110,17 +102,6 @@
 }
 
 // Primary Navigation
-@media screen and (min-width: $screen-lg) {
-	.nav-primary {
-		background: $white;
-		border-bottom: 1px solid $gray-light;
-
-		> .wrap {
-			max-width: 1240px;
-			padding: 0 40px;
-		}
-	}
-}
 
 @media screen and (min-width: $screen-lg) {
 	.nav-primary,

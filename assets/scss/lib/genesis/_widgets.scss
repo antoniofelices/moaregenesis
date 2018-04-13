@@ -4,7 +4,36 @@
  *
  */
 
+ /*----------  Widgets  ----------*/
+ .widget {
+ 	word-wrap: break-word;
 
+ 	ol > li {
+ 		list-style-position: inside;
+ 		list-style-type: decimal;
+ 		padding-left: 20px;
+ 		text-indent: -20px;
+ 	}
+
+ 	li li {
+ 		border: 0;
+ 		margin: 0 0 0 30px;
+ 		padding: 0;
+ 	}
+ }
+
+ .widget_calendar {
+
+ 	table {
+ 		width: 100%;
+ 	}
+
+ 	th,
+ 	td {
+ 		text-align: center;
+ 	}
+ }
+ 
  /*----------  Header Widget Area  ----------*/
 
 .header-widget-area {
