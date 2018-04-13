@@ -10,18 +10,16 @@
  */
 
 @import 'variables';
+@import "plugins/mixins";
+@import 'plugins/normalize';
 
-// Dependencies
-// @import 'lib/normalize-scss/normalize';
 
 // Genesis
-@import 'lib/genesis/structure';
 @import 'lib/genesis/defaults';
 @import 'lib/genesis/type';
 @import 'lib/genesis/objects';
 @import 'lib/genesis/tables';
 @import 'lib/genesis/forms';
-@import 'lib/genesis/accessibility';
 @import 'lib/genesis/navigation';
 @import 'lib/genesis/content';
 @import 'lib/genesis/sidebars';
@@ -33,7 +31,10 @@
 
 // Custom
 @import "plugins/fonts";
-@import "plugins/mixins";
+@import 'plugins/accessibility';
+@import 'plugins/structure';
+
+
 @import "plugins/html";
 @import "plugins/layout";
 @import "plugins/classes";

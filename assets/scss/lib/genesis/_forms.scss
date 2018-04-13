@@ -15,11 +15,11 @@ textarea {
 	width: 100%;
 }
 
-input:focus,
-textarea:focus {
-	border: 1px solid $gray;
-	outline: none;
-}
+// input:focus,
+// textarea:focus {
+// 	border: 1px solid $gray;
+// 	// outline: none;
+// }
 
 input[type="checkbox"],
 input[type="image"],
@@ -27,11 +27,11 @@ input[type="radio"] {
 	width: auto;
 }
 
-input:not( [type="checkbox" ] ),
-input:not( [type="image"] ),
-input:not( [type="radio"] ) {
-	-webkit-appearance: none; /* Remove iOS styles */
-}
+// input:not( [type="checkbox" ] ),
+// input:not( [type="image"] ),
+// input:not( [type="radio"] ) {
+// 	-webkit-appearance: none; /* Remove iOS styles */
+// }
 
 ::-moz-placeholder {
 	color: $gray-dark;

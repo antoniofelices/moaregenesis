@@ -5,12 +5,7 @@
  */
 
 
-/*----------  Site Containers  ----------*/
-
-.site-container {
-	max-width: 100%;
-}
-
+// Site Containers
 .site-inner,
 .wrap,
 .site-footer {
@@ -20,14 +15,14 @@
 }
 
 .site-inner {
-	clear: both;
-	padding: 1.5rem 10px;
+	@include padding-vertical;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 /*----------  Site Header  ----------*/
 
 .site-header {
-	background: $white;
 	border-bottom: 1px solid $gray-lightest;
 	width: 100%;
 
@@ -99,7 +94,6 @@
 @media screen and (min-width: $screen-sm) {
 
 	/* Structure */
-	.site-inner,
 	.site-footer {
 		padding: 1.5rem;
 	}
@@ -112,11 +106,6 @@
 }
 
 @media screen and (min-width: $screen-lg) {
-
-	/* Structure */
-	.site-inner {
-		margin-top: 0;
-	}
 
 	/* Layout Wrappers */
 	.content-sidebar-sidebar,
