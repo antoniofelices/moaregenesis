@@ -45,13 +45,17 @@ add_theme_support( 'html5', array(
  *
  * @since 	1.0.0
  */
-add_theme_support( 'genesis-structural-wraps', array(
-    // 'header',
-    // 'menu-primary',
-    'menu-secondary',
-    'footer-widgets',
-    'footer'
-) );
+// One by one
+// add_theme_support( 'genesis-structural-wraps', array(
+//     'header',
+//     'menu-primary',
+//     'menu-secondary',
+//     'footer-widgets',
+//     'footer'
+// ) );
+
+// All wraps
+remove_theme_support( 'genesis-structural-wraps' );
 
 // Add title-tag to Let WordPress Handle the Title Tag
 add_theme_support( 'title-tag' );
