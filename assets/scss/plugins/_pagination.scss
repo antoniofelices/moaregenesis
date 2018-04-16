@@ -1,0 +1,34 @@
+/*
+ *
+ * Pagination
+ *
+ */
+
+.pagination {
+	overflow: hidden;
+  @include padding-vertical();
+	ul {
+		text-align: center;
+    @extend %list-inline;
+    li.active a {
+      border: 0;
+      font-weight: bold;
+    }
+    .pagination-next,
+    .pagination-previous {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+    @include breakpoint(sm){
+      .pagination-next {
+        float: right;
+        width: auto;
+      }
+      .pagination-previous {
+        float: left;
+        width: auto;
+      }
+    }
+	}
+}

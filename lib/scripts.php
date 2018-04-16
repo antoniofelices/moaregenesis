@@ -24,7 +24,6 @@ function mg_enqueue_scripts_styles() {
 	wp_enqueue_script( 'moare-genesis-responsive-menu', get_stylesheet_directory_uri() . "/assets/js/lib/responsive-menus{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 	wp_enqueue_script( 'mainscripts', get_stylesheet_directory_uri() . "/assets/js/main{$suffix}.js", array('jquery'), CHILD_THEME_VERSION, true );
 
-
 	wp_localize_script(
 		'moare-genesis-responsive-menu',
 		'genesis_responsive_menu',

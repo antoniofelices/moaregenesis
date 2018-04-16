@@ -7,9 +7,7 @@
 // Site Header
 .site-header {
 	@include breakpoint( $responsive-menu-break ){
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex ( $justifycontent: space-between, $alignitems: center );
 	}
 }
 
@@ -55,17 +53,14 @@ body.full-width-content {
 			main{
 				grid-area: main;
 				max-width: 100%;
-				background-color: blue;
 			}
 			.sidebar-primary{
 				grid-area: sidebar-1;
 				max-width: 100%;
-				background-color: red;
 			}
 			.sidebar-secondary{
 				grid-area: sidebar-2;
 				max-width: 100%;
-				background-color: red;
 			}
 		}
 	}
@@ -93,8 +88,13 @@ body.full-width-content {
 
 }
 
-// TODO: create a columns system
+// Columns
 @include breakpoint(lg){
+
+	.row{
+		display: flex;
+		flex-wrap: wrap;
+	}
 
 	/*----------  Columns  ----------*/
 	.five-sixths,
@@ -108,7 +108,6 @@ body.full-width-content {
 	.two-fourths,
 	.two-sixths,
 	.two-thirds {
-		float: left;
 		margin-left: 2.564102564102564%;
 	}
 
@@ -145,7 +144,6 @@ body.full-width-content {
 	}
 
 	.first {
-		clear: both;
 		margin-left: 0;
 	}
 

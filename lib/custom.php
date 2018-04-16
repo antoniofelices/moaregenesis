@@ -79,7 +79,7 @@ function mg_all_custom_footer() {
  *
  * @since 	1.0.0
  */
-add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
+// add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
 function mg_all_remove_post_info() {
 
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );

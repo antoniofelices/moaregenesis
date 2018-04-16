@@ -3,3 +3,7 @@
  * CUSTOM CLASSES
  *
  */
+
+.clearfix{
+  @extend %clearfix;
+}
