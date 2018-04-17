@@ -51,7 +51,8 @@
 
 // Vertical rhythms
 @mixin padding-vertical( $top: $magic-number, $bottom: $magic-number ) {
-  padding: ( $top / 2 ) 0;
+  padding-top: ( $top / 2 );
+  padding-bottom:  ( $bottom / 2 );
   @include breakpoint(md) {
     padding-top: $top;
     padding-bottom: $bottom;
@@ -63,7 +64,8 @@
 }
 
 @mixin margin-vertical( $top: $magic-number, $bottom: $magic-number ) {
-  margin: ( $top/2 ) 0;
+  margin-top: ( $top / 2 );
+  margin-bottom: ( $bottom / 2 );
   @include breakpoint(md) {
     margin-top: $top;
     margin-bottom: $bottom;

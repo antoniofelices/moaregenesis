@@ -1,0 +1,111 @@
+/*
+ *
+ * Type
+ *
+ */
+
+// Typography
+a {
+  @include borderBB(1px, solid, $link-color);
+	color: $link-color;
+	text-decoration: $link-decoration;
+	&:hover, &:active, &:focus {
+    color: $link-hover-color;
+		@include borderBB(1px, solid, $link-hover-color);
+	}
+}
+
+b,
+strong {
+	font-weight: $font-weight-bold;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+ol,
+ul {
+  margin-bottom: $magic-number;
+  padding-left: $gutter;
+  ol,
+  ul{
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  @include borderBL(3px, solid, $gray-lighter);
+	@include margin-vertical();
+	padding-left: $gutter;
+}
+
+hr {
+	@include margin-vertical();
+}
+
+p {
+  margin: 0 0 $magic-number 0;
+}
+
+small{
+	font-size: $font-size-xs;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $headings-color;
+	font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  @include margin-vertical( $magic-number, ( $magic-number / 2 ) );
+}
+
+h1 {
+	font-size: $font-size-h1;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-semienourmos;
+  }
+}
+
+h2 {
+	font-size: $font-size-h2;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-h1;
+  }
+}
+
+h3 {
+	font-size: $font-size-h3;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-h2;
+  }
+}
+
+h4{
+	font-size: $font-size-h4;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-h3;
+  }
+
+}
+
+h5{
+	font-size: $font-size-h5;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-h4;
+  }
+
+}
+
+h6 {
+	font-size: $font-size-h6;
+  @include breakpoint ( $responsive-menu-break ){
+    font-size: $font-size-h5;
+  }
+}

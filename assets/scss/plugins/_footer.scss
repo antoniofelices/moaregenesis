@@ -1,0 +1,29 @@
+/*
+ *
+ * Footer
+ *
+ */
+
+.site-footer {
+ 	overflow: hidden;
+ 	p {
+ 		margin-bottom: 0;
+ 	}
+  .mg-main-footer{
+    background-color: $bg-footer;
+  }
+  .mg-sub-footer{
+    background-color: $bg-subfooter;
+  }
+}
+
+ // Widgets
+ .footer-widgets {
+ 	overflow: hidden;
+  @include padding-vertical();
+  padding-right: $gutter;
+  padding-left: $gutter;
+ 	.widget {
+ 		margin-bottom: ( $magic-number * 2 );
+ 	}
+ }

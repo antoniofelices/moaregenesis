@@ -1,0 +1,16 @@
+/*
+ *
+ * Share buttons
+ *
+ */
+
+.mb-social-share{
+	.social{
+		@extend %list-inline;
+		a{
+			@include primary-button ( $color: $gray );
+			font-size: $font-size-xs;
+			padding: ( $magic-number / 4 );
+		}
+	}
+}

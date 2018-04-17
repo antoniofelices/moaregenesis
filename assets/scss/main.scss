@@ -15,30 +15,31 @@
 
 
 // Genesis
-@import 'lib/genesis/defaults';
-@import 'lib/genesis/type';
-@import 'lib/genesis/objects';
-@import 'lib/genesis/tables';
+
 @import 'lib/genesis/forms';
 @import 'lib/genesis/navigation';
-@import 'lib/genesis/content';
-@import 'lib/genesis/sidebars';
+// @import 'lib/genesis/content';
 @import 'lib/genesis/widgets';
-@import 'lib/genesis/genesis';
-@import 'lib/genesis/genesis';
-@import 'lib/genesis/footer';
 
 
 // Custom
-@import "plugins/fonts";
+@import 'plugins/fonts';
 @import 'plugins/accessibility';
 @import 'plugins/structure';
+@import 'plugins/footer';
 
 
-@import "plugins/html";
-@import "plugins/layout";
-@import "plugins/comments";
-@import "plugins/pagination";
-@import "plugins/classes";
-@import "plugins/pages";
-@import "plugins/classes-wordpress";
+@import 'plugins/html';
+@import 'plugins/type';
+
+@import 'plugins/classes';
+@import 'plugins/classes-wordpress';
+
+@import 'plugins/tables';
+@import 'plugins/comments';
+@import 'plugins/pagination';
+
+@import 'plugins/buttons';
+@import 'plugins/share-buttons';
+
+@import 'plugins/pages';

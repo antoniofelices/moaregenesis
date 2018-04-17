@@ -18,10 +18,10 @@
 
 // Site Footer
 .site-footer {
-	.bg-main-footer {
+	.mg-main-footer {
 		@include padding-vertical;
 	}
-	.bg-sub-footer {
+	.mg-sub-footer {
 		@include padding-vertical( ( $magic-number / 4 ), ( $magic-number / 4 ));
 	}
 }

@@ -56,14 +56,14 @@ function mg_all_custom_footer() {
 
 	echo '<footer class="site-footer">';
 
-	echo '<div class="bg-main-footer"><div class="wrap">';
+	echo '<div class="mg-main-footer"><div class="wrap">';
 	genesis_widget_area( 'footer', array(
 		'before' => '<section>',
 		'after' => '</section>',
 	) );
 	echo "</div></div>";
 
-	echo '<div class="bg-sub-footer"><div class="wrap">';
+	echo '<div class="mg-sub-footer"><div class="wrap">';
 	genesis_widget_area( 'subfooter', array(
 		'before' => '<section>',
 		'after' => '</section>',

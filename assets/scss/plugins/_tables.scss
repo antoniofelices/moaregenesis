@@ -1,0 +1,27 @@
+/*
+ *
+ * Tables
+ *
+ */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	@include margin-vertical( 0, $magic-number );
+	width: 100%;
+	td,
+	th {
+		text-align: left;
+	}
+	td {
+		@include borderBT( $color:$gray-light );
+		@include padding-vertical();
+	}
+
+	th {
+		font-weight: $font-weight-normal;
+	}
+	tbody {
+		@include borderBB( $color:$gray-light );
+	}
+}
