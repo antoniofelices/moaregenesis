@@ -1,11 +1,12 @@
 /*
  *
- * Accessibility
+ * Accessibility. Genesis accessibility.
+ * If add_theme_support genesis-accessibility
  *
  */
 
 
-// Screen Reader Text
+// Screen Reader Text.
 .screen-reader-text,
 .screen-reader-text span,
 .screen-reader-shortcut {
@@ -39,12 +40,16 @@
 	box-shadow: 0 0 2px 2px rgba($black,.6);
 }
 
-// Don't display outline on focus
+.more-link {
+    position: relative;
+}
+
+// Don't display outline on focus.
 :focus {
 	outline: none;
 }
 
-// Skip Links
+// Skip Links.
 .genesis-skip-link {
 	margin: 0;
 	li {

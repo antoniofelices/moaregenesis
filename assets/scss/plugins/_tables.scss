@@ -7,21 +7,19 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	@include margin-vertical( 0, $magic-number );
 	width: 100%;
+	@include margin-vertical( 0, $magic-number );
+	@include borderB( $color:$gray-light );
 	td,
 	th {
-		text-align: left;
+		padding-left: $gutter;
+		padding-right: $gutter;
 	}
 	td {
 		@include borderBT( $color:$gray-light );
-		@include padding-vertical();
+		@include padding-vertical( ( $magic-number / 2 ), ( $magic-number / 2 ) );
 	}
-
 	th {
-		font-weight: $font-weight-normal;
-	}
-	tbody {
-		@include borderBB( $color:$gray-light );
+		font-weight: $font-weight-bold;
 	}
 }

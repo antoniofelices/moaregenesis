@@ -1,0 +1,21 @@
+/*
+ *
+ * Widgets
+ *
+ */
+
+.widget {
+	ol > li {
+		list-style-position: inside;
+		padding-left: ( $gutter * 2 );
+		text-indent: -( $gutter * 2 );
+	}
+}
+
+// Widget calendar
+.widget_calendar {
+	th,
+	td {
+		text-align: center;
+	}
+}

@@ -4,16 +4,39 @@
  *
  */
 
-// Site Header
+// Site Header.
 .site-header {
-	@include breakpoint( $responsive-menu-break ){
-		@include flex ( $justifycontent: space-between, $alignitems: center );
-	}
+	@include flex ( $justifycontent: space-between, $alignitems: center );
+	padding-right: $gutter;
+	padding-left: $gutter;
 }
 
-// Site Inner
+// Site Inner.
 .site-inner {
 	@include padding-vertical;
+}
+
+// Genesis footer widgets.
+// This widget area is not inside footer. Is between site-inner and footer.
+.footer-widgets{
+	padding-right: $gutter;
+	padding-left: $gutter;
+	@include padding-vertical();
+	@include breakpoint( $responsive-menu-break ){
+		@include flex ( $justifycontent: space-between, $alignitems: baseline );
+	}
+	.widget {
+		margin-bottom: ( $magic-number * 2 );
+	}
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3 {
+		margin-left: 2.564102564102564%;
+		width: 31.623931623931625%;
+	}
+	.footer-widgets-1 {
+		margin-left: 0;
+	}
 }
 
 // Site Footer
@@ -26,19 +49,19 @@
 	}
 }
 
-// Classes
+// Classes.
 .wrap{
 	@extend %wrap;
 }
 
-// Full width
+// Full width.
 body.full-width-content {
 	.content-sidebar-wrap {
 		width: 100%;
 	}
 }
 
-// Main - aside
+// Main - aside.
 @include breakpoint(md) {
 
 	body.content-sidebar,
@@ -88,7 +111,7 @@ body.full-width-content {
 
 }
 
-// Columns
+// Columns.
 @include breakpoint(lg){
 
 	.row{
@@ -96,7 +119,6 @@ body.full-width-content {
 		flex-wrap: wrap;
 	}
 
-	/*----------  Columns  ----------*/
 	.five-sixths,
 	.four-sixths,
 	.one-fourth,

@@ -92,15 +92,7 @@ $lead-font-weight: $font-weight-bold !default;
 $small-font-size: $font-size-sm !default;
 
 //Medias
-//
-$screen-xxl: 1440px !default;
-$screen-xl:  1340px !default;
-$screen-lg:  1200px !default;
-$screen-md:  1023px !default;
-$screen-sm:  860px !default;
-$screen-xs:  600px !default;
-
-$responsive-menu-break: $screen-sm !default;
+$responsive-menu-break: 860px !default;
 
 $breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px);
 

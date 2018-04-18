@@ -1,0 +1,57 @@
+/*
+ *
+ * Forms
+ *
+ */
+
+input,
+select,
+textarea {
+	background-color: $white;
+	border-radius: 0;
+	width: 100%;
+	padding: ($magic-number / 2);
+	@include borderB( $color: $gray-lighter );
+}
+
+input,
+textarea {
+	&::-moz-placeholder,
+	&::-webkit-input-placeholder,
+	&::-ms-input-placeholder,
+	&::placeholder {
+		color: $gray;
+		opacity: 1;
+	}
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	@include primary-button( $display: inline-block );
+}
+
+// Search Form
+.genesis-nav-menu,
+.widget_search {
+	form {
+		position: relative;
+	}
+	input[type="search"] {
+		padding-right: 6rem;
+	}
+	input[type="submit"] {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+}

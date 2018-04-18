@@ -16,14 +16,3 @@
     background-color: $bg-subfooter;
   }
 }
-
- // Widgets
- .footer-widgets {
- 	overflow: hidden;
-  @include padding-vertical();
-  padding-right: $gutter;
-  padding-left: $gutter;
- 	.widget {
- 		margin-bottom: ( $magic-number * 2 );
- 	}
- }

@@ -40,6 +40,16 @@ add_theme_support( 'html5', array(
 	'search-form',
 ) );
 
+// Add Accessibility support.
+// Have to use _accesibility.scss file
+add_theme_support( 'genesis-accessibility', array(
+	'404-page',
+	'drop-down-menu',
+	'headings',
+	'search-form',
+	'skip-links'
+) );
+
 /**
  * Remove wraps: header, primary menu.
  *
@@ -67,7 +77,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support( 'genesis-after-entry-widget-area' );
 
 // Add support for 2-column footer widgets.
-add_theme_support( 'genesis-footer-widgets', 2 );
+add_theme_support( 'genesis-footer-widgets', 3 );
 
 // Scripts.
 include_once( get_stylesheet_directory() . '/lib/scripts.php' );

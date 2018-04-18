@@ -4,8 +4,10 @@
  *
  */
 
-html{
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -15,11 +17,7 @@ body {
 	font-size: $font-size-base;
 	font-weight: $font-weight-normal;
 	line-height:  $line-height-base;
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	.nav-visible {
-		overflow: hidden;
-	}
+	// -webkit-font-smoothing: antialiased;
 }
 
 embed,
@@ -32,4 +30,8 @@ video {
 
 img {
  height: auto;
+}
+
+hr {
+	@include margin-vertical();
 }

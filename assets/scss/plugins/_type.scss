@@ -41,10 +41,6 @@ blockquote {
 	padding-left: $gutter;
 }
 
-hr {
-	@include margin-vertical();
-}
-
 p {
   margin: 0 0 $magic-number 0;
 }

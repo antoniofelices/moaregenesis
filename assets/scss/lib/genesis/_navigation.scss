@@ -5,145 +5,12 @@
  */
 
 
-.genesis-nav-menu {
-	clear: both;
-	line-height: 1;
 
-	// TODO: move
-	margin: 0;
-	padding: 0;
-
-	.menu-item {
-		display: block;
-		position: relative;
-		@media screen and (min-width: $screen-lg) {
-			display: inline-block;
-		}
-		> a {
-			padding: $magic-number;
-		}
-	}
-
-	a {
-		display: block;
-		padding: 1.5rem 10px;
-		text-align: left;
-
-		@media screen and (min-width: $screen-lg) {
-			border-bottom: 0;
-			display: block;
-			padding: 1.5rem;
-		}
-	}
-
-	> .menu-item > a {
-		@media screen and (min-width: $screen-lg) {
-			padding: 1.5rem;
-		}
-	}
-
-	// Sub Menus
-	.sub-menu {
-		display: none;
-
-		@media screen and (min-width: $screen-lg) {
-			display: none;
-			left: 0;
-			margin-left: 0;
-			position: absolute;
-			width: 200px;
-			z-index: 99;
-
-			a,
-			.menu-item {
-				display: block;
-			}
-
-			.menu-item-has-children:hover > .sub-menu {
-				display: block;
-				left: auto;
-			}
-		}
-
-		a {
-			font-size: $font-size-sm;
-			padding-left: 40px;
-			word-wrap: break-word;
-
-			@media screen and (min-width: $screen-lg) {
-				background: $white;
-				border: 1px solid $gray-light;
-				border-top: 0;
-				padding: 1.5rem;
-				word-wrap: break-word;
-			}
-		}
-
-		> .menu-item:first-child {
-			@media screen and (min-width: $screen-lg) {
-				border-top: 1px solid $gray-light;
-			}
-		}
-
-		.sub-menu {
-			@media screen and (min-width: $screen-lg) {
-				margin: -1px 0 0 198px;
-				top: 0;
-			}
-			a {
-				padding-left: 60px;
-
-				@media screen and (min-width: $screen-lg) {
-					padding: 1.5rem;
-				}
-			}
-		}
-	}
-}
-
-// Primary Navigation
-
-@media screen and (min-width: $screen-lg) {
-	.nav-primary,
-	.admin-bar .nav-primary {
-		display: block;
-		height: auto;
-		overflow: visible;
-		padding: 0;
-		position: static;
-	}
-}
-
-// Secondary Navigation
-@media screen and (min-width: $screen-lg) {
-	.nav-secondary {
-		border-bottom: 1px solid $gray-lightest;
-		font-size: $font-size-sm;
-		font-style: italic;
-
-		> .wrap {
-			max-width: 1240px;
-			padding: 0 40px;
-		}
-	}
-}
-
-// Responsive Menu
-@media only screen and (min-width: $responsive-menu-break) {
-	.genesis-responsive-menu {
-		display: block;
-		visibility: visible;
-	}
-	.menu-toggle,
-	.sub-menu-toggle {
-		display: none;
-		visibility: hidden;
-	}
-
+// Responsive Menu desktop
+@include breakpoint( $responsive-menu-break ){
 	.menu .menu-item:focus {
 		position: static;
 	}
-
 	.menu .menu-item > a:focus + ul.sub-menu,
 	.menu .menu-item.sfHover > ul.sub-menu {
 		left: auto;
@@ -151,101 +18,14 @@
 	}
 }
 
+// Responsive Menu mobile
 @media only screen and (max-width: $responsive-menu-break) {
-	.genesis-responsive-menu {
-		display: none;
-		position: relative;
-
-		> .wrap {
-			padding: 0;
-		}
-
-		.genesis-nav-menu {
-			.sub-menu {
-				border: none;
-				clear: both;
-				display: none;
-				margin: 0;
-				opacity: 1;
-				position: static;
-				width: 100%;
-			}
-
-			.menu-item {
-				display: block;
-				float: none;
-				position: relative;
-				text-align: left;
-
-				a {
-				 	margin-bottom: 1px;
-				 	padding: .75rem 20px;
-				 	width: 100%;
-
-					&:focus,
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-
-				.sub-menu a {
-					padding-left: 25px;
-				}
-			}
-		}
-	}
-
 	.genesis-skip-link .skip-link-hidden {
 		display: none;
 		visibility: hidden;
-
 		@media only screen and (min-width: $responsive-menu-break) {
 			display: block;
 			visibility: visible;
-		}
-	}
-
-	.menu-toggle,
-	.sub-menu-toggle {
-		display: block;
-		margin: 0 auto;
-		overflow: hidden;
-		text-align: center;
-		visibility: visible;
-	}
-
-	.menu-toggle {
-		line-height: 20px;
-		position: relative;
-		z-index: 1000;
-		width: 100%;
-
-		&::before {
-			font-size: $font-size-lg;
-			margin-right: 10px;
-			line-height: inherit;
-			text-rendering: auto;
-			vertical-align: bottom;
-		}
-	}
-
-	.sub-menu-toggle {
-		float: right;
-		padding: .75rem;
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: 100;
-
-		&::before {
-			display: inline-block;
-			text-rendering: auto;
-			transform: rotate(0);
-			transition: transform .25s ease-in-out;
-		}
-
-		&.activated::before {
-			transform: rotate(180deg);
 		}
 	}
 }
