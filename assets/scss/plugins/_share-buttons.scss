@@ -8,8 +8,8 @@
 	.social{
 		@extend %list-inline;
 		a{
-			@include primary-button ( $color: $gray );
 			font-size: $font-size-xs;
+			@include primary-button ( $color: $gray );
 			padding: ( $magic-number / 4 );
 		}
 	}

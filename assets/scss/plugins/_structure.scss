@@ -39,7 +39,7 @@
 	}
 }
 
-// Site Footer
+// Site Footer.
 .site-footer {
 	.mg-main-footer {
 		@include padding-vertical();
@@ -51,7 +51,7 @@
 	}
 }
 
-// Classes.
+// Wrap.
 .wrap{
 	@extend %wrap;
 }
@@ -79,11 +79,11 @@ body.full-width-content {
 				grid-area: main;
 				max-width: 100%;
 			}
-			.sidebar-primary{
+			.sidebar-primary {
 				grid-area: sidebar-1;
 				max-width: 100%;
 			}
-			.sidebar-secondary{
+			.sidebar-secondary {
 				grid-area: sidebar-2;
 				max-width: 100%;
 			}
@@ -92,21 +92,21 @@ body.full-width-content {
 
 	body.content-sidebar {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(3, 1fr [col-start]);
+			grid-template-columns: repeat(3, 1fr [col]);
 			grid-template-areas: "main main sidebar-1";
 		}
 	}
 
 	body.sidebar-content {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(3, 1fr [col-start]);
+			grid-template-columns: repeat(3, 1fr [col]);
 			grid-template-areas: "sidebar-1 main main";
 		}
 	}
 
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(4, 1fr [col-start]);
+			grid-template-columns: repeat(4, 1fr [col]);
 			grid-template-areas: "sidebar-1 main main sidebar-2";
 		}
 	}

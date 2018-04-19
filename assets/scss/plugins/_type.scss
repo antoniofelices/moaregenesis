@@ -6,12 +6,12 @@
 
 // Typography
 a {
-  @include borderBB(1px, solid, $link-color);
 	color: $link-color;
 	text-decoration: $link-decoration;
+  @include borderBB( $color: $link-color );
 	&:hover, &:active, &:focus {
     color: $link-hover-color;
-		@include borderBB(1px, solid, $link-hover-color);
+		@include borderBB( $color: $link-hover-color );
 	}
 }
 
@@ -42,11 +42,11 @@ blockquote {
 }
 
 p {
-  margin: 0 0 ($magic-number / 2) 0;
+  margin: 0 0 ($magic-number / 2);
 }
 
 small{
-	font-size: $font-size-xs;
+	font-size: $font-size-sm;
 }
 
 // Headings
@@ -88,7 +88,6 @@ h4{
   @include breakpoint ( $responsive-menu-break ){
     font-size: $font-size-h3;
   }
-
 }
 
 h5{
@@ -96,7 +95,6 @@ h5{
   @include breakpoint ( $responsive-menu-break ){
     font-size: $font-size-h4;
   }
-
 }
 
 h6 {

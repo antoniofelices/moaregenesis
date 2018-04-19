@@ -17,7 +17,7 @@
 // Links
 // Fonts
 // Medias
-
+// Other
 
 // Colors
 // Grayscale and brand colors for use across.
@@ -80,21 +80,16 @@ $font-size-h4: 1.333rem !default;
 $font-size-h5: 1rem !default;
 $font-size-h6: 1rem !default;
 
-$headings-margin-bottom: ($line-height-base / 2) !default;
+$headings-margin-bottom: ($magic-number / 2) !default;
 $headings-font-family:   $font-family-sans-serif !default;
 $headings-font-weight:   $font-weight-normal !default;
 $headings-line-height:   1.1 !default;
 $headings-color:         $body-color !default;
 
-$lead-font-size:   1.777rem !default;
-$lead-font-weight: $font-weight-bold !default;
-
-$small-font-size: $font-size-sm !default;
-
 //Medias
 $responsive-menu-break: 860px !default;
 
-$breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px);
+$breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px );
 
 // Other
 $bg-header: $gray-lighter;

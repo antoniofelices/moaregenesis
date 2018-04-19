@@ -11,7 +11,7 @@
 }
 
 body {
-	background-color: $white;
+	background-color: $body-bg;
 	color:  $body-color;
 	font-family: $font-family-base;
 	font-size: $font-size-base;
@@ -25,11 +25,11 @@ iframe,
 img,
 object,
 video {
- max-width: 100%;
+  max-width: 100%;
 }
 
 img {
- height: auto;
+  height: auto;
 }
 
 hr {

@@ -8,7 +8,7 @@
 %button{
 	font: $font-weight-bold $font-size-sm $font-family-sans-serif;
 	text-transform: uppercase;
-	@include borderB($width: 1px, $color: $gray-lighter);
+	@include borderB( $color: $gray-lighter );
 	transition: all .3s ease;
 }
 

@@ -12,7 +12,7 @@
     @extend %list-inline;
     li.active a {
       border: 0;
-      font-weight: bold;
+      font-weight: $font-weight-bold;
     }
     .pagination-next,
     .pagination-previous {

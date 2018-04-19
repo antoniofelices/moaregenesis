@@ -135,15 +135,3 @@
     }
   }
 }
-
-// Responsive Menu mobile
-@media only screen and (max-width: $responsive-menu-break) {
-	.genesis-skip-link .skip-link-hidden {
-		display: none;
-		visibility: hidden;
-		@media only screen and (min-width: $responsive-menu-break) {
-			display: block;
-			visibility: visible;
-		}
-	}
-}

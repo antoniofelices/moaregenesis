@@ -5,19 +5,18 @@
  *
  */
 
-
 // Screen Reader Text.
 .screen-reader-text,
 .screen-reader-text span,
 .screen-reader-shortcut {
 	border: 0;
 	clip-path: inset(50%);
+	width: 1px;
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute !important;
-	width: 1px;
 	word-wrap: normal !important;
 }
 
@@ -41,12 +40,12 @@
 }
 
 .more-link {
-    position: relative;
+  position: relative;
 }
 
 // Don't display outline on focus.
 :focus {
-	outline: none;
+	outline: 1px dotted $link-hover-color;
 }
 
 // Skip Links.
@@ -61,6 +60,18 @@
 		border-bottom: 0;
 		&:hover {
 			background: $gray-lighter;
+		}
+	}
+	@media only screen and (max-width: $responsive-menu-break) {
+		.skip-link-hidden {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	@include breakpoint( $responsive-menu-break ){
+		.skip-link-hidden {
+			display: block;
+			visibility: visible;
 		}
 	}
 }
