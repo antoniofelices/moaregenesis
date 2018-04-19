@@ -63,6 +63,19 @@ body.full-width-content {
 	}
 }
 
+// Narrow.
+body.full-width-content.narrow {
+	.content-sidebar-wrap {
+		@include breakpoint(md){
+			width: 65.81196581196582%;
+			margin: 0 auto;
+		}
+		@include breakpoint(xxl){
+			width: 31.623931623931625%;
+		}
+	}
+}
+
 // Main - aside.
 @include breakpoint(md) {
 
