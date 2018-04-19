@@ -8,44 +8,46 @@
 .site-header {
 	@include flex ( $justifycontent: space-between, $alignitems: center );
 	padding-right: $gutter;
-	padding-left: $gutter;
+  padding-left: $gutter;
 }
 
 // Site Inner.
 .site-inner {
-	@include padding-vertical;
+	@include padding-vertical();
+	@include padding-horizontal();
 }
 
 // Genesis footer widgets.
 // This widget area is not inside footer. Is between site-inner and footer.
 .footer-widgets{
-	padding-right: $gutter;
-	padding-left: $gutter;
 	@include padding-vertical();
+	@include padding-horizontal();
 	@include breakpoint( $responsive-menu-break ){
 		@include flex ( $justifycontent: space-between, $alignitems: baseline );
+		.footer-widgets-1,
+		.footer-widgets-2,
+		.footer-widgets-3 {
+			margin-left: 2.564102564102564%;
+			width: 31.623931623931625%;
+		}
+		.footer-widgets-1 {
+			margin-left: 0;
+		}
 	}
 	.widget {
 		margin-bottom: ( $magic-number * 2 );
-	}
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3 {
-		margin-left: 2.564102564102564%;
-		width: 31.623931623931625%;
-	}
-	.footer-widgets-1 {
-		margin-left: 0;
 	}
 }
 
 // Site Footer
 .site-footer {
 	.mg-main-footer {
-		@include padding-vertical;
+		@include padding-vertical();
+		@include padding-horizontal();
 	}
 	.mg-sub-footer {
 		@include padding-vertical( ( $magic-number / 4 ), ( $magic-number / 4 ));
+		@include padding-horizontal();
 	}
 }
 
@@ -72,7 +74,7 @@ body.full-width-content {
 			max-width: 1200px;
 			display: grid;
 			grid-template-rows: auto;
-			grid-gap: 0 ( $magic-number / 2 );
+			grid-gap: 0 ( $magic-number );
 			main{
 				grid-area: main;
 				max-width: 100%;

@@ -1,0 +1,50 @@
+/*
+ *
+ * Main
+ *
+ */
+
+// Main all.
+.breadcrumb {
+	font-size: $font-size-sm;
+	@include margin-vertical( 0, ( $magic-number / 2 ) );
+}
+
+.entry {
+	text-rendering: optimizeLegibility;
+	.entry-meta {
+		font-size: $font-size-sm;
+		margin-bottom: ( $magic-number / 2 );
+	}
+}
+
+// Main archives and search results.
+body.archive,
+body.search-results{
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		+ .entry {
+			@include margin-vertical( $magic-number, 0 );
+		}
+		.entry-title {
+			margin-bottom: ( $magic-number / 4 );
+			a{
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+// Main singles and pages.
+body.page,
+body.single-post {
+	.entry {
+		.entry-title {
+			@include breakpoint(sm){
+				margin-top: 0;
+			}
+		}
+	}
+}

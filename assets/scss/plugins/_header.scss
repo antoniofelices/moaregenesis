@@ -32,7 +32,7 @@
     display: none;
     position: absolute;
     top: ( $magic-number * 2 );
-    right: $gutter;
+    right: 0;
     ul.genesis-nav-menu{
       margin: 0;
       padding: 0;
@@ -88,7 +88,7 @@
     }
   }
 
-  // All on desktop displays
+  // Desktop displays
   @include breakpoint( $responsive-menu-break ) {
     .menu-toggle {
       display: none;
@@ -102,7 +102,12 @@
           a {
             display: inline;
             background-color: transparent;
+						padding-right: 0;
+						padding-left: 0;
           }
+					+.menu-item{
+						margin-left: $gutter;
+					}
           // Submenus
           .sub-menu-toggle {
             display: none;
@@ -115,6 +120,9 @@
             a,
             .menu-item {
               display: block;
+							+.menu-item{
+								margin-left: 0;
+							}
             }
             a{
               padding: ( $magic-number / 2 ) $gutter;
@@ -125,6 +133,17 @@
         }
       }
     }
-
   }
+}
+
+// Responsive Menu mobile
+@media only screen and (max-width: $responsive-menu-break) {
+	.genesis-skip-link .skip-link-hidden {
+		display: none;
+		visibility: hidden;
+		@media only screen and (min-width: $responsive-menu-break) {
+			display: block;
+			visibility: visible;
+		}
+	}
 }

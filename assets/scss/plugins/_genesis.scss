@@ -1,0 +1,41 @@
+/*
+ *
+ * Genesis
+ *
+ */
+
+// Archive/Author Box
+.archive-description,
+.author-box {
+	@include breakpoint(sm){
+		@include borderBT( $color: $gray-lighter );
+		@include borderBB( $color: $gray-lighter );
+	}
+	@include padding-vertical();
+	p:last-child {
+	 	margin-bottom: 0;
+	}
+}
+
+// Objects
+.featured-content{
+	img {
+		width: auto;
+	}
+}
+.wp-caption {
+	margin: 0;
+}
+
+// Author box
+.author-box {
+	font-size: $font-size-sm;
+	margin: 1.5rem 0 3rem;
+	@include margin-vertical( ($magic-number / 2), $magic-number );
+	.avatar {
+		max-width: 70px;
+		@include breakpoint(sm){
+			max-width: 100%;
+		}
+	}
+}

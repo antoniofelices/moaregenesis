@@ -4,6 +4,14 @@
  *
  */
 
+// Clean margins.
+.widget-title,
+.author-box-title,
+.footer-widgets .widget-title,
+.sidebar .entry-title {
+	margin-top: 0;
+}
+
 .widget {
 	ol > li {
 		list-style-position: inside;

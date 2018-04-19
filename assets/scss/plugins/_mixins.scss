@@ -76,6 +76,16 @@
   }
 }
 
+// Gutters
+@mixin padding-horizontal( $right: $gutter, $left: $gutter ){
+  padding-right: $right;
+  padding-left: $left;
+  @include breakpoint( $responsive-menu-break ) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 // Grafic resourses
 @mixin border-after($width: 10%, $height: 4px, $color: darken($gray-lighter,5%), $marginsm: $magic-number){
   &:after{

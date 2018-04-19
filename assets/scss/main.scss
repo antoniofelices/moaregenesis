@@ -18,21 +18,21 @@
 @import 'plugins/type';
 @import 'plugins/accessibility';
 @import 'plugins/structure';
+@import 'plugins/widgets';
 @import 'plugins/header';
 @import 'plugins/sidebar';
+@import 'plugins/main';
 @import 'plugins/footer';
-@import 'plugins/widgets';
 
+@import 'plugins/genesis';
 @import 'plugins/classes';
 @import 'plugins/classes-wordpress';
 
 @import 'plugins/buttons';
-
 @import 'plugins/forms';
 @import 'plugins/tables';
 @import 'plugins/comments';
 @import 'plugins/pagination';
 
 @import 'plugins/share-buttons';
-
 @import 'plugins/pages';

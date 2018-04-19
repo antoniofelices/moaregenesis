@@ -58,8 +58,8 @@ function mg_all_custom_footer() {
 
 	echo '<div class="mg-main-footer"><div class="wrap">';
 	genesis_widget_area( 'footer', array(
-		'before' => '<section>',
-		'after' => '</section>',
+		'before' => '',
+		'after' => '',
 	) );
 	echo "</div></div>";
 

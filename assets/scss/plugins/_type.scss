@@ -42,7 +42,7 @@ blockquote {
 }
 
 p {
-  margin: 0 0 $magic-number 0;
+  margin: 0 0 ($magic-number / 2) 0;
 }
 
 small{

@@ -11,6 +11,11 @@
  	}
   .mg-main-footer{
     background-color: $bg-footer;
+    > .wrap{
+      @include breakpoint( $responsive-menu-break ){
+        @include flex ( $justifycontent: space-between, $alignitems: baseline );
+      }
+    }
   }
   .mg-sub-footer{
     background-color: $bg-subfooter;
