@@ -33,6 +33,7 @@
     position: absolute;
     top: ( $magic-number * 2 );
     right: 0;
+		z-index: 999;
     ul.genesis-nav-menu{
       margin: 0;
       padding: 0;
@@ -116,7 +117,7 @@
             position: absolute;
             left: 0;
             width: 200px;
-            z-index: 99;
+            z-index: 999;
             a,
             .menu-item {
               display: block;
