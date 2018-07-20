@@ -14,6 +14,7 @@
 'use strict';
 module.exports = function(grunt) {
 
+  const sass = require('node-sass');
   require('load-grunt-tasks')(grunt);
 
   // Project configuration.
@@ -22,27 +23,24 @@ module.exports = function(grunt) {
 
     // Sass
     sass: {
-      dev:{
-        options: {
-          sourceMap: true,
-          sourceMapEmbed: false,
-          sourceMapContents: true
-        },
-        files: [{
-          expand: true,
-          cwd: 'assets/scss',
-          src: ['*.{scss,sass}'],
-          dest: 'assets/stylesheets',
-          ext: '.css'
-        }]
+      options: {
+        implementation: sass,
+        sourceMap: true,
+        sourceComments: true
+        // sourceMapContents: true
+      },
+      dist: {
+        files: {
+          'assets/stylesheets/main.css': 'assets/scss/main.scss'
+        }
       }
     },
 
     // Watch
     watch: {
       css: {
-        files: ['assets/scss/*.scss','assets/scss/plugins/*.scss','assets/scss/lib/genesis/*.scss'],
-        tasks: ['sass:dev']
+        files: ['assets/scss/*.scss','assets/scss/*/*.scss'],
+        tasks: ['sass']
       }
     },
 

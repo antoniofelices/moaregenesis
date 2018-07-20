@@ -116,13 +116,13 @@
   list-style: none;
   > li{
     margin: 0;
-    @include borderBB( $color: $gray-lighter );
-    @include padding-vertical( $top: ( $magic-number / 2 ), $bottom: ( $magic-number / 2 ) );
+		padding-top: ( $magic-number / 2 );
+		padding-bottom: ( $magic-number / 2 );
     @include flex( $justifycontent: start )
     &:before{
       content: '\e903';
       color: $gray-light;
-      font: normal $font-size-h1 $font-family-icons;
+      font: normal $font-size-base $font-family-icons;
       line-height: $line-height-xs;
     }
     a{
@@ -218,7 +218,7 @@
 // Featured paragraph.
 %paragraph-meta{
   margin: 0;
-  font-family: $font-family-sans-serif-bold;
+  font-family: $font-weight-bold;
   font-size: $font-size-sm;
   padding: ( $magic-number / 4 ) 0;
   a{

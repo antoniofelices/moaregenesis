@@ -34,9 +34,6 @@
 .sidebar-primary{
 	.widget_recent_entries,
 	.widget_nav_menu{
-		h3{
-			@include borderBB( $color: $gray-lighter );
-		}
 		ul{
 			@include main-list();
 		}

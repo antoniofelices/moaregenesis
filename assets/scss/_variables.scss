@@ -68,6 +68,8 @@ $font-weight-bold: 700 !default;
 
 $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.5 !default;
+$line-height-sm: 1.5 !default;
+$line-height-xs: 1 !default;
 $magic-number: 1.5rem !default;
 $gutter: 15px !default;
 
@@ -83,7 +85,7 @@ $font-size-h6: 1rem !default;
 $headings-margin-bottom: ($magic-number / 2) !default;
 $headings-font-family:   $font-family-sans-serif !default;
 $headings-font-weight:   $font-weight-normal !default;
-$headings-line-height:   1.1 !default;
+$headings-line-height:   $line-height-xs !default;
 $headings-color:         $body-color !default;
 
 //Medias

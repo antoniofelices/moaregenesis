@@ -1,7 +1,7 @@
 {
   "name": "moaregenesis",
   "description": "moare genesis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "licenses": [
     {
       "type": "MIT",
@@ -9,14 +9,15 @@
     }
   ],
   "engines": {
-    "node": ">= 6.2.0"
+    "node": "latest"
   },
   "devDependencies": {
     "grunt": "latest",
-    "load-grunt-tasks": "latest",
-    "grunt-sass": "latest",
-    "grunt-contrib-watch": "latest",
+    "grunt-contrib-cssmin": "latest",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-cssmin": "latest"
+    "grunt-contrib-watch": "latest",
+    "grunt-sass": "latest",
+    "load-grunt-tasks": "latest",
+    "node-sass": "latest"
   }
 }

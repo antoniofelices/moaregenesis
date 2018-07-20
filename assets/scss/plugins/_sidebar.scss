@@ -11,6 +11,13 @@
 		@include breakpoint( $responsive-menu-break ){
 			margin-bottom: ( $magic-number * 2 );
 		}
+		.widget-title{
+			font-size: $font-size-base;
+			margin-bottom: ( $magic-number / 2 );
+			padding-bottom: ( $magic-number / 2 );
+			text-transform: uppercase;
+			@include borderBB( $width: 4px, $color: $gray-lighter );
+		}
 	}
 	> section:first-of-type h3{
 		margin-top: 0;
