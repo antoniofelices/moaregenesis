@@ -3,26 +3,3 @@
  * Buttons
  *
  */
-
-//Buttons
-%button{
-	font: $font-weight-bold $font-size-sm $font-family-sans-serif;
-	text-transform: uppercase;
-	@include borderB( $color: $gray-lighter );
-	transition: all .3s ease;
-}
-
-@mixin primary-button($display: inline, $color: $link-color, $bgcolor: transparent, $width: auto, $hovercolor: $white, $hoverbgcolor: $link-hover-color){
-  @extend %button;
-  display: $display;
-  color: $color;
-  background-color: $bgcolor;
-  border-color: darken($color, 10%);
-  width: $width;
-  text-align: center;
-  &:hover, &:active, &:focus{
-    color: $hovercolor;
-    background-color: $hoverbgcolor;
-    border-color: darken($hoverbgcolor, 10%);
-  }
-}

@@ -2,14 +2,14 @@
 /**
  * Moare Genesis.
  *
- * This file adds menus to Moare Genesis Starter Theme.
+ * This file adds menus for the Moare Genesis Starter Theme.
  *
- * @package moare-genesis
+ * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 // Reduce the secondary navigation menu to one level depth.

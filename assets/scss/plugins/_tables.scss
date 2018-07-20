@@ -16,7 +16,7 @@ table {
 		padding-right: $gutter;
 	}
 	td {
-		@include borderBT( $color:$gray-light );
+		@include borderBT( $color: $gray-light );
 		@include padding-vertical( ( $magic-number / 2 ), ( $magic-number / 2 ) );
 	}
 	th {

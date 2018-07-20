@@ -2,14 +2,14 @@
 /**
  * Moare Genesis.
  *
- * This file adds functions to Moare Genesis Starter Theme.
+ * This file adds functions for the Moare Genesis Starter Theme.
  *
- * @package moare-genesis
+ * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 // Start the engine.
@@ -22,7 +22,7 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 add_action( 'after_setup_theme', 'mg_localization_setup' );
 function mg_localization_setup(){
 
-	load_child_theme_textdomain( 'moare-genesis', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'moaregenesis', get_stylesheet_directory() . '/languages' );
 
 }
 

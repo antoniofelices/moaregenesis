@@ -6,8 +6,8 @@
  * @version 1.1.2
  * @license GPL-2.0+
  *
- * Moare Sample.
- * @package Moare Sample
+ * Moare Genesis.
+ * @package moaregenesis
  * 
  */
 

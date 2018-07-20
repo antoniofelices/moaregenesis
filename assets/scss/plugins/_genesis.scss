@@ -31,7 +31,7 @@
 .author-box {
 	font-size: $font-size-sm;
 	margin: 1.5rem 0 3rem;
-	@include margin-vertical( ($magic-number / 2), $magic-number );
+	@include margin-vertical( ( $magic-number / 2 ), $magic-number );
 	.avatar {
 		max-width: 70px;
 		@include breakpoint(sm){

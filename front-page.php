@@ -1,15 +1,15 @@
 <?php
 /**
- * Radio Nikosia.
+ * Moare Genesis.
  *
- * This file adds functions to the Radio Nikosia front page.
+ * This file adds functions for the Moare Genesis Starter Theme front page.
  *
- * @package radio-nikosia
+ * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 /**
@@ -29,31 +29,41 @@ function mg_front_page_meta() {
 }
 
 /**
- * Add accessibility
+ * Opening wrap.
  *
- * @since  1.0.0
+ * @since 	1.0.0
  */
-add_filter( 'genesis_attr_site-inner', 'mg_site_inner_attr' );
-function mg_site_inner_attr( $attributes ) {
+add_action( 'mg_front_page_content_area', 'mg_front_page_open' );
+function mg_front_page_open() {
 
-	$attributes['id'] = 'genesis-content';
+	echo '<div class="content-sidebar-wrap">';
+	echo '<main id="genesis-content" class="content">';
 
-	$attributes = wp_parse_args( $attributes, genesis_attributes_entry( array() ) );
-
-	return $attributes;
 }
-
 
 /**
  * Main example
  *
  * @since 	1.0.0
  */
-add_action( 'mg_content_area_front_page', 'mg_front_page_main_example' );
+add_action( 'mg_front_page_content_area', 'mg_front_page_main_example' );
 function mg_front_page_main_example() {
 
 }
 
+/**
+ * Closing wrap.
+ *
+ * @since 	1.0.0
+ */
+add_action( 'mg_front_page_content_area', 'mg_front_page_close' );
+function mg_front_page_close() {
+
+	echo '</main>';
+	echo '</div>';
+
+}
+
 get_header();
-do_action( 'mg_content_area_front_page' );
+do_action( 'mg_front_page_content_area' );
 get_footer();

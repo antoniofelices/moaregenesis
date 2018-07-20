@@ -4,6 +4,18 @@
 ### Added
 - BrowserSync
 
+## [1.0.1] - 2018-07-20
+### Added
+- Pager.
+- Grid layout.
+- Some styles.
+
+### Changed
+- Rename Text Domain.
+
+### Fixed
+- Names front-page file.
+
 ## [1.0.0] - 2017-08-18
 ### Added
 - All

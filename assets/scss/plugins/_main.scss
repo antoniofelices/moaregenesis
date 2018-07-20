@@ -24,14 +24,19 @@ body.search-results{
 	.archive-title {
 		margin: 0;
 	}
-	.entry {
-		+ .entry {
-			@include margin-vertical( $magic-number, 0 );
-		}
-		.entry-title {
-			margin-bottom: ( $magic-number / 4 );
-			a{
-				border-bottom: none;
+	.content{
+		.entry {
+			.entry-title {
+				margin-top: 0;
+				margin-bottom: ( $magic-number / 2 );
+				a{
+					color: $body-color;
+					border-bottom: none;
+				}
+			}
+			+ .entry {
+				@include margin-vertical( $top: $magic-number, $bottom: 0 );
+				@include borderBT( $color: $gray-lighter );
 			}
 		}
 	}

@@ -2,14 +2,14 @@
 /**
  * Moare Genesis.
  *
- * This file adds the default theme settings to Moare Genesis Theme.
+ * This file adds the default theme settings for the Moare Genesis Theme.
  *
- * @package moare-genesis
+ * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 /**

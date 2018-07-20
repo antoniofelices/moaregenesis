@@ -8,5 +8,11 @@
 .sidebar-primary {
 	section {
 		margin-bottom: $magic-number;
+		@include breakpoint( $responsive-menu-break ){
+			margin-bottom: ( $magic-number * 2 );
+		}
+	}
+	> section:first-of-type h3{
+		margin-top: 0;
 	}
 }

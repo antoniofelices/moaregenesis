@@ -35,3 +35,7 @@ img {
 hr {
 	@include margin-vertical();
 }
+
+address{
+  font-style: normal;
+}

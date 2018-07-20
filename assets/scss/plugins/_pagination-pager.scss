@@ -32,3 +32,18 @@
     }
 	}
 }
+
+// Pager
+.pager,
+.archive-pagination {
+  @extend %wrap;
+  @include padding-vertical();
+  @include flex( $justifycontent: space-between );
+	a{
+		border-bottom: none;
+		color: $body-color;
+		&:hover, &:active, &:focus{
+			color: $link-hover-color;
+		}
+	}
+}

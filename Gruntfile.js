@@ -2,12 +2,12 @@
  *
  * Gruntfile Moare Genesis theme
  *
- * @package moare-genesis
+ * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.0
+ * @version 1.0.1
  *
  */
 

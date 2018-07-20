@@ -76,6 +76,35 @@ body.full-width-content.narrow {
 	}
 }
 
+// Layouts entries.
+body.width-2-entries,
+body.width-3-entries {
+	.content {
+		@extend %wrap;
+	}
+}
+
+// Layouts entries. Two width entry.
+body.width-2-entries {
+	.content {
+		@include breakpoint(sm){
+			@include grid( $grid-template-columns: 2 );
+		}
+	}
+}
+
+// Layouts entries. Tree width entry.
+body.width-3-entries {
+	.content {
+		@include breakpoint(xs){
+			@include grid( $grid-template-columns: 2 );
+		}
+		@include breakpoint(sm){
+			@include grid( $grid-template-columns: 3 );
+		}
+	}
+}
+
 // Main - aside.
 @include breakpoint(md) {
 
@@ -84,10 +113,7 @@ body.full-width-content.narrow {
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
 			margin: 0 auto;
-			max-width: 1200px;
-			display: grid;
-			grid-template-rows: auto;
-			grid-gap: 0 ( $magic-number );
+			max-width: 960px;
 			main{
 				grid-area: main;
 				max-width: 100%;
@@ -105,22 +131,25 @@ body.full-width-content.narrow {
 
 	body.content-sidebar {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(3, 1fr [col]);
-			grid-template-areas: "main main sidebar-1";
+			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
+			grid-template-columns: 1fr 1fr ( $gutter * 2 ) 1fr;
+			grid-template-areas: "main main . sidebar-1";
 		}
 	}
 
 	body.sidebar-content {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(3, 1fr [col]);
-			grid-template-areas: "sidebar-1 main main";
+			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
+			grid-template-columns: 1fr ( $gutter * 2 ) 1fr 1fr;
+			grid-template-areas: "sidebar-1 . main main";
 		}
 	}
 
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
-			grid-template-columns: repeat(4, 1fr [col]);
-			grid-template-areas: "sidebar-1 main main sidebar-2";
+			@include grid( $grid-template-columns: 4, $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
+			grid-template-columns: 1fr ( $gutter * 2 ) 1fr 1fr ( $gutter * 2 ) 1fr;
+			grid-template-areas: "sidebar-1 . main main . sidebar-2";
 		}
 	}
 
@@ -130,7 +159,7 @@ body.full-width-content.narrow {
 @include breakpoint(lg){
 
 	.row{
-		display: flex;
+		@include flex( $justifycontent: flex-start, $alignitems: flex-start );
 		flex-wrap: wrap;
 	}
 

@@ -36,7 +36,7 @@ ul {
 }
 
 blockquote {
-  @include borderBL(3px, solid, $gray-lighter);
+  @include borderBL( $width: 3px, solid, $gray-lighter );
 	@include margin-vertical();
 	padding-left: $gutter;
 }

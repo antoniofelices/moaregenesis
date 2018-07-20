@@ -1,6 +1,6 @@
 /*
  *
- * MIXINS
+ * Mixins
  *
  */
 
@@ -44,19 +44,25 @@
 
 // Flex
 @mixin flex( $justifycontent: center, $alignitems: center ) {
+	display: -ms-flexbox;
   display: flex;
   justify-content: $justifycontent;
   align-items: $alignitems;
 }
 
+// Grid
+@mixin grid( $grid-template-rows: auto, $grid-template-columns: 3, $grid-gap-vertical: $magic-number, $grid-gap-horizontal: $magic-number ) {
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: $grid-template-rows;
+  grid-template-columns: repeat($grid-template-columns, 1fr [col]);
+  grid-gap: $grid-gap-vertical $grid-gap-horizontal;
+}
+
 // Vertical rhythms
 @mixin padding-vertical( $top: $magic-number, $bottom: $magic-number ) {
-  padding-top: ( $top / 2 );
-  padding-bottom:  ( $bottom / 2 );
-  @include breakpoint(md) {
-    padding-top: $top;
-    padding-bottom: $bottom;
-  }
+  padding-top: $top;
+  padding-bottom:  $bottom;
   @include breakpoint(xxl) {
     padding-top: ( $top * 2 );
     padding-bottom: ( $bottom * 2 );
@@ -64,12 +70,8 @@
 }
 
 @mixin margin-vertical( $top: $magic-number, $bottom: $magic-number ) {
-  margin-top: ( $top / 2 );
-  margin-bottom: ( $bottom / 2 );
-  @include breakpoint(md) {
-    margin-top: $top;
-    margin-bottom: $bottom;
-  }
+  margin-top: $top;
+  margin-bottom: $bottom;
   @include breakpoint(xxl) {
     margin-top: ( $top * 2 );
     margin-bottom: ( $bottom * 2 );
@@ -86,19 +88,74 @@
   }
 }
 
-// Grafic resourses
-@mixin border-after($width: 10%, $height: 4px, $color: darken($gray-lighter,5%), $marginsm: $magic-number){
+// Buttons
+@mixin primary-button( $display: inline, $color: $body-color, $bgcolor: $white, $width: auto, $bordercolor: $white, $padding: $magic-number, $hovercolor: $white, $hoverbgcolor: $link-hover-color ){
+  font: $font-weight-normal $font-size-base $font-family-sans-serif;
+  display: $display;
+  color: $color;
+  background-color: $bgcolor;
+  width: $width;
+  text-align: center;
+  @include borderB( $color: $bordercolor );
+  transition: all .3s ease;
+  padding: ( $padding / 2 ) $padding;
+  &:hover, &:active, &:focus{
+    color: $hovercolor;
+    background-color: $hoverbgcolor;
+    border-color: darken($hoverbgcolor, 10%);
+  }
+  a{
+    border-bottom: none;
+  }
+}
+
+// Lists
+@mixin main-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  > li{
+    margin: 0;
+    @include borderBB( $color: $gray-lighter );
+    @include padding-vertical( $top: ( $magic-number / 2 ), $bottom: ( $magic-number / 2 ) );
+    @include flex( $justifycontent: start )
+    &:before{
+      content: '\e903';
+      color: $gray-light;
+      font: normal $font-size-h1 $font-family-icons;
+      line-height: $line-height-xs;
+    }
+    a{
+      border-bottom: none;
+    }
+  }
+}
+
+// Grafic resourses. Border after.
+@mixin border-after( $width: 10%, $height: 4px, $color: darken($gray-lighter,5%), $margin-top-bottom: $magic-number ){
   &:after{
     content: ' ';
     display: block;
     width: $width;
     height: $height;
-    margin: ( $magic-number / 2 ) 0;
+    margin: ( $margin-top-bottom / 2 ) 0;
     background-color: $color;
     @include breakpoint(sm){
-      margin: $marginsm 0;
+      margin: $margin-top-bottom 0;
     }
   }
+}
+
+// Grafic resourses. Filters.
+@mixin image-filter( $filter-type: grayscale, $filter-amount:100% ) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+// Transitions.
+@mixin transition( $properties: all, $time:.5s ) {
+  -webkit-transition: $properties $time;
+  transition: $properties $time;
 }
 
 // Don't show
@@ -126,12 +183,17 @@
 
 // Wrap
 %wrap{
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
+  @include breakpoint(md){
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+  }
+  @include breakpoint(lg){
+    max-width: 1140px;
+  }
 }
 
-// List unstyled
+// List unstyled.
 %list-unstyled{
   margin-left: 0;
   padding-left: 0;
@@ -140,7 +202,7 @@
   }
 }
 
-// List inline
+// List inline.
 %list-inline{
   margin: 0;
   padding: 0;
@@ -150,5 +212,16 @@
     +li{
       margin-left: 5px;
     }
+  }
+}
+
+// Featured paragraph.
+%paragraph-meta{
+  margin: 0;
+  font-family: $font-family-sans-serif-bold;
+  font-size: $font-size-sm;
+  padding: ( $magic-number / 4 ) 0;
+  a{
+    border-bottom: none;
   }
 }
