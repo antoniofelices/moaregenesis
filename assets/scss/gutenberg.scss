@@ -1,0 +1,18 @@
+/**
+ * Moare Genesis.
+ *
+ * This file adds gutenberg styles.
+ *
+ * @package moaregenesis
+ * @author  Antonio
+ * @license GPL-2.0+
+ * @link    https://studiomoare.com
+ */
+
+@import 'variables';
+@import "plugins/mixins";
+@import 'plugins/normalize';
+
+@import 'plugins/type';
+@import 'plugins/colors';
+@import 'plugins/blocks';

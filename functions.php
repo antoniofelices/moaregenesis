@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 // Start the engine.
@@ -25,6 +25,9 @@ function mg_localization_setup(){
 	load_child_theme_textdomain( 'moaregenesis', get_stylesheet_directory() . '/languages' );
 
 }
+
+// Gutenberg.
+include_once( get_stylesheet_directory() . '/lib/gutenberg.php' );
 
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Moare Genesis' );

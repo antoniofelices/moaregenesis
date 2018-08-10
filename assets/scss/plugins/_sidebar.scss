@@ -22,4 +22,15 @@
 	> section:first-of-type h3{
 		margin-top: 0;
 	}
+	.mb-loops{
+		article{
+			h4{
+				font-size: $font-size-base;
+				margin-bottom: ( $magic-number / 2 );
+				a{
+					border-bottom: none;
+				}
+			}
+		}
+	}
 }

@@ -9,14 +9,13 @@ table {
 	border-spacing: 0;
 	width: 100%;
 	@include margin-vertical();
-	@include borderB( $color:$gray-light );
 	td,
 	th {
 		padding-left: $gutter;
 		padding-right: $gutter;
 	}
 	td {
-		@include borderBT( $color: $gray-light );
+		@include borderB( $color: $gray-light );
 		@include padding-vertical( ( $magic-number / 2 ), ( $magic-number / 2 ) );
 	}
 	th {

@@ -35,10 +35,23 @@ ul {
   }
 }
 
-blockquote {
+blockquote:not(.wp-block-pullquote) {
   @include borderBL( $width: 3px, $color: $gray-lighter );
 	@include margin-vertical();
-	padding-left: $gutter;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 0 0 $gutter;
+	p {
+		font-style: normal;
+		line-height: inherit;
+		&:last-of-type {
+	    margin-bottom: 0;
+	  }
+	}
+}
+
+cite {
+	font-style: normal;
 }
 
 p {
