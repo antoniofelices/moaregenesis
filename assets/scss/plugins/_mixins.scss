@@ -60,23 +60,23 @@
 }
 
 // Boders
-@mixin borderB( $width: 1px, $style: solid, $color: $brand-primary ){
+@mixin borderB( $width: 1px, $style: solid, $color: $gray-lighter ){
   border: $width $style $color;
 }
 
-@mixin borderBT( $width: 1px, $style: solid, $color: $brand-primary ){
+@mixin borderBT( $width: 1px, $style: solid, $color: $gray-lighter ){
   border-top: $width $style $color;
 }
 
-@mixin borderBR( $width: 1px, $style: solid, $color: $brand-primary ){
+@mixin borderBR( $width: 1px, $style: solid, $color: $gray-lighter ){
   border-right: $width $style $color;
 }
 
-@mixin borderBB( $width: 1px, $style: solid, $color: $brand-primary ){
+@mixin borderBB( $width: 1px, $style: solid, $color: $gray-lighter ){
   border-bottom: $width $style $color;
 }
 
-@mixin borderBL( $width: 1px, $style: solid, $color: $brand-primary ){
+@mixin borderBL( $width: 1px, $style: solid, $color: $gray-lighter ){
   border-left: $width $style $color;
 }
 
@@ -224,11 +224,11 @@
 %wrap{
   @include breakpoint(md){
     margin: 0 auto;
-    max-width: 960px;
+    max-width: $grid-max-width-md;
     width: 100%;
   }
   @include breakpoint(lg){
-    max-width: 1140px;
+    max-width: $grid-max-width-lg;
   }
 }
 

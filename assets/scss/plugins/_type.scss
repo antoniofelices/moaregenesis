@@ -51,7 +51,10 @@ blockquote:not(.wp-block-pullquote) {
 }
 
 cite {
+	color: $gray;
 	font-style: normal;
+	font-size: $font-size-md;
+	display: block;
 }
 
 p {

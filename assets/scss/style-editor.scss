@@ -1,0 +1,22 @@
+/**
+ * Moare Genesis.
+ *
+ * This file adds gutenberg editor styles.
+ *
+ * @package moaregenesis
+ * @author  Antonio
+ * @license GPL-2.0+
+ * @link    https://studiomoare.com
+ */
+
+.edit-post-visual-editor {
+  @import 'variables';
+  @import "plugins/mixins";
+
+  @import 'plugins/fonts';
+  @import 'plugins/type';
+  @import 'plugins/classes';
+  @import 'plugins/colors';
+  @import 'plugins/gutenberg';
+  @import 'plugins/blocks';
+}

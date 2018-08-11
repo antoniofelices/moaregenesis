@@ -90,3 +90,11 @@ function mg_setup_theme_supported_features() {
   add_theme_support( 'disable-custom-colors' );
 
 }
+
+/**
+ * Enqueue block editor style
+ */
+add_action( 'enqueue_block_editor_assets', 'mg_block_editor_styles' );
+function mg_block_editor_styles() {
+    wp_enqueue_style( 'mg-block-editor-styles', get_theme_file_uri( '/assets/stylesheets/style-editor.css' ), false, CHILD_THEME_VERSION, 'all' );
+}

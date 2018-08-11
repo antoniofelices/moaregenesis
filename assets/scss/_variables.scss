@@ -95,6 +95,10 @@ $responsive-menu-break: 860px !default;
 
 $breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px );
 
+// Max width
+$grid-max-width-md: 960px !default;
+$grid-max-width-lg: 1140px !default;
+
 // Other
 $bg-header: $gray-lighter;
 $bg-footer: $bg-header;

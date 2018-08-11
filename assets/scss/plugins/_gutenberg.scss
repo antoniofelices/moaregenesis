@@ -1,0 +1,57 @@
+/*
+ *
+ * Gutenberg editor
+ *
+ */
+
+// All
+&,
+& p {
+  color: $body-color;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-normal;
+	line-height: $line-height-base;
+}
+
+.editor-block-list__block {
+	max-width: $grid-max-width-md;
+}
+
+// Permalink
+.editor-post-permalink{
+  a{
+    border-bottom: none;
+  }
+}
+
+// Title = h1
+.editor-post-title__block {
+  max-width: 100%;
+  .editor-post-title__input{
+    color: $headings-color;
+  	font-family: $headings-font-family;
+  	font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    @include margin-vertical( $magic-number, ( $magic-number / 2 ) );
+    font-size: $font-size-h1;
+    @include breakpoint ( $responsive-menu-break ){
+      font-size: $font-size-semienourmos;
+    }
+  }
+}
+
+// Parragraph
+.editor-rich-text__tinymce.mce-content-body{
+  line-height: $line-height-base;
+}
+
+// Headings
+.wp-block-heading.editor-rich-text h1,
+.wp-block-heading.editor-rich-text h2,
+.wp-block-heading.editor-rich-text h3,
+.wp-block-heading.editor-rich-text h4,
+.wp-block-heading.editor-rich-text h5,
+.wp-block-heading.editor-rich-text h6 {
+	line-height: $headings-line-height;
+}

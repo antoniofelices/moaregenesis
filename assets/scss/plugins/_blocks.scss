@@ -100,26 +100,34 @@ body.full-width-content {
 	@extend blockquote;
 	cite {
 		font-size: $font-size-md;
-		display: block;
 		text-align: left;
 	}
 }
 
 .wp-block-quote.is-large,
-.wp-block-quote.is-style-large,
-.wp-block-quote.wp-block-pullquote {
+.wp-block-quote.is-style-large {
 	p{
 		font-size: $font-size-lg;
 		line-height: $line-height-sm;
 	}
 }
 
-.wp-block-quote.wp-block-pullquote {
+// Pullquotes
+.wp-block-pullquote {
 	margin-left: $gutter;
 	margin-right: $gutter;
+	@include borderBT( $width: 3px );
+	@include borderBB( $width: 3px );
 	@include breakpoint(xl){
 		margin-left: ( $gutter * 2 );
 		margin-right: ( $gutter * 2 );
+	}
+	p{
+		font-size: $font-size-lg;
+		line-height: $line-height-sm;
+	}
+	cite {
+		text-transform: capitalize;
 	}
 }
 
