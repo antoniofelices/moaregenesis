@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 /**
@@ -20,8 +20,14 @@
 // add_action( 'genesis_before_entry_content', 'mg_example_cf' );
 // function mg_example_cf(){
 //
-//   if( get_field('custom_field') ) :
-//     echo '<p>' . esc_html__('EXAMPLE: ', 'moaregenesis') .  esc_html( get_field('custom_field') ) . '</p>';
-//   endif;
+// if ( !function_exists( 'get_field' ) )
+// return;
+//
+// if( get_field( 'customfield' ) ) :
+//   echo sprintf( '<li>%s: <span>%s</span></li>',
+//     esc_html__( 'Lorem', 'moaregenesis' ),
+//     esc_html( get_field( 'customfield' ) )
+//   );
+// endif;
 //
 // }

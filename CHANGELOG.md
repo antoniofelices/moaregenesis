@@ -4,6 +4,11 @@
 ### Added
 - BrowserSync
 
+## [1.0.3] - 2018-09-20
+### Added
+- Gutenberg some styles.
+- Template full width wrap.
+
 ## [1.0.2] - 2018-08-10
 ### Added
 - First test Gutenberg

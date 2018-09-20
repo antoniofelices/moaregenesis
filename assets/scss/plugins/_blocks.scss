@@ -4,98 +4,45 @@
  *
  */
 
-
-// Button
-.wp-block-button {
-	margin-bottom: $magic-number;
-	text-align: center;
-	.wp-block-button__link {
-		@include primary-button();
+// All.
+*[class^="wp-block"] {
+	&.alignleft {
+		margin-right: $gutter;
+	}
+	&.alignright {
+		margin-left: $gutter;
 	}
 }
 
-// Images
-.wp-block-image {
-	img {
-		display: block;
-		width: 100%;
-	}
+// Classes.
+.has-small-font-size {
+	font-size: $font-size-md;
+	line-height: $line-height-sm;
+}
+
+.has-regular-font-size {
+	font-size: $font-size-base;
+}
+
+.has-large-font-size {
+	font-size: $font-size-lg;
+}
+
+.has-larger-font-size {
+	font-size: $font-size-h2;
+	line-height: $line-height-xs;
+}
+
+// Audio.
+.wp-block-audio {
 	figcaption {
 		color: $gray;
 		font-size: $font-size-sm;
-		margin-top: ( $magic-number / 2 );
-	}
-	@include breakpoint(lg) {
-		&.alignwide {
-			margin-left: calc(25% - 25vw);
-			width: auto;
-			max-width: 1000%;
-			figcaption {
-				text-align: left;
-			}
-		}
+		margin: ( $magic-number / 2 ) 0;
 	}
 }
 
-body.full-width-content {
-	.wp-block-image {
-		@include breakpoint(lg) {
-			&.alignwide {
-				margin-left: calc(25% - 25vw);
-				margin-right: calc(25% - 25vw);
-				width: auto;
-				max-width: 1000%;
-			}
-			&.alignfull {
-				margin-left: calc(50% - 50vw);
-				margin-right: calc(50% - 50vw);
-				width: auto;
-				max-width: 1000%;
-			}
-		}
-	}
-}
-
-// Gallery
-.wp-block-gallery {
-	@include breakpoint(lg) {
-		&.alignwide {
-			margin-left: calc(25% - 25vw);
-			width: auto;
-			max-width: 1000%;
-			figcaption {
-				text-align: left;
-			}
-		}
-	}
-}
-
-body.full-width-content {
-	.wp-block-gallery {
-		@include breakpoint(lg) {
-			&.alignwide {
-				margin-left: calc(25% - 25vw);
-				margin-right: calc(25% - 25vw);
-				width: auto;
-				max-width: 1000%;
-			}
-			&.alignfull {
-				margin-left: calc(50% - 50vw);
-				margin-right: calc(50% - 50vw);
-				width: auto;
-				max-width: 1000%;
-			}
-		}
-	}
-}
-
-// Embed video
-.wp-block-embed.is-type-video {
-	@extend .embed-responsive;
-	padding-top: 56.25%;
-}
-
-// Blockquotes
+// Blockquotes.
 .wp-block-quote:not(.wp-block-pullquote) {
 	@extend blockquote;
 	cite {
@@ -104,15 +51,82 @@ body.full-width-content {
 	}
 }
 
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
-	p{
-		font-size: $font-size-lg;
-		line-height: $line-height-sm;
+.wp-block-quote {
+	&.is-large,
+	&.is-style-large {
+		p{
+			font-size: $font-size-lg;
+			line-height: $line-height-sm;
+		}
 	}
 }
 
-// Pullquotes
+// Button.
+.wp-block-button {
+	margin: $magic-number 0;
+	.wp-block-button__link {
+		@include primary-button();
+	}
+}
+
+// Columns.
+.wp-block-columns {
+	.wp-block-column + .wp-block-column {
+		margin-left: $gutter;
+	}
+}
+
+// Embed video.
+.wp-block-embed {
+	&.is-type-video {
+		@extend .embed-responsive;
+		padding-bottom: 56.25%;
+	}
+}
+
+// Gallery.
+.wp-block-gallery {
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+		figcaption {
+			font-size: $font-size-sm;
+			padding: $magic-number $gutter ( $magic-number / 2 );
+		}
+	}
+}
+
+// Images.
+.wp-block-image {
+	img {
+		display: block;
+		width: 100%;
+	}
+	figcaption {
+		color: $gray;
+		font-size: $font-size-sm;
+		margin: ( $magic-number / 2 ) 0;
+	}
+}
+
+// Image cover.
+.wp-block-cover-image {
+	.wp-block-cover-image-text,
+	h2 {
+		font-size: $font-size-lg;
+		line-height: $line-height-base;
+	}
+}
+
+// Paragraph sub header.
+// Have to use selector p.
+p.wp-block-subhead {
+	color: $gray-light;
+	font-size: $font-size-lg;
+	font-style: normal;
+	opacity: 1;
+}
+
+// Pullquotes.
 .wp-block-pullquote {
 	margin-left: $gutter;
 	margin-right: $gutter;
@@ -121,6 +135,12 @@ body.full-width-content {
 	@include breakpoint(xl){
 		margin-left: ( $gutter * 2 );
 		margin-right: ( $gutter * 2 );
+	}
+	&.alignleft {
+		margin-left: 0;
+	}
+	&.alignright {
+		margin-right: 0;
 	}
 	p{
 		font-size: $font-size-lg;
@@ -131,7 +151,39 @@ body.full-width-content {
 	}
 }
 
-// Separator
+// Separator.
 .wp-block-separator{
 	@include margin-vertical();
+	clear: both;
+}
+
+// Separator doots.
+.wp-block-separator.is-style-dots {
+	&:before {
+		color: $gray;
+		font: $font-weight-normal $font-size-enourmos $font-family-sans-serif;
+		letter-spacing: $gutter;
+		padding-left: $gutter;
+	}
+}
+
+// Queries.
+@include breakpoint(lg) {
+	.has-larger-font-size {
+		font-size: $font-size-semienourmos;
+	}
+	body.full-width-content {
+		// alignwide and alignfull.
+		.alignwide {
+			margin-left: calc(25% - 25vw);
+			margin-right: calc(25% - 25vw);
+			width: auto;
+			max-width: 1000%;
+		}
+		.alignfull {
+			margin-left  : calc( -100vw / 2 + 100% / 2 );
+			margin-right : calc( -100vw / 2 + 100% / 2 );
+			max-width    : 100vw;
+		}
+	}
 }

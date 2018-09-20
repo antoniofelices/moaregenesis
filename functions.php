@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 // Start the engine.
@@ -32,7 +32,7 @@ include_once( get_stylesheet_directory() . '/lib/gutenberg.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Moare Genesis' );
 define( 'CHILD_THEME_URL', 'http://www.studiomoare.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.0.3' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array(
@@ -70,6 +70,19 @@ add_theme_support( 'genesis-accessibility', array(
 // All wraps
 remove_theme_support( 'genesis-structural-wraps' );
 
+/**
+ * Add_theme_support custom logo
+ *
+ * @since 	1.0.3
+ */
+add_theme_support( 'custom-logo', array(
+	 'height'      => 280,
+	 'width'       => 95,
+	 'flex-height' => true,
+	 'flex-width'  => true,
+ )
+);
+
 // Add title-tag to Let WordPress Handle the Title Tag
 add_theme_support( 'title-tag' );
 
@@ -93,6 +106,9 @@ include_once( get_stylesheet_directory() . '/lib/widgets-areas.php' );
 
 // Menus.
 include_once( get_stylesheet_directory() . '/lib/menus.php' );
+
+// Grid.
+include_once( get_stylesheet_directory() . '/lib/grid.php' );
 
 // Custom.
 include_once( get_stylesheet_directory() . '/lib/custom.php' );

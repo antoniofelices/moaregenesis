@@ -2,9 +2,9 @@
 /**
  * Moare Genesis.
  *
- * This file create template Full Width.
+ * This file create template Full Width with wrap.
  *
- * Template Name: Full Width Narrow
+ * Template Name: Full Width Wrap
  * Template Post Type: post, page, mycustom
  *
  * @package moaregenesis
@@ -18,10 +18,10 @@
 /**
 * Commons
 *
-* @since 1.0.2
+* @since 1.0.0.
 */
-add_action( 'genesis_meta', 'mg_tpl_full_width_narrow_layout' );
-function mg_tpl_full_width_narrow_layout() {
+add_action( 'genesis_meta', 'mg_tpl_full_width_wrap_content_layout' );
+function mg_tpl_full_width_wrap_content_layout() {
 
 	// Force full width content layout.
 	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
@@ -33,15 +33,15 @@ function mg_tpl_full_width_narrow_layout() {
 /**
  * Add body class.
  *
- * @since 1.0.2
+ * @since 1.0.0
  *
  * @param array $classes Current classes.
  * @return array $classes Updated class array.
  */
-add_filter( 'body_class', 'mg_tpl_full_width_narrow_body_class' );
-function mg_tpl_full_width_narrow_body_class( $classes ) {
+add_filter( 'body_class', 'mg_tpl_full_width_wrap_content_body_class' );
+function mg_tpl_full_width_wrap_content_body_class( $classes ) {
 
-	$classes[] = 'narrow';
+	$classes[] = 'wrap-content';
 
 	return $classes;
 
