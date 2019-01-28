@@ -1,0 +1,204 @@
+/*
+ *
+ * Builder
+ *
+ */
+
+// All.
+section.builder {
+  @include padding-vertical();
+  @include borderBB();
+  .title-section {
+    color: $brand-primary;
+    line-height: $line-height-md;
+    max-width: $grid-max-width-md;
+    margin-top: $magic-number;
+    margin-bottom: $magic-number;
+  }
+}
+
+// Commons.
+section.carousel,
+section.featured,
+section.grid,
+section.image-text,
+section.text-image {
+  .wrap {
+    @include padding-horizontal();
+  }
+}
+
+section.image-text,
+section.text-image {
+  .wrap {
+    @include breakpoint( xl ) {
+      @include flex( $alignitems: start );
+      h2 {
+        font-size: $font-size-h4;
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+      .bg-image,
+      .bg-text {
+        flex:  0 1 50%;
+      }
+    }
+    @include breakpoint( xl ) {
+      p {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}
+
+// Featured
+section.featured {
+  .wrap {
+    > ul {
+      @extend %list-unstyled;
+      @include breakpoint( md ) {
+        @include grid();
+        grid-template-columns: repeat(2, 1fr [col]);
+      }
+      @include breakpoint( lg ) {
+        grid-template-columns: repeat(3, 1fr [col]);
+      }
+      li {
+        margin-bottom: $magic-number;
+        @include breakpoint( md ) {
+          margin-bottom: 0;
+        }
+      }
+      a {
+        display: block;
+        color: $body-color;
+        border-bottom: none;
+      }
+      .bg-image {
+      	height: 33vh;
+      	width: 100%;
+      	overflow: hidden;
+        @include breakpoint( md ) {
+          height: 45vh;
+        }
+      }
+      img {
+      	object-fit: cover;
+      	height: 100%;
+      	width: 100%;
+      }
+      h3 {
+        font-size: $font-size-h4;
+        margin: ( $magic-number / 2 ) 0 ( $magic-number / 4 );
+        @include breakpoint( md ) {
+          margin-top: $magic-number;
+          margin-bottom: ( $magic-number / 2 );
+        }
+      }
+      a:hover, a:active, a:focus {
+        h3 {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+// Grid.
+section.grid {
+  .wrap {
+    > ul {
+      @extend %list-unstyled;
+      @include grid();
+      grid-template-columns: repeat( 2, 1fr [col] );
+      @include breakpoint( lg ) {
+        grid-template-columns: repeat( 3, 1fr [col] );
+      }
+      @include breakpoint( xl ) {
+        grid-template-columns: repeat( 4, 1fr [col] );
+      }
+      a {
+        border-bottom: none;
+        color: $body-color;
+      }
+      li > a {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        height: ( $magic-number * 6 );
+        position: relative;
+        @include breakpoint( md ) {
+          height: ( $magic-number * 8 );
+        }
+      }
+      strong {
+        color: transparent;
+        font: $font-weight-normal $font-size-base $font-family-sans-serif;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        @include flex();
+        span {
+          text-align: center;
+          width: 74.35897435897436%;
+        }
+      }
+      li > a:hover, li > a:active, li > a:focus {
+        background-image: none !important;
+        background-color: $link-hover-color !important;
+        strong {
+          color: $white;
+        }
+      }
+      h3 {
+        font-size: $font-size-base;
+        margin: ( $magic-number / 2 ) 0 ( $magic-number / 4 );
+        text-transform: uppercase;
+        @include breakpoint( md ) {
+          margin-top: $magic-number;
+          margin-bottom: ( $magic-number / 2 );
+        }
+      }
+    }
+  }
+}
+
+// Text full width.
+section.text-full-width {
+  font-size: $font-size-lg;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  padding-top: ( $magic-number * 4 );
+  padding-bottom: ( $magic-number * 4 );
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Image text.
+section.image-text {
+  .bg-text{
+    @include breakpoint( md ) {
+      margin-left: $gutter;
+    }
+    @include breakpoint( xl ) {
+      margin-left: ( $gutter * 4 );
+    }
+  }
+}
+
+// Text image.
+section.text-image {
+  .bg-text{
+    @include breakpoint( md ) {
+      margin-right: $gutter;
+    }
+    @include breakpoint( xl ) {
+      margin-right: ( $gutter * 4 );
+    }
+  }
+}

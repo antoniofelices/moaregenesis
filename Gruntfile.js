@@ -7,7 +7,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.3
+ * @version 1.0.4
  *
  */
 
@@ -52,7 +52,11 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          'assets/js/main.min.js': ['assets/js/lib/responsive-menus.js', 'assets/js/main.js']
+          'assets/js/main.min.js': ['assets/js/main.js'],
+          'assets/js/mainbuilder.min.js': ['assets/js/mainbuilder.js'],
+          // 'assets/js/gmaps.min.js': ['assets/js/gmaps.js'],
+          'assets/js/lib/responsive-menus.min.js': ['assets/js/lib/responsive-menus.js']
+          // 'assets/js/lib/jquery.flexslider.min.js': ['assets/js/lib/jquery.flexslider.js'],
         }
       }
     },

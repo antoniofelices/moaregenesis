@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 // Start the engine.
@@ -27,12 +27,12 @@ function mg_localization_setup(){
 }
 
 // Gutenberg.
-include_once( get_stylesheet_directory() . '/lib/gutenberg.php' );
+include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
 
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Moare Genesis' );
 define( 'CHILD_THEME_URL', 'http://www.studiomoare.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.3' );
+define( 'CHILD_THEME_VERSION', '1.0.4' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array(
@@ -71,13 +71,14 @@ add_theme_support( 'genesis-accessibility', array(
 remove_theme_support( 'genesis-structural-wraps' );
 
 /**
- * Add_theme_support custom logo
+ * Add_theme_support custom logo.
+ * Same values mg_all_custom_header()
  *
  * @since 	1.0.3
  */
 add_theme_support( 'custom-logo', array(
-	 'height'      => 280,
-	 'width'       => 95,
+	 'height'      => 300,
+	 'width'       => 100,
 	 'flex-height' => true,
 	 'flex-width'  => true,
  )

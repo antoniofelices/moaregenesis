@@ -4,46 +4,48 @@
  *
  */
 
-.pagination {
+.archive-pagination {
 	overflow: hidden;
   @include padding-vertical();
-	ul {
-		text-align: center;
-    @extend %list-inline;
-    li.active a {
-      border: 0;
-      font-weight: $font-weight-bold;
-    }
-    .pagination-next,
-    .pagination-previous {
-      display: block;
-      width: 100%;
-      margin: 0;
-    }
-    @include breakpoint(sm){
-      .pagination-next {
-        float: right;
-        width: auto;
-      }
-      .pagination-previous {
-        float: left;
-        width: auto;
-      }
-    }
+	.pagination-next,
+	.pagination-previous {
+		display: block;
+		width: 100%;
 	}
-}
-
-// Pager
-.pager,
-.archive-pagination {
-  @extend %wrap;
-  @include padding-vertical();
-  @include flex( $justifycontent: space-between );
+	ul {
+		@include flex( $justifycontent: flex-start );
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+		}
+		li + li {
+			margin-left: ( $gutter / 4 );
+		}
+	}
 	a{
+		background-color: $gray-lighter;
 		border-bottom: none;
 		color: $body-color;
+		font-size: $font-size-sm;
+		display: block;
+		padding: ( $magic-number / 2 ) ( $magic-number / 2 );
 		&:hover, &:active, &:focus{
-			color: $link-hover-color;
+			background-color: $link-hover-color;
+			color: $white;
+		}
+	}
+	li.active a {
+		font-weight: $font-weight-bold;
+	}
+	@include breakpoint( lg ){
+		.pagination-next {
+			float: right;
+			width: auto;
+		}
+		.pagination-previous {
+			float: left;
+			width: auto;
 		}
 	}
 }

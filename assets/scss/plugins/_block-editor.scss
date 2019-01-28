@@ -1,6 +1,6 @@
 /*
  *
- * Gutenberg editor
+ * Block editor
  *
  */
 
@@ -19,7 +19,7 @@
 }
 
 // Permalink
-.editor-post-permalink{
+.editor-post-permalink {
   a{
     border-bottom: none;
   }
@@ -28,21 +28,21 @@
 // Title = h1
 .editor-post-title__block {
   max-width: 100%;
-  .editor-post-title__input{
+  .editor-post-title__input {
     color: $headings-color;
   	font-family: $headings-font-family;
   	font-weight: $headings-font-weight;
     line-height: $headings-line-height;
     @include margin-vertical( $magic-number, ( $magic-number / 2 ) );
     font-size: $font-size-h1;
-    @include breakpoint ( $responsive-menu-break ){
+    @include breakpoint ( lg ){
       font-size: $font-size-semienourmos;
     }
   }
 }
 
 // Parragraph
-.editor-rich-text__tinymce.mce-content-body{
+.editor-rich-text__tinymce.mce-content-body {
   line-height: $line-height-base;
 }
 

@@ -17,7 +17,7 @@
 // Classes.
 .has-small-font-size {
 	font-size: $font-size-md;
-	line-height: $line-height-sm;
+	line-height: $line-height-md;
 }
 
 .has-regular-font-size {
@@ -56,7 +56,7 @@
 	&.is-style-large {
 		p{
 			font-size: $font-size-lg;
-			line-height: $line-height-sm;
+			line-height: $line-height-md;
 		}
 	}
 }
@@ -65,7 +65,7 @@
 .wp-block-button {
 	margin: $magic-number 0;
 	.wp-block-button__link {
-		@include primary-button();
+		@include button();
 	}
 }
 
@@ -144,7 +144,7 @@ p.wp-block-subhead {
 	}
 	p{
 		font-size: $font-size-lg;
-		line-height: $line-height-sm;
+		line-height: $line-height-md;
 	}
 	cite {
 		text-transform: capitalize;
@@ -155,6 +155,7 @@ p.wp-block-subhead {
 .wp-block-separator{
 	@include margin-vertical();
 	clear: both;
+	color: $gray;
 }
 
 // Separator doots.

@@ -12,43 +12,53 @@
 
 .entry {
 	text-rendering: optimizeLegibility;
-	.entry-meta {
-		font-size: $font-size-sm;
+	.entry-meta,
+	.post-meta {
+		font-size: $font-size-xs;
 		margin-bottom: ( $magic-number / 2 );
+		text-transform: uppercase;
+	}
+	.entry-meta {
+	}
+	.post-meta {
 	}
 }
 
 // Main archives and search results.
-body.archive,
-body.search-results{
-	.archive-title {
-		margin: 0;
-	}
-	.content{
+body.blog,
+body.date,
+body.category,
+body.tag,
+body.search-results,
+body.author {
+	.content {
 		.entry {
-			.entry-title {
-				margin-top: 0;
-				margin-bottom: ( $magic-number / 2 );
-				a{
-					color: $body-color;
-					border-bottom: none;
-				}
-			}
-			+ .entry {
-				@include margin-vertical( $top: $magic-number, $bottom: 0 );
-				@include borderBT( $color: $gray-lighter );
-			}
+			@include entries-default();
+		}
+	}
+}
+
+// Grids archives
+body.width-2-entries,
+body.width-3-entries {
+	.content {
+		.entry {
+			@include entries-grid();
 		}
 	}
 }
 
 // Main singles and pages.
 body.page,
-body.single-post {
-	.entry {
-		.entry-title {
-			@include breakpoint(sm){
-				margin-top: 0;
+body.single {
+	.content {
+		> .entry {
+			@extend %clearfix;
+			.entry-title {
+				@include border-after();
+			}
+			.entry-content {
+				font-size: $font-size-md;
 			}
 		}
 	}

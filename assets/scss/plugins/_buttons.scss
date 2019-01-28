@@ -3,3 +3,14 @@
  * Buttons
  *
  */
+
+// Main button
+.main-button{
+  @include button( $fontsize: $font-size-xs, $display: inline-block, $color: $link-color, $bgcolor: transparent, $bordercolor: $link-color );
+  text-transform: uppercase;
+}
+
+// Inverse button
+.inverse-button{
+  @include button( $display: inline-block, $color: $gray-lighter, $bgcolor: $body-color, $bordercolor: $gray );
+}

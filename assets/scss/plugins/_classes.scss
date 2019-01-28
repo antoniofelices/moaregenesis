@@ -8,20 +8,18 @@
   @extend %clearfix;
 }
 
-// Buttons
-// More on forms file
-.main-button{
-  @include primary-button( $display: inline-block, $color: $link-color, $bgcolor: transparent, $bordercolor: $link-color );
-}
-
-.inverse-button{
-  @include primary-button( $display: inline-block, $color: $gray-lighter, $bgcolor: $body-color, $bordercolor: $gray );
+.contains-image {
+	border: none;
+  display: block;
+  &:hover, &:active, &:focus {
+    border: none;
+  }
 }
 
 // Typography
 .lead{
   font: $font-weight-normal $font-size-lg $font-family-base;
-  line-height: $line-height-sm;
+  line-height: $line-height-md;
 }
 
 // Embeds responsive

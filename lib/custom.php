@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 /**
@@ -22,17 +22,39 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'mg_all_custom_header', 10 );
 function mg_all_custom_header(){
 
-	// Site title
-	echo '<div class="title-area">';
-	do_action( 'genesis_site_title' );
-	echo '</div>';
+	?>
 
+	<div class="title-area">
+
+	<?php
+
+	// Site title
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+	if( has_custom_logo() ) {
+
+		?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><img src="<?php echo esc_url( $logo[0] ); ?>" width="300" height="100"></a>
+		<?php
+
+	} else {
+
+		do_action( 'genesis_site_title' );
+
+	}
+	?>
+
+
+	</div>
+
+	<?php
 	// Site navbar
 	if ( ! genesis_nav_menu_supported( 'primary' ) ){
 
 		return;
 
-	} else{
+	} else {
 
 		genesis_nav_menu( array(
 			'theme_location' => 'primary',
@@ -54,23 +76,55 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 add_action( 'genesis_footer', 'mg_all_custom_footer' );
 function mg_all_custom_footer() {
 
-	echo '<footer class="site-footer">';
+	?>
 
-	echo '<div class="mg-main-footer"><div class="wrap">';
-	genesis_widget_area( 'footer', array(
-		'before' => '',
-		'after' => '',
-	) );
-	echo "</div></div>";
+	<footer class="site-footer">
+		<div class="mg-main-footer">
+			<div class="wrap">
+				<?php
 
-	echo '<div class="mg-sub-footer"><div class="wrap">';
-	genesis_widget_area( 'subfooter', array(
-		'before' => '<section>',
-		'after' => '</section>',
-	) );
-	echo "</div></div>";
+				genesis_widget_area( 'footer', array(
+					'before' => '',
+					'after' => '',
+				) );
 
-	echo "</footer>";
+				?>
+			</div>
+		</div>
+		<div class="mg-sub-footer">
+			<div class="wrap">
+				<?php
+
+				genesis_widget_area( 'subfooter', array(
+					'before' => '<section>',
+					'after' => '</section>',
+				) );
+
+				?>
+			</div>
+		</div>
+	</footer>
+
+	<?php
+}
+
+/**
+ * Load all items. Archives cpts and tax.
+ *
+ * @since 	1.0.4
+ */
+add_action( 'pre_get_posts', 'mg_pre_get_posts_cpts_and_tax' );
+function mg_pre_get_posts_cpts_and_tax( $query ){
+
+		if ( $query->is_main_query() && !is_admin() ) {
+
+			if ( $query->is_tax() || $query->is_post_type_archive() ) {
+
+				$query->set( 'posts_per_page', 99 );
+
+			}
+
+		}
 
 }
 
@@ -101,7 +155,7 @@ function mg_custom_pager(){
 
 		echo '<div class="pager">';
 
-			echo '<h2 class="screen-reader-text">'. esc_html__('Post navigation', 'moaregenesis') .'</h2>';
+			echo '<h2 class="screen-reader-text">'. esc_html__( 'Post navigation', 'moaregenesis' ) .'</h2>';
 
 			if ( !empty( $previouspost ) ):
 

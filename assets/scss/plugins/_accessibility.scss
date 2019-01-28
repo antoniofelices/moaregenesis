@@ -31,7 +31,7 @@
 	display: block;
 	font-size: $font-size-base;
 	font-weight: $font-weight-bold;
-	padding: ($magic-number / 2) $magic-number;
+	padding: ( $magic-number / 2 ) $magic-number;
 	color: $gray-dark;
 	background: $white;
 	z-index: 100000; /* Above WP toolbar. */

@@ -8,13 +8,17 @@
 .archive-description,
 .author-box {
 	margin-bottom: $magic-number;
-	@include breakpoint(sm){
-		@include borderBT( $color: $gray-lighter );
-		@include borderBB( $color: $gray-lighter );
-	}
 	@include padding-vertical();
+	> h1 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 	p:last-child {
 	 	margin-bottom: 0;
+	}
+	@include breakpoint( sm ){
+		@include borderBT();
+		@include borderBB();
 	}
 }
 
@@ -35,7 +39,7 @@
 	@include margin-vertical( ( $magic-number / 2 ), $magic-number );
 	.avatar {
 		max-width: 70px;
-		@include breakpoint(sm){
+		@include breakpoint( sm ){
 			max-width: 100%;
 		}
 	}

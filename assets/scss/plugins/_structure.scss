@@ -12,9 +12,11 @@
 }
 
 // Site Inner.
-.site-inner {
-	@include padding-vertical();
-	@include padding-horizontal();
+body:not(.builder) {
+	.site-inner {
+		@include padding-vertical();
+		@include padding-horizontal();
+	}
 }
 
 // Genesis footer widgets.
@@ -22,7 +24,7 @@
 .footer-widgets{
 	@include padding-vertical();
 	@include padding-horizontal();
-	@include breakpoint( $responsive-menu-break ){
+	@include breakpoint( lg ){
 		@include flex ( $justifycontent: space-between, $alignitems: baseline );
 		.footer-widgets-1,
 		.footer-widgets-2,
@@ -46,13 +48,25 @@
 		@include padding-horizontal();
 	}
 	.mg-sub-footer {
-		@include padding-vertical( ( $magic-number / 4 ), ( $magic-number / 4 ));
+		@include padding-vertical();
 		@include padding-horizontal();
+	}
+	@include breakpoint( lg ) {
+		.mg-main-footer {
+			> .wrap {
+				@include flex ( $justifycontent: flex-start, $alignitems: flex-start );
+			}
+		}
+		.mg-sub-footer {
+			> .wrap {
+				@include flex ( $justifycontent: flex-start, $alignitems: center );
+			}
+		}
 	}
 }
 
 // Wrap.
-.wrap{
+.wrap {
 	@extend %wrap;
 }
 
@@ -66,12 +80,9 @@ body.full-width-content {
 // Narrow.
 body.full-width-content.narrow {
 	.content-sidebar-wrap {
-		@include breakpoint(md){
-			width: 65.81196581196582%;
+		@include breakpoint( lg ){
+			width: $grid-max-width-lg;
 			margin: 0 auto;
-		}
-		@include breakpoint(xxl){
-			width: 31.623931623931625%;
 		}
 	}
 }
@@ -81,14 +92,25 @@ body.width-2-entries,
 body.width-3-entries {
 	.content {
 		@extend %wrap;
+		.archive-description {
+			grid-area: header;
+		}
+		.item {
+			grid-area: item;
+		}
 	}
 }
 
 // Layouts entries. Two width entry.
 body.width-2-entries {
 	.content {
-		@include breakpoint(sm){
-			@include grid( $grid-template-columns: 2 );
+		@include breakpoint( md ){
+			@include grid();
+			grid-template-columns: 1fr 1fr;
+			grid-template-row: auto;
+			grid-template-areas:
+				"header header"
+				"item item";
 		}
 	}
 }
@@ -96,24 +118,33 @@ body.width-2-entries {
 // Layouts entries. Tree width entry.
 body.width-3-entries {
 	.content {
-		@include breakpoint(xs){
-			@include grid( $grid-template-columns: 2 );
+		@include breakpoint( md ){
+			@include grid();
+			grid-template-columns: 1fr 1fr;
+			grid-template-row: auto;
+			grid-template-areas:
+				"header header"
+				"item item";
 		}
-		@include breakpoint(sm){
-			@include grid( $grid-template-columns: 3 );
+		@include breakpoint( lg ){
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-areas:
+				"header header header"
+				"item item item";
 		}
 	}
 }
 
 // Main - aside.
-@include breakpoint(md) {
+@include breakpoint( lg ) {
 
 	body.content-sidebar,
 	body.sidebar-content,
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
 			margin: 0 auto;
-			max-width: 960px;
+			max-width: $grid-max-width-lg;
+			width: 100%;
 			main{
 				grid-area: main;
 				max-width: 100%;
@@ -132,31 +163,65 @@ body.width-3-entries {
 	body.content-sidebar {
 		.content-sidebar-wrap {
 			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 1fr 1fr ( $gutter * 2 ) 1fr;
+			grid-template-columns: 36% 36% ( $gutter * 3 ) 1fr;
 			grid-template-areas: "main main . sidebar-1";
+			main{
+				padding-right: ( $gutter * 2 );
+				@include borderBR();
+			}
 		}
 	}
 
 	body.sidebar-content {
 		.content-sidebar-wrap {
 			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 1fr ( $gutter * 2 ) 1fr 1fr;
+			grid-template-columns: 1fr ( $gutter * 3 ) 36% 36%;
 			grid-template-areas: "sidebar-1 . main main";
+			main{
+				padding-left: ( $gutter * 2 );
+				@include borderBL();
+			}
 		}
 	}
 
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
-			@include grid( $grid-template-columns: 4, $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
+			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
 			grid-template-columns: 1fr ( $gutter * 2 ) 1fr 1fr ( $gutter * 2 ) 1fr;
 			grid-template-areas: "sidebar-1 . main main . sidebar-2";
+			main{
+				padding-right: ( $gutter * 2 );
+				padding-left: ( $gutter * 2 );
+				@include borderBR();
+				@include borderBL();
+			}
 		}
 	}
 
 }
 
+@include breakpoint( xl ) {
+	body.content-sidebar,
+	body.sidebar-content,
+	body.sidebar-content-sidebar {
+		.content-sidebar-wrap {
+			max-width: $grid-max-width-xl;
+		}
+	}
+}
+
+@include breakpoint( xxl ) {
+	body.content-sidebar,
+	body.sidebar-content,
+	body.sidebar-content-sidebar {
+		.content-sidebar-wrap {
+			max-width: $grid-max-width-xxl;
+		}
+	}
+}
+
 // Columns.
-@include breakpoint(lg){
+@include breakpoint( lg ){
 
 	.row{
 		@include flex( $justifycontent: flex-start, $alignitems: flex-start );

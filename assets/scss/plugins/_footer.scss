@@ -5,19 +5,36 @@
  */
 
 .site-footer {
+  color: $bg-footer-color;
  	overflow: hidden;
+  h3, h4, a {
+    color: $bg-footer-color;
+  }
+  a {
+    border-bottom: none;
+  }
  	p {
  		margin-bottom: 0;
  	}
   .mg-main-footer{
     background-color: $bg-footer;
-    > .wrap{
-      @include breakpoint( $responsive-menu-break ){
-        @include flex ( $justifycontent: space-between, $alignitems: baseline );
-      }
+    section + section {
+      margin-top: $magic-number;
     }
   }
-  .mg-sub-footer{
+  .mg-sub-footer {
     background-color: $bg-subfooter;
+    font-size: $font-size-sm;
+    .menu {
+      @extend %list-inline;
+    }
+  }
+  @include breakpoint( lg ){
+    .mg-main-footer {
+      section + section {
+        margin-left: $gutter;
+        margin-top: 0;
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 /**
  * Moare Genesis.
  *
- * This file adds gutenberg editor styles.
+ * This file adds block editor styles.
  *
  * @package moaregenesis
  * @author  Antonio
@@ -17,6 +17,6 @@
   @import 'plugins/type';
   @import 'plugins/classes';
   @import 'plugins/colors';
-  @import 'plugins/gutenberg';
+  @import 'plugins/block-editor';
   @import 'plugins/blocks';
 }

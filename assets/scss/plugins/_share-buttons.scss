@@ -9,7 +9,7 @@
 		@extend %list-inline;
 		a{
 			font-size: $font-size-xs;
-			@include primary-button ( $color: $gray );
+			@include button( $color: $gray );
 			padding: ( $magic-number / 4 );
 		}
 	}

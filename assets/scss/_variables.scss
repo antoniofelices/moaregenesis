@@ -24,17 +24,18 @@
 $white:  #fff !default;
 $black:  #000 !default;
 
-// Create grayscale
-$gray-dark:                 #3d3d3d !default;
-$gray:                      #8e8e8e !default;
-$gray-light:                #d1d1d1 !default;
-$gray-lighter:              #e5e5e5 !default;
-$gray-lightest:             #f9f9f9 !default;
-
 // Reassign color vars to semantic color scheme 8d3422 893e2d a36c87
 $brand-primary:             blue !default;
 $brand-secondary:           black !default;
 $brand-tertiary:            blue !default;
+
+// Create grayscale
+$gray:                      grayscale( $brand-primary ) !default;
+$gray-darker:               darken( $gray, 25% ) !default;
+$gray-dark:                 darken( $gray, 15% ) !default;
+$gray-light:                lighten( $gray, 20% ) !default;
+$gray-lighter:              lighten( $gray, 30% ) !default;
+$gray-lightest:             lighten( $gray, 40% ) !default;
 
 // Body
 // Settings for the `<body>` element.
@@ -47,7 +48,7 @@ $inverse-color:             $gray-lighter !default;
 // Style anchor elements.
 $link-color:                $brand-primary !default;
 $link-decoration:           none !default;
-$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-color:          darken( $link-color, 15% ) !default;
 $link-hover-decoration:     underline !default;
 
 // Fonts
@@ -59,47 +60,54 @@ $font-family-monospace: monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default;
-$font-size-lg:   1.333rem !default;
-$font-size-md:   .875rem !default;
-$font-size-sm:   .75rem !default;
-$font-size-xs:   0.563rem !default;
+$font-size-lg:   1.424rem !default;
+$font-size-md:   1.125rem !default;
+$font-size-sm:   .889rem !default;
+$font-size-xs:   .79rem !default;
 
 $font-weight-normal: 400 !default;
 $font-weight-bold: 700 !default;
-
 $font-weight-base: $font-weight-normal !default;
+
 $line-height-base: 1.5 !default;
 $line-height-lg: 1.77 !default;
-$line-height-sm: 1.33 !default;
+$line-height-md: 1.35 !default;
 $line-height-xs: 1.1 !default;
 $magic-number: 1.5rem !default;
-$gutter: 15px !default;
+$gutter: 20px !default;
 
-$font-size-enourmos: 7.594rem !default;
-$font-size-semienourmos: 4.209rem !default;
-$font-size-h1: 3.157rem !default;
-$font-size-h2: 2.369rem !default;
-$font-size-h3: 1.777rem !default;
-$font-size-h4: 1.333rem !default;
-$font-size-h5: 1rem !default;
+$font-size-enourmos: 2.28rem !default;
+$font-size-semienourmos: 2.027rem !default;
+$font-size-h1: 1.802rem !default;
+$font-size-h2: 1.602rem !default;
+$font-size-h3: 1.424rem !default;
+$font-size-h4: 1.266rem !default;
+$font-size-h5: 1.125rem !default;
 $font-size-h6: 1rem !default;
 
-$headings-margin-bottom: ($magic-number / 2) !default;
+$headings-margin-bottom: ( $magic-number / 2 ) !default;
 $headings-font-family:   $font-family-sans-serif !default;
 $headings-font-weight:   $font-weight-normal !default;
 $headings-line-height:   $line-height-xs !default;
 $headings-color:         $body-color !default;
 
-//Medias
-$responsive-menu-break: 860px !default;
+// Medias
+// Bootstrap v4.2.1 (https://getbootstrap.com/)
+// Copyright 2011-2019 The Bootstrap Authors
+// Copyright 2011-2019 Twitter, Inc.
+// Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+$breakpoints: ( sm: 586px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px );
 
-$breakpoints: ( xs: 600px, sm: 860px, md: 1023px, lg: 1200px, xl: 1340px, xxl: 1440px );
+$responsive-menu-break: 1200px !default;
 
-// Max width
-$grid-max-width-md: 960px !default;
-$grid-max-width-lg: 1140px !default;
+$grid-max-width-sm: 34.35rem !default; // 550px
+$grid-max-width-md: 45rem !default; // 720px
+$grid-max-width-lg: 60rem !default; // 960px
+$grid-max-width-xl: 71.25rem !default; // 1140px
+$grid-max-width-xxl: 84.075rem !default; // 1345px
 
-// Other
-$bg-header: $gray-lighter;
-$bg-footer: $bg-header;
-$bg-subfooter: darken($bg-header, 15%);
+// Header, footer
+$bg-header: $gray-lighter !default;
+$bg-footer: $gray-darker !default;
+$bg-footer-color: $white !default;
+$bg-subfooter: $black !default;

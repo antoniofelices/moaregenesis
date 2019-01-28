@@ -21,44 +21,6 @@
   }
 }
 
-/**
- * Font Sizes
- *
-**/
-@mixin font-sizes( $xs: null, $sm: null, $md: null, $lg: null, $xl: null, $xxl: null ) {
-  @if ( $xs ) {
-    font-size: $xs;
-  }
-  @if( $sm ) {
-    @include breakpoint(sm) {
-      font-size: $sm;
-    }
-  }
-  @if( $md ) {
-    @include breakpoint(md) {
-      font-size: $md;
-    }
-  }
-  @if( $lg ) {
-    @include breakpoint(lg) {
-      font-size: $lg;
-      line-height: $headings-line-height;
-    }
-  }
-  @if( $xl ) {
-    @include breakpoint(xl) {
-      font-size: $xl;
-      line-height: $headings-line-height;
-    }
-  }
-  @if( $xxl ) {
-    @include breakpoint(xxl) {
-      font-size: $xxl;
-      line-height: $headings-line-height;
-    }
-  }
-}
-
 // Boders
 @mixin borderB( $width: 1px, $style: solid, $color: $gray-lighter ){
   border: $width $style $color;
@@ -89,11 +51,9 @@
 }
 
 // Grid
-@mixin grid( $grid-template-rows: auto, $grid-template-columns: 3, $grid-gap-vertical: $magic-number, $grid-gap-horizontal: $magic-number ) {
+@mixin grid( $grid-gap-vertical: $magic-number, $grid-gap-horizontal: $magic-number ) {
   display: -ms-grid;
   display: grid;
-  grid-template-rows: $grid-template-rows;
-  grid-template-columns: repeat($grid-template-columns, 1fr [col]);
   grid-gap: $grid-gap-vertical $grid-gap-horizontal;
 }
 
@@ -101,7 +61,7 @@
 @mixin padding-vertical( $top: $magic-number, $bottom: $magic-number ) {
   padding-top: $top;
   padding-bottom:  $bottom;
-  @include breakpoint(xxl) {
+  @include breakpoint( lg ) {
     padding-top: ( $top * 2 );
     padding-bottom: ( $bottom * 2 );
   }
@@ -110,7 +70,7 @@
 @mixin margin-vertical( $top: $magic-number, $bottom: $magic-number ) {
   margin-top: $top;
   margin-bottom: $bottom;
-  @include breakpoint(xxl) {
+  @include breakpoint( lg ) {
     margin-top: ( $top * 2 );
     margin-bottom: ( $bottom * 2 );
   }
@@ -127,8 +87,9 @@
 }
 
 // Buttons
-@mixin primary-button( $display: inline, $color: $body-color, $bgcolor: $white, $width: auto, $bordercolor: $gray-light, $padding: $magic-number, $hovercolor: $white, $hoverbgcolor: $link-hover-color ){
-  font: $font-weight-normal $font-size-base $font-family-sans-serif;
+@mixin button( $fontsize: $font-size-base, $fontfamily: $font-family-sans-serif, $display: inline-block, $color: $body-color, $bgcolor: transparent, $width: auto, $bordercolor: $body-color, $padding: ( $magic-number / 2 ), $hovercolor: $white, $hoverbgcolor: $link-hover-color ){
+  font-size: $fontsize;
+  font-family: $fontfamily;
   display: $display;
   color: $color;
   background-color: $bgcolor;
@@ -136,12 +97,12 @@
   text-align: center;
   @include borderB( $color: $bordercolor );
   transition: all .3s ease;
-  padding: ( $padding / 2 ) $padding;
+  padding: $padding;
   border-radius: 0;
   &:hover, &:active, &:focus{
     color: $hovercolor;
     background-color: $hoverbgcolor;
-    border-color: darken($hoverbgcolor, 10%);
+    border-color: darken( $hoverbgcolor, 10% );
   }
   a{
     border-bottom: none;
@@ -163,10 +124,86 @@
       color: $gray-light;
       font: normal $font-size-base $font-family-icons;
       line-height: $line-height-xs;
+      margin-right: ( $gutter / 2 );
     }
     a{
       border-bottom: none;
+      color: $body-color;
+      font-size: $font-size-sm;
     }
+  }
+}
+
+@mixin main-menu() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    a {
+      display: block;
+      padding: ( $magic-number / 2 );
+      @include borderB();
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      color: $body-color;
+      &:hover, &:active, &:focus{
+        color: $white;
+        background-color: $brand-primary;
+      }
+    }
+  }
+  li + li {
+    a {
+      border-top: none;
+    }
+  }
+	li.current-menu-item a {
+    color: $white;
+		background-color: $brand-primary;
+	}
+}
+
+// Entries default.
+@mixin entries-default() {
+  @extend %clearfix;
+  .entry-image-link {
+  }
+  .entry-title {
+    margin-top: 0;
+    margin-bottom: ( $magic-number / 2 );
+    a {
+      color: $body-color;
+      border-bottom: none;
+    }
+  }
+  .entry-content {
+  }
+  .entry-footer {
+  }
+  + .entry {
+    @include borderBT();
+		margin-top: $magic-number;
+    padding-top: $magic-number;
+  }
+}
+
+// Entries grid.
+@mixin entries-grid() {
+  overflow: hidden;
+  margin-bottom: ( $magic-number / 2 );
+  @extend %clearfix;
+  .entry-image-link {
+  }
+  .entry-title {
+    margin: $magic-number 0;
+    a {
+      color: $body-color;
+      border-bottom: none;
+    }
+  }
+  .entry-content {
+  }
+  .entry-footer {
   }
 }
 
@@ -179,7 +216,7 @@
     height: $height;
     margin: ( $margin-top-bottom / 2 ) 0;
     background-color: $color;
-    @include breakpoint(sm){
+    @include breakpoint( lg ){
       margin: $margin-top-bottom 0;
     }
   }
@@ -198,7 +235,7 @@
 }
 
 // Don't show
-%dontshow{
+%dontshow {
   position: absolute !important;
   top: -9999rem;
   left: auto;
@@ -208,59 +245,65 @@
 }
 
 // Clearfix
-%clearfix{
+%clearfix {
   *zoom: 1;
   &:before,
-  &:after{
+  &:after {
     content: " ";
     display: table;
   }
-  &:after{
+  &:after {
     clear: both;
   }
 }
 
 // Wrap
-%wrap{
-  @include breakpoint(md){
+%wrap {
+  @include breakpoint( md ) {
     margin: 0 auto;
     max-width: $grid-max-width-md;
     width: 100%;
   }
-  @include breakpoint(lg){
+  @include breakpoint( lg ){
     max-width: $grid-max-width-lg;
+  }
+  @include breakpoint( xl ){
+    max-width: $grid-max-width-xl;
+  }
+  @include breakpoint( xxl ){
+    max-width: $grid-max-width-xxl;
   }
 }
 
 // List unstyled.
-%list-unstyled{
+%list-unstyled {
   margin-left: 0;
   padding-left: 0;
-  li{
+  li {
     list-style: none;
   }
 }
 
 // List inline.
-%list-inline{
+%list-inline {
   margin: 0;
   padding: 0;
-  li{
+  li {
     display: inline-block;
     list-style: none;
-    +li{
+    +li {
       margin-left: 5px;
     }
   }
 }
 
 // Featured paragraph.
-%paragraph-meta{
+%paragraph-meta {
   margin: 0;
   font-family: $font-weight-bold;
   font-size: $font-size-sm;
   padding: ( $magic-number / 4 ) 0;
-  a{
+  a {
     border-bottom: none;
   }
 }

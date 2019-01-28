@@ -8,29 +8,30 @@
 .sidebar-primary {
 	section {
 		margin-bottom: $magic-number;
-		@include breakpoint( $responsive-menu-break ){
+		@include breakpoint( lg ){
 			margin-bottom: ( $magic-number * 2 );
 		}
-		.widget-title{
-			font-size: $font-size-base;
-			margin-bottom: ( $magic-number / 2 );
-			padding-bottom: ( $magic-number / 2 );
-			text-transform: uppercase;
-			@include borderBB( $width: 4px, $color: $gray-lighter );
-		}
 	}
-	> section:first-of-type h3{
+	> section:first-of-type h3 {
 		margin-top: 0;
 	}
-	.mb-loops{
-		article{
-			h4{
-				font-size: $font-size-base;
-				margin-bottom: ( $magic-number / 2 );
-				a{
-					border-bottom: none;
-				}
-			}
+	.menu {
+		@include main-menu();
+	}
+	.widget_text,
+	.widget_custom_html {
+		.textwidget {
+			font-size: $font-size-sm;
+			line-height: $line-height-md;
+		}
+	}
+	.mb-featured-content,
+	.featured-content {
+		padding: $magic-number;
+		background-color: $gray-lightest;
+		.entry-content {
+			font-size: $font-size-sm;
+			line-height: $line-height-md;
 		}
 	}
 }

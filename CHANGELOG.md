@@ -4,6 +4,17 @@
 ### Added
 - BrowserSync
 
+## [1.0.4] - 2018-01-28
+### Added
+- Template builder.
+
+### Changed
+- Rename Gutenberg to block editor.
+- Update to normalize.css 8.0.1.
+
+## Fixed
+- Fixed some styles.
+
 ## [1.0.3] - 2018-09-20
 ### Added
 - Gutenberg some styles.
