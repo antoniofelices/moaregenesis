@@ -12,6 +12,7 @@
 
 // Table of Contents
 //
+// Rithms
 // Colors
 // Body
 // Links
@@ -19,17 +20,21 @@
 // Medias
 // Other
 
+// Rithms
+$magic-number: 1.5rem !default;
+$gutter: 20px !default;
+
 // Colors
-// Grayscale and brand colors for use across.
+// Basics.
 $white:  #fff !default;
 $black:  #000 !default;
 
-// Reassign color vars to semantic color scheme 8d3422 893e2d a36c87
+// Brand color.
 $brand-primary:             blue !default;
 $brand-secondary:           black !default;
 $brand-tertiary:            blue !default;
 
-// Create grayscale
+// Grayscale
 $gray:                      grayscale( $brand-primary ) !default;
 $gray-darker:               darken( $gray, 25% ) !default;
 $gray-dark:                 darken( $gray, 15% ) !default;
@@ -59,12 +64,6 @@ $font-family-icons: 'icomoon' !default;
 $font-family-monospace: monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base: 1rem !default;
-$font-size-lg:   1.424rem !default;
-$font-size-md:   1.125rem !default;
-$font-size-sm:   .889rem !default;
-$font-size-xs:   .79rem !default;
-
 $font-weight-normal: 400 !default;
 $font-weight-bold: 700 !default;
 $font-weight-base: $font-weight-normal !default;
@@ -73,8 +72,12 @@ $line-height-base: 1.5 !default;
 $line-height-lg: 1.77 !default;
 $line-height-md: 1.35 !default;
 $line-height-xs: 1.1 !default;
-$magic-number: 1.5rem !default;
-$gutter: 20px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.424rem !default;
+$font-size-md:   1.125rem !default;
+$font-size-sm:   .889rem !default;
+$font-size-xs:   .79rem !default;
 
 $font-size-enourmos: 2.28rem !default;
 $font-size-semienourmos: 2.027rem !default;
