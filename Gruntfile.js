@@ -14,75 +14,75 @@
 'use strict';
 module.exports = function(grunt) {
 
-  const sass = require('node-sass');
-  require('load-grunt-tasks')(grunt);
+	const sass = require('node-sass');
+	require('load-grunt-tasks')(grunt);
 
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
-    // Sass
-    sass: {
-      options: {
-        implementation: sass,
-        sourceMap: true,
-        sourceComments: true
-        // sourceMapContents: true
-      },
-      dist: {
-        files: {
-          'assets/stylesheets/main.css': 'assets/scss/main.scss',
-          'assets/stylesheets/style-editor.css': 'assets/scss/style-editor.scss'
-        }
-      }
-    },
+		// Sass
+		sass: {
+			options: {
+				implementation: sass,
+				sourceMap: true,
+				sourceComments: true
+				// sourceMapContents: true
+			},
+			dist: {
+				files: {
+					'assets/stylesheets/main.css': 'assets/scss/main.scss',
+					'assets/stylesheets/style-editor.css': 'assets/scss/style-editor.scss'
+				}
+			}
+		},
 
-    // Watch
-    watch: {
-      css: {
-        files: ['assets/scss/*.scss','assets/scss/*/*.scss'],
-        tasks: ['sass']
-      }
-    },
+		// Watch
+		watch: {
+			css: {
+				files: ['assets/scss/*.scss','assets/scss/*/*.scss'],
+				tasks: ['sass']
+			}
+		},
 
-    // Uglify
-    uglify: {
-      options: {
-        preserveComments: false,
-      },
-      all: {
-        files: {
-          'assets/js/main.min.js': ['assets/js/main.js'],
-          'assets/js/mainbuilder.min.js': ['assets/js/mainbuilder.js'],
-          // 'assets/js/gmaps.min.js': ['assets/js/gmaps.js'],
-          'assets/js/lib/responsive-menus.min.js': ['assets/js/lib/responsive-menus.js']
-          // 'assets/js/lib/jquery.flexslider.min.js': ['assets/js/lib/jquery.flexslider.js'],
-        }
-      }
-    },
+		// Uglify
+		uglify: {
+			options: {
+				preserveComments: false,
+			},
+			all: {
+				files: {
+					'assets/js/main.min.js': ['assets/js/main.js'],
+					'assets/js/mainbuilder.min.js': ['assets/js/mainbuilder.js'],
+					// 'assets/js/gmaps.min.js': ['assets/js/gmaps.js'],
+					'assets/js/lib/responsive-menus.min.js': ['assets/js/lib/responsive-menus.js']
+					// 'assets/js/lib/jquery.flexslider.min.js': ['assets/js/lib/jquery.flexslider.js'],
+				}
+			}
+		},
 
-    // CSSmin
-    cssmin: {
-      options: {
-        sourceMap: true
-      },
-      target: {
-        files: {
-          'assets/stylesheets/main.min.css': ['assets/stylesheets/main.css']
-        }
-      }
-    }
+		// CSSmin
+		cssmin: {
+			options: {
+				sourceMap: true
+			},
+			target: {
+				files: {
+					'assets/stylesheets/main.min.css': ['assets/stylesheets/main.css']
+				}
+			}
+		}
 
-  });
+	});
 
-  // Load tasks
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+	// Load tasks
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  // Register tasks
-  grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['cssmin','uglify']);
+	// Register tasks
+	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['cssmin','uglify']);
 
 };

@@ -15,48 +15,48 @@
 add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
 function mg_setup_theme_supported_features() {
 
-  add_theme_support( 'editor-color-palette', array(
-    array(
-      'name' => __( 'brand primary', 'moaregenesis' ),
-      'slug' => 'brand-primary',
-      'color' => 'blue',
-    ),
-    array(
-      'name' => __( 'brand secondary', 'moaregenesis' ),
-      'slug' => 'brand-secondary',
-      'color' => 'black',
-    ),
-    array(
-      'name' => __( 'brand tertiary', 'moaregenesis' ),
-      'slug' => 'brand-tertiary',
-      'color' => 'blue',
-    ),
-    array(
-      'name' => __( 'gray dark', 'moaregenesis' ),
-      'slug' => 'gray-dark',
-      'color' => '#3d3d3d',
-    ),
-    array(
-      'name' => __( 'gray', 'moaregenesis' ),
-      'slug' => 'gray',
-      'color' => '#8e8e8e',
-    ),
-    array(
-      'name' => __( 'gray lighter', 'moaregenesis' ),
-      'slug' => 'gray-lighter',
-      'color' => '#e5e5e5',
-    ),
-    array(
-      'name' => __( 'white', 'moaregenesis' ),
-      'slug' => 'white',
-      'color' => '#ffffff',
-    ),
-    array(
-      'name' => __( 'black', 'moaregenesis' ),
-      'slug' => 'black',
-      'color' => '#000000',
-    ),
-  ) );
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name' => __( 'brand primary', 'moaregenesis' ),
+			'slug' => 'brand-primary',
+			'color' => 'blue',
+		),
+		array(
+			'name' => __( 'brand secondary', 'moaregenesis' ),
+			'slug' => 'brand-secondary',
+			'color' => 'black',
+		),
+		array(
+			'name' => __( 'brand tertiary', 'moaregenesis' ),
+			'slug' => 'brand-tertiary',
+			'color' => 'blue',
+		),
+		array(
+			'name' => __( 'gray dark', 'moaregenesis' ),
+			'slug' => 'gray-dark',
+			'color' => '#3d3d3d',
+		),
+		array(
+			'name' => __( 'gray', 'moaregenesis' ),
+			'slug' => 'gray',
+			'color' => '#8e8e8e',
+		),
+		array(
+			'name' => __( 'gray lighter', 'moaregenesis' ),
+			'slug' => 'gray-lighter',
+			'color' => '#e5e5e5',
+		),
+		array(
+			'name' => __( 'white', 'moaregenesis' ),
+			'slug' => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name' => __( 'black', 'moaregenesis' ),
+			'slug' => 'black',
+			'color' => '#000000',
+		),
+	) );
 
   add_theme_support( 'editor-font-sizes', array(
     array(
@@ -96,5 +96,7 @@ function mg_setup_theme_supported_features() {
  */
 add_action( 'enqueue_block_editor_assets', 'mg_block_editor_styles' );
 function mg_block_editor_styles() {
-    wp_enqueue_style( 'mg-block-editor-styles', get_theme_file_uri( '/assets/stylesheets/style-editor.css' ), false, CHILD_THEME_VERSION, 'all' );
+
+	wp_enqueue_style( 'mg-block-editor-styles', get_theme_file_uri( '/assets/stylesheets/style-editor.css' ), false, CHILD_THEME_VERSION, 'all' );
+
 }

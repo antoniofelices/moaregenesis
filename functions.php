@@ -77,10 +77,10 @@ remove_theme_support( 'genesis-structural-wraps' );
  * @since 	1.0.3
  */
 add_theme_support( 'custom-logo', array(
-	 'height'      => 300,
-	 'width'       => 100,
-	 'flex-height' => true,
-	 'flex-width'  => true,
+		'height'      => 300,
+		'width'       => 100,
+		'flex-height' => true,
+		'flex-width'  => true,
  )
 );
 
