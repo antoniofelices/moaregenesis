@@ -7,7 +7,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
@@ -17,7 +17,6 @@ body {
 	font-size: $font-size-base;
 	font-weight: $font-weight-normal;
 	line-height:  $line-height-base;
-	// -webkit-font-smoothing: antialiased;
 }
 
 embed,
@@ -25,11 +24,12 @@ iframe,
 img,
 object,
 video {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 img {
-  height: auto;
+	height: auto;
+	vertical-align: middle;
 }
 
 hr {
@@ -37,10 +37,11 @@ hr {
 }
 
 address {
-  font-style: normal;
+	font-style: normal;
 }
 
 figure {
 	margin-right: 0;
 	margin-left: 0;
+	max-width: 100%;
 }

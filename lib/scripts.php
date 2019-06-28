@@ -9,14 +9,14 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.4
+ * @version 1.0.5
  */
 
 // Enqueue Scripts and Styles.
 add_action( 'wp_enqueue_scripts', 'mg_enqueue_scripts_styles' );
 function mg_enqueue_scripts_styles() {
 
-	wp_enqueue_style( 'dashicons' );
+	// wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'moaregenesis-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
 	$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
@@ -46,9 +46,9 @@ function mg_responsive_menu_settings() {
 
 	$settings = array(
 		'mainMenu'          => __( 'Menu', 'moaregenesis' ),
-		'menuIconClass'     => 'dashicons-before dashicons-menu',
+		'menuIconClass'     => '',
 		'subMenu'           => __( 'Submenu', 'moaregenesis' ),
-		'subMenuIconsClass' => 'dashicons-before dashicons-arrow-down-alt2',
+		'subMenuIconsClass' => '',
 		'menuClasses'       => array(
 			'combine' => array(
 				'.nav-primary',

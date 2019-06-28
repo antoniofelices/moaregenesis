@@ -4,10 +4,10 @@
  *
  */
 
-.mg-social-share{
-	.social{
+.mg-social-share {
+	.social {
 		@extend %list-inline;
-		a{
+		a {
 			font-size: $font-size-xs;
 			@include button( $color: $gray );
 			padding: ( $magic-number / 4 );

@@ -4,49 +4,52 @@
  *
  */
 
-.clearfix{
-  @extend %clearfix;
+.clearfix {
+	@extend %clearfix;
+}
+
+.dontshow {
+	@extend %dontshow;
 }
 
 .contains-image {
-	border: none;
-  display: block;
-  &:hover, &:active, &:focus {
-    border: none;
-  }
+	display: block;
+	&:hover, &:active, &:focus {
+		border: none;
+	}
 }
 
 // Typography
-.lead{
-  font: $font-weight-normal $font-size-lg $font-family-base;
-  line-height: $line-height-md;
+.lead {
+	font: $font-weight-normal $font-size-lg $font-family-base;
+	line-height: $line-height-md;
 }
 
 // Embeds responsive
 //
 // Credit: Nicolas Gallagher and SUIT CSS.
-.embed-responsive{
-  position: relative;
-  display: block;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  .embed-responsive-item,
-  iframe,
-  embed,
-  object {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    border: 0;
-  }
-  &.embed-responsive-16by9 {
-    padding-bottom: 56.25%;
-  }
-  &.embed-responsive-4by3 {
-    padding-bottom: 75%;
-  }
+.embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	.embed-responsive-item,
+	iframe,
+	embed,
+	object {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+	}
+	&.embed-responsive-16by9 {
+		padding-bottom: 56.25%;
+	}
+	&.embed-responsive-4by3 {
+		padding-bottom: 75%;
+	}
 }

@@ -2,14 +2,14 @@
 /**
  * Moare Genesis.
  *
- * This file adds gutenberg functions for the Moare Genesis Starter Theme.
+ * This file adds block editor functions for the Moare Genesis Starter Theme.
  *
  * @package moaregenesis
  * @author  Antonio
  * @since 	1.0.2
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.4
+ * @version 1.0.5
  */
 
 add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
@@ -58,36 +58,36 @@ function mg_setup_theme_supported_features() {
 		),
 	) );
 
-  add_theme_support( 'editor-font-sizes', array(
-    array(
-      'name' => __( 'small', 'moaregenesis' ),
-      'shortName' => __( 'S', 'moaregenesis' ),
-      'size' => 12,
-      'slug' => 'small'
-    ),
-    array(
-      'name' => __( 'regular', 'moaregenesis' ),
-      'shortName' => __( 'M', 'moaregenesis' ),
-      'size' => 16,
-      'slug' => 'regular'
-    ),
-    array(
-      'name' => __( 'large', 'moaregenesis' ),
-      'shortName' => __( 'L', 'moaregenesis' ),
-      'size' => 21,
-      'slug' => 'large'
-    ),
-    array(
-      'name' => __( 'larger', 'moaregenesis' ),
-      'shortName' => __( 'XL', 'moaregenesis' ),
-      'size' => 37,
-      'slug' => 'larger'
-    )
-  ) );
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name' => __( 'small', 'moaregenesis' ),
+			'shortName' => __( 'S', 'moaregenesis' ),
+			'size' => 12,
+			'slug' => 'small'
+		),
+		array(
+			'name' => __( 'regular', 'moaregenesis' ),
+			'shortName' => __( 'M', 'moaregenesis' ),
+			'size' => 16,
+			'slug' => 'regular'
+		),
+		array(
+			'name' => __( 'large', 'moaregenesis' ),
+			'shortName' => __( 'L', 'moaregenesis' ),
+			'size' => 21,
+			'slug' => 'large'
+		),
+		array(
+			'name' => __( 'larger', 'moaregenesis' ),
+			'shortName' => __( 'XL', 'moaregenesis' ),
+			'size' => 37,
+			'slug' => 'larger'
+		)
+	) );
 
-  add_theme_support( 'align-wide' );
+	add_theme_support( 'align-wide' );
 
-  add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-colors' );
 
 }
 

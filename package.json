@@ -1,23 +1,23 @@
 {
-  "name": "moaregenesis",
-  "description": "moare genesis",
-  "version": "1.0.4",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
-  "engines": {
-    "node": "latest"
-  },
-  "devDependencies": {
-    "grunt": "latest",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-sass": "latest",
-    "load-grunt-tasks": "latest",
-    "node-sass": "latest"
-  }
+	"name": "moaregenesis",
+	"description": "moare genesis",
+	"version": "1.0.5",
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"engines": {
+		"node": "latest"
+	},
+	"devDependencies": {
+		"grunt": "latest",
+		"grunt-contrib-cssmin": "latest",
+		"grunt-contrib-uglify": "latest",
+		"grunt-contrib-watch": "latest",
+		"grunt-sass": "latest",
+		"load-grunt-tasks": "latest",
+		"node-sass": "latest"
+	}
 }

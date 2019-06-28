@@ -2,9 +2,20 @@
 
 ## [Unreleased]
 ### Added
-- BrowserSync
+- BrowserSync.
 
-## [1.0.4] - 2018-01-28
+## [1.0.5] - 2019-06-28
+### Remove
+- Remove dashicons frontend.
+
+### Changed
+- Styles menus.
+
+### Fixed
+- Indent.
+- Some styles.
+
+## [1.0.4] - 2019-01-28
 ### Added
 - Template builder.
 

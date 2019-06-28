@@ -8,22 +8,26 @@
 .archive-description,
 .author-box {
 	margin-bottom: $magic-number;
-	@include padding-vertical();
-	> h1 {
-		margin-top: 0;
-		margin-bottom: 0;
+	padding-top: ( $magic-number / 2 );
+	padding-bottom: ( $magic-number / 2 );
+	@include borderBT();
+	@include borderBB();
+	h1, h2 {
+		font-size: $font-size-base;
+		text-transform: uppercase;
+		&:before {
+			content: '\e907';
+			font: $font-weight-normal $font-size-xs $font-family-icons;
+			margin-right: ( $gutter / 2 );
+		}
 	}
 	p:last-child {
 	 	margin-bottom: 0;
 	}
-	@include breakpoint( sm ){
-		@include borderBT();
-		@include borderBB();
-	}
 }
 
 // Objects
-.featured-content{
+.featured-content {
 	img {
 		width: auto;
 	}
@@ -39,7 +43,7 @@
 	@include margin-vertical( ( $magic-number / 2 ), $magic-number );
 	.avatar {
 		max-width: 70px;
-		@include breakpoint( sm ){
+		@include breakpoint( sm ) {
 			max-width: 100%;
 		}
 	}

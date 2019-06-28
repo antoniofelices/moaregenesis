@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.4
+ * @version 1.0.5
  */
 
 /**
@@ -24,44 +24,50 @@ function mg_all_custom_header(){
 
 	?>
 
-	<div class="title-area">
+	<div>
+		<div class="title-area">
 
-	<?php
-
-	// Site title
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
-	if( has_custom_logo() ) {
-
-		?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><img src="<?php echo esc_url( $logo[0] ); ?>" width="300" height="100"></a>
 		<?php
 
-	} else {
+		// Site title
+		if( function_exists( 'the_custom_logo' ) ) {
 
-		do_action( 'genesis_site_title' );
+			if( has_custom_logo() ) {
 
-	}
-	?>
+				the_custom_logo();
 
+			} else {
+
+				do_action( 'genesis_site_title' );
+
+			}
+
+		}
+
+		?>
+
+		</div>
+
+		<?php
+		// Site navbar
+		if ( ! genesis_nav_menu_supported( 'primary' ) ){
+
+			return;
+
+		} else {
+
+			genesis_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_class'     => 'menu genesis-nav-menu',
+			) );
+
+		}
+
+		?>
 
 	</div>
 
 	<?php
-	// Site navbar
-	if ( ! genesis_nav_menu_supported( 'primary' ) ){
-
-		return;
-
-	} else {
-
-		genesis_nav_menu( array(
-			'theme_location' => 'primary',
-			'menu_class'     => 'menu genesis-nav-menu',
-		) );
-
-	}
 
 }
 
@@ -96,8 +102,8 @@ function mg_all_custom_footer() {
 				<?php
 
 				genesis_widget_area( 'subfooter', array(
-					'before' => '<section>',
-					'after' => '</section>',
+					'before' => '',
+					'after' => '',
 				) );
 
 				?>

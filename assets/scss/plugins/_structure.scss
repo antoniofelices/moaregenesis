@@ -6,15 +6,31 @@
 
 // Site Header.
 .site-header {
-	@include flex ( $justifycontent: space-between, $alignitems: center );
 	padding-right: $gutter;
-  padding-left: $gutter;
+	padding-left: $gutter;
+	> div {
+		@extend %wrap;
+		@include flex ( $justifycontent: space-between, $alignitems: center );
+	}
+	.title-area {
+		flex: 0 1 60%;
+	}
+	.menu-toggle {
+		flex: 0 1 30%;
+	}
 }
 
 // Site Inner.
 body:not(.builder) {
 	.site-inner {
-		@include padding-vertical();
+		padding-top: $magic-number;
+		padding-bottom: $magic-number;
+		@include breakpoint( lg ) {
+			padding-top: ( $magic-number * 2 );
+			padding-bottom: ( $magic-number * 2 );
+		}
+	}
+	main.content {
 		@include padding-horizontal();
 	}
 }
@@ -44,22 +60,24 @@ body:not(.builder) {
 // Site Footer.
 .site-footer {
 	.mg-main-footer {
-		@include padding-vertical();
+		padding-bottom: ( $magic-number * 3 );
+		padding-top: ( $magic-number * 3 );
 		@include padding-horizontal();
 	}
 	.mg-sub-footer {
-		@include padding-vertical();
+		padding-bottom: $magic-number;
+		padding-top: $magic-number;
 		@include padding-horizontal();
 	}
 	@include breakpoint( lg ) {
 		.mg-main-footer {
 			> .wrap {
-				@include flex ( $justifycontent: flex-start, $alignitems: flex-start );
+				@include flex ( $justifycontent: space-between, $alignitems: normal );
 			}
 		}
 		.mg-sub-footer {
 			> .wrap {
-				@include flex ( $justifycontent: flex-start, $alignitems: center );
+				@include flex ( $justifycontent: space-between, $alignitems: center );
 			}
 		}
 	}
@@ -74,6 +92,13 @@ body:not(.builder) {
 body.full-width-content {
 	.content-sidebar-wrap {
 		width: 100%;
+	}
+}
+
+// Full width with wrap.
+body.full-width-content.wrap-content {
+	.content {
+		@extend %wrap;
 	}
 }
 
@@ -145,7 +170,7 @@ body.width-3-entries {
 			margin: 0 auto;
 			max-width: $grid-max-width-lg;
 			width: 100%;
-			main{
+			main {
 				grid-area: main;
 				max-width: 100%;
 			}
@@ -163,7 +188,7 @@ body.width-3-entries {
 	body.content-sidebar {
 		.content-sidebar-wrap {
 			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 36% 36% ( $gutter * 3 ) 1fr;
+			grid-template-columns: 32% 32% ( $gutter * 3 ) 1fr;
 			grid-template-areas: "main main . sidebar-1";
 			main{
 				padding-right: ( $gutter * 2 );
@@ -175,7 +200,7 @@ body.width-3-entries {
 	body.sidebar-content {
 		.content-sidebar-wrap {
 			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 1fr ( $gutter * 3 ) 36% 36%;
+			grid-template-columns: 1fr ( $gutter * 3 ) 32% 32%;
 			grid-template-areas: "sidebar-1 . main main";
 			main{
 				padding-left: ( $gutter * 2 );

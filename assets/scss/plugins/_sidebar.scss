@@ -8,8 +8,10 @@
 .sidebar-primary {
 	section {
 		margin-bottom: $magic-number;
-		@include breakpoint( lg ){
+		padding: $magic-number;
+		@include breakpoint( $responsive-menu-break ){
 			margin-bottom: ( $magic-number * 2 );
+			padding: 0;
 		}
 	}
 	> section:first-of-type h3 {
@@ -17,6 +19,10 @@
 	}
 	.menu {
 		@include main-menu();
+	}
+	.main-button,
+	.inverse-button {
+		display: block;
 	}
 	.widget_text,
 	.widget_custom_html {
@@ -27,11 +33,15 @@
 	}
 	.mb-featured-content,
 	.featured-content {
+		background-color: lighten( $gray-lightest, 5% );
 		padding: $magic-number;
-		background-color: $gray-lightest;
-		.entry-content {
-			font-size: $font-size-sm;
-			line-height: $line-height-md;
+		.container-grid {
+			.entry-title {
+				font-size: $font-size-sm;
+			}
+			@include breakpoint( lg ){
+				grid-template-columns: repeat(2, 1fr [col]);
+			}
 		}
 	}
 }

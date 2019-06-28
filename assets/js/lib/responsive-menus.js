@@ -8,7 +8,7 @@
  *
  * Moare Genesis.
  * @package moaregenesis
- * 
+ *
  */
 
 var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? '' : genesis_responsive_menu,
@@ -95,8 +95,8 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 			return;
 		}
 
-		var menuIconClass     = typeof genesisMenuParams.menuIconClass !== 'undefined' ? genesisMenuParams.menuIconClass : 'dashicons-before dashicons-menu',
-			subMenuIconClass  = typeof genesisMenuParams.subMenuIconClass !== 'undefined' ? genesisMenuParams.subMenuIconClass : 'dashicons-before dashicons-arrow-down-alt2',
+		var menuIconClass     = typeof genesisMenuParams.menuIconClass !== 'undefined' ? genesisMenuParams.menuIconClass : '',
+			subMenuIconClass  = typeof genesisMenuParams.subMenuIconClass !== 'undefined' ? genesisMenuParams.subMenuIconClass : '',
 			toggleButtons     = {
 				menu : $( '<button />', {
 					'class' : mainMenuButtonClass,

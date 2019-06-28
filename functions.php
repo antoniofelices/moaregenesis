@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.4
+ * @version 1.0.5
  */
 
 // Start the engine.
@@ -32,7 +32,7 @@ include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Moare Genesis' );
 define( 'CHILD_THEME_URL', 'http://www.studiomoare.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.4' );
+define( 'CHILD_THEME_VERSION', '1.0.5' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array(
@@ -77,11 +77,10 @@ remove_theme_support( 'genesis-structural-wraps' );
  * @since 	1.0.3
  */
 add_theme_support( 'custom-logo', array(
-		'height'      => 300,
-		'width'       => 100,
-		'flex-height' => true,
-		'flex-width'  => true,
- )
+	'height'      => 75,
+	'width'       => 150,
+	'flex-height' => false,
+	'flex-width'  => false, )
 );
 
 // Add title-tag to Let WordPress Handle the Title Tag

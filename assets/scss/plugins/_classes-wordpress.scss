@@ -33,30 +33,28 @@ a.alignright {
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 24px;
+	margin: 0 auto $magic-number;
 }
 
 img.alignnone,
 .alignnone {
-	margin-bottom: 12px;
+	margin-bottom: ( $magic-number / 2 );
 }
 
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 0 24px 24px 0;
+	margin: 0 $gutter $magic-number 0;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-	margin: 0 0 24px 24px;
+	margin: 0 0 $magic-number $gutter;
 }
 
 .wp-caption-text {
-	font-size: 14px;
-	font-size: 1.4rem;
-	font-style: italic;
+	font-size: $font-size-sm;
 	text-align: center;
 }
 
@@ -69,11 +67,10 @@ img.alignright,
 }
 
 .entry-content {
-
 	.wp-audio-shortcode,
 	.wp-playlist,
 	.wp-video {
-		margin: 0 0 28px;
+		margin: 0 0 $magic-number;
 	}
 }
 
@@ -89,7 +86,7 @@ img.alignright,
 
 .gallery-item {
 	float: left;
-	margin: 0 0 28px;
+	margin: 0 0 $magic-number;
 	text-align: center;
 }
 
@@ -126,14 +123,10 @@ img.alignright,
 }
 
 .gallery img {
-	border: 1px solid $gray-lightest;
 	height: auto;
 	width: auto;
-	padding: 4px;
-	&:hover,
-	&:focus {
-		border: 1px solid $gray-lightest;
-	}
+	padding: ( $gutter / 2 );
+	@include borderB();
 }
 
 .gallery-caption {
@@ -147,11 +140,11 @@ img.alignright,
 }
 
 .alignleft .avatar {
-	margin-left: 24px;
+	margin-left: $gutter;
 }
 
 .alignright .avatar {
-	margin-left: 24px;
+	margin-left: $gutter;
 }
 
 // Comments

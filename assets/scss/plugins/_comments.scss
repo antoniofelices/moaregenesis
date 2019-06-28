@@ -5,41 +5,41 @@
  */
 
 .entry-comments{
-  ol{
-    @extend %list-unstyled;
-  }
-  .comment-header {
-  	margin-bottom: $magic-number;
-  	overflow: hidden;
-  }
-  .comment-author {
-  	margin: 0;
-  }
-  .comment .avatar {
-  	float: left;
-  	margin: 0 $gutter 0 0;
-  }
-  .says,
-  .comment-meta,
-  .comment-edit-link {
-  	font-size: $font-size-sm;
-  	margin: 0;
-  }
-  .comment-reply {
-  	clear: both;
-  }
-  li.pingback,
-  li.comment > article {
-  	margin-bottom: $magic-number;
-  }
-  ul.children {
-  	margin-left: $gutter;
-  }
+	ol{
+		@extend %list-unstyled;
+	}
+	.comment-header {
+		margin-bottom: $magic-number;
+		overflow: hidden;
+	}
+	.comment-author {
+		margin: 0;
+	}
+	.comment .avatar {
+		float: left;
+		margin: 0 $gutter 0 0;
+	}
+	.says,
+	.comment-meta,
+	.comment-edit-link {
+		font-size: $font-size-sm;
+		margin: 0;
+	}
+	.comment-reply {
+		clear: both;
+	}
+	li.pingback,
+	li.comment > article {
+		margin-bottom: $magic-number;
+	}
+	ul.children {
+		margin-left: $gutter;
+	}
 }
 
 .comment-respond{
-  .comment-reply-title > small,
-  .logged-in-as {
-  	font-size: $font-size-sm;
-  }
+	.comment-reply-title > small,
+	.logged-in-as {
+		font-size: $font-size-sm;
+	}
 }

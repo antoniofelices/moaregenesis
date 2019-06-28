@@ -6,7 +6,7 @@
 
 .archive-pagination {
 	overflow: hidden;
-  @include padding-vertical();
+	@include padding-vertical();
 	.pagination-next,
 	.pagination-previous {
 		display: block;
@@ -25,12 +25,11 @@
 	}
 	a{
 		background-color: $gray-lighter;
-		border-bottom: none;
 		color: $body-color;
-		font-size: $font-size-sm;
+		font-size: $font-size-xs;
 		display: block;
 		padding: ( $magic-number / 2 ) ( $magic-number / 2 );
-		&:hover, &:active, &:focus{
+		&:hover, &:active, &:focus {
 			background-color: $link-hover-color;
 			color: $white;
 		}

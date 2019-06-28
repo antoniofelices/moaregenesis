@@ -36,3 +36,36 @@
 		text-align: center;
 	}
 }
+
+// Moare featured content.
+.mb-featured-content {
+	.entry {
+		.entry-title {
+			font-size: $font-size-h4;
+			font-weight: $font-weight-normal;
+			margin: ( $magic-number / 2 ) 0;
+		}
+		.entry-content {
+			font-size: $font-size-sm;
+			line-height: $line-height-md;
+		}
+	}
+	.container-grid {
+		@include breakpoint( md ){
+			@include grid();
+			grid-template-rows: auto;
+			grid-template-columns: repeat(2, 1fr [col]);
+		}
+		@include breakpoint( lg ){
+			@include grid();
+			grid-template-columns: repeat(3, 1fr [col]);
+		}
+	}
+	.container {
+		.entry {
+			+ .entry {
+				margin-top: $magic-number;
+			}
+		}
+	}
+}
