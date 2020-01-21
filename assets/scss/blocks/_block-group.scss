@@ -1,0 +1,29 @@
+/*
+ *
+ * Block Group.
+ * Related /blocks-editor/_editor-block-group
+ */
+
+.wp-block-group.has-background {
+	padding: $magic-number;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.wp-block-group__inner-container {
+	margin: 0 auto;
+}
+
+.wp-block-group__inner-container,
+.entry-content .wp-block-group p {
+	max-width: 100%;
+}
+
+.alignfull:not(.has-background) > .wp-block-group__inner-container > p:not(.has-background-color) {
+	padding-left: ( $gutter * 3 );
+	padding-right: ( $gutter * 3 );
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

@@ -1,0 +1,40 @@
+/*
+ *
+ * Typography.
+ * Related /blocks-editor/_editor-typography
+ * Base on /plugins/_type.scss
+ * On this file just some block classes, all the rest came from /plugins files
+ */
+
+.has-text-align-left {
+	/*rtl:ignore*/
+	text-align: left;
+}
+
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+
+.has-drop-cap:not(:focus)::first-letter {
+	font-size: $font-size-enourmos;
+	font-weight: $font-weight-bold;
+	margin: 0 ( $gutter / 4 ) 0 0;
+}
+
+.has-drop-cap:not(:focus)::first-letter::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.has-drop-cap:not(:focus)::after {
+	padding: 0;
+}
+
+p.has-background {
+	padding: $magic-number $gutter;
+}

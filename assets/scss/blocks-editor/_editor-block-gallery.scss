@@ -1,0 +1,16 @@
+/*
+ *
+ * Editor Block File.
+ * Related /blocks/_block-file
+ */
+
+.editor-styles-wrapper {
+	.wp-block-gallery ul {
+		margin-bottom: 0;
+		padding-left: 0;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

@@ -14,7 +14,6 @@
 @import 'plugins/normalize';
 
 @import 'plugins/accessibility';
-
 @import 'plugins/fonts';
 @import 'plugins/html';
 @import 'plugins/type';
@@ -24,19 +23,39 @@
 @import 'plugins/main';
 @import 'plugins/sidebar';
 @import 'plugins/footer';
-@import 'plugins/builder';
-
+// @import 'plugins/builder';
 @import 'plugins/genesis';
 @import 'plugins/classes';
-@import 'plugins/colors';
 @import 'plugins/classes-wordpress';
-@import 'plugins/blocks';
-
 @import 'plugins/buttons';
 @import 'plugins/forms';
 @import 'plugins/tables';
 @import 'plugins/comments';
 @import 'plugins/pagination-pager';
-
 @import 'plugins/share-buttons';
 @import 'plugins/pages';
+
+// Blocks
+@import 'blocks/colors';
+@import 'blocks/margins';
+@import 'blocks/typography';
+@import 'blocks/font-sizes-classes';
+
+@import 'blocks/block-audio';
+@import 'blocks/block-button';
+@import 'blocks/block-columns';
+@import 'blocks/block-cover';
+@import 'blocks/block-embed';
+@import 'blocks/block-file';
+@import 'blocks/block-gallery';
+@import 'blocks/block-group';
+@import 'blocks/block-media-text';
+@import 'blocks/block-pullquote';
+@import 'blocks/block-quote';
+@import 'blocks/block-search';
+@import 'blocks/block-separator';
+@import 'blocks/block-shared-media';
+@import 'blocks/block-shared-widget';
+@import 'blocks/block-table';
+@import 'blocks/block-widget-latest-comments';
+@import 'blocks/block-widget-latest-posts';

@@ -259,6 +259,32 @@
 	transition: $properties $time;
 }
 
+// Embeds responsive
+//
+// Credit: Nicolas Gallagher and SUIT CSS.
+%embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0 0 56.25%;
+	overflow: hidden;
+	.embed-responsive-item,
+	iframe,
+	embed,
+	object {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+	}
+	&.embed-responsive-4by3 {
+		padding-bottom: 75%;
+	}
+}
+
 // Don't show
 %dontshow {
 	position: absolute !important;
@@ -328,4 +354,25 @@
 	font-family: $font-weight-bold;
 	font-size: $font-size-sm;
 	padding: ( $magic-number / 4 ) 0;
+}
+
+// Table.
+%table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	margin-bottom: $magic-number;
+	margin-top: $magic-number;
+	width: 100%;
+	td,
+	th {
+		padding: ( $magic-number / 4 ) $gutter;
+		@include borderB( $color: $gray-light );
+	}
+	th {
+		background-color: $gray-dark;
+		color: $white;
+		font-weight: $font-weight-bold;
+		text-align: left;
+	}
 }

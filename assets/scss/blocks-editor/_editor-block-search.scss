@@ -1,0 +1,17 @@
+/*
+ *
+ * Editor Block Search.
+ * Related /blocks/_block-search
+ */
+
+.editor-styles-wrapper {
+	.wp-block-search {
+		.wp-block-search__input {
+			border-radius: 0;
+			font-family: inherit;
+		}
+		.wp-block-search__button {
+			@include button();
+		}
+	}
+}

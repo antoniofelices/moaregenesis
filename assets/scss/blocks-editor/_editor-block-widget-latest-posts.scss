@@ -1,0 +1,33 @@
+/*
+ *
+ * Editor Block Widget Latest Posts.
+ * Related /blocks/_block-widget-latest-comments
+ */
+
+.editor-styles-wrapper {
+	ul.wp-block-latest-posts:not(.is-grid) li {
+		margin-top: ( $magic-number / 2 );
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	.wp-block-latest-posts.is-grid li {
+		margin-top: $magic-number;
+		padding-top: ( $magic-number / 2 );
+		@include borderBT();
+	}
+	.wp-block-latest-posts__post-date {
+		color: $gray;
+		font-size: $font-size-xs;
+	}
+}
+
+.editor-styles-wrapper .wp-block-latest-posts__post-excerpt {
+	font-size: $font-size-sm;
+	line-height: $line-height-md;
+	margin: ( $magic-number / 4 ) 0 $magic-number;
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

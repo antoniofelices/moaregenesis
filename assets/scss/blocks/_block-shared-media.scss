@@ -1,0 +1,20 @@
+/*
+ *
+ * Block Shared Media.
+ * Related /blocks-editor/_editor-block-shared-media
+ */
+
+.wp-block-embed,
+.wp-block-image {
+	figcaption {
+		color: $gray-dark;
+		font-size: $font-size-xs;
+		margin-bottom: ( $magic-number / 2 );
+		margin-top: ( $magic-number / 2 );
+		text-align: center;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

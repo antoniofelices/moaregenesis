@@ -1,0 +1,23 @@
+/*
+ *
+ * Editor Block Audio.
+ * Related /blocks/_block-audio
+ */
+
+.editor-styles-wrapper {
+	.wp-block-audio {
+		audio {
+			width: 100%;
+		}
+		figcaption {
+			color: $gray;
+			font-size: $font-size-sm;
+			margin: ( $magic-number / 2 ) 0;
+			text-align: left;
+		}
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

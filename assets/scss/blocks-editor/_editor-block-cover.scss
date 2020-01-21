@@ -1,0 +1,45 @@
+/*
+ *
+ * Editor Block Cover.
+ * Related /blocks/_block-cover
+ */
+
+.editor-styles-wrapper {
+	.wp-block-cover-image,
+	.wp-block-cover {
+		.wp-block-cover__inner-container {
+			width: calc(100% - 4rem);
+			padding: 2rem 0;
+			margin: 0 auto;
+		}
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		h2 {
+			max-width: 100%;
+		}
+	}
+}
+
+.editor-styles-wrapper {
+	.wp-block[data-type="core/cover"][data-align="right"],
+	.wp-block[data-type="core/cover"][data-align="left"] {
+		height: auto;
+		max-height: none;
+	}
+
+	.wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover {
+		text-align: left;
+	}
+
+	.wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover {
+		text-align: right;
+	}
+
+	.wp-block[data-type="core/cover"][data-align="right"] .block-editor-block-list__block-edit,
+	.wp-block[data-type="core/cover"][data-align="left"] .block-editor-block-list__block-edit {
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+	}
+}

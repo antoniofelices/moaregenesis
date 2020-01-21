@@ -1,0 +1,20 @@
+/*
+ *
+ * Block Shared widget.
+ * Related /blocks-editor/_editor-block-shared-widget
+ */
+
+.wp-block-archives,
+.wp-block-categories,
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+	ul {
+		list-style: none;
+	}
+	li {
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,48 @@
+/*
+ *
+ * Block Widget Latest Comments.
+ * Related /blocks-editor/_editor-block-widget-latest-comments
+ */
+
+.wp-block-latest-comments {
+	li.wp-block-latest-comments__comment {
+		font-size: inherit;
+		margin: $magic-number 0;
+	}
+}
+
+/*
+ * Date.
+ */
+.wp-block-latest-comments__comment-date {
+	color: $gray;
+	font-size: $font-size-xs;
+}
+
+/*
+ * Excerpt.
+ */
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: $font-size-xs;
+	line-height: inherit;
+	margin: inherit;
+}
+
+/*
+ * Avatar.
+ */
+.wp-block-latest-comments.has-avatars {
+	.wp-block-latest-comments__comment {
+		.wp-block-latest-comments__comment-excerpt p {
+			margin: initial;
+		}
+	}
+}
+
+
+
+
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

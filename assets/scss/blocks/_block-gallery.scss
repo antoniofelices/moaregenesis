@@ -1,0 +1,28 @@
+/*
+ *
+ * Block Gallery.
+ * Related /blocks-editor/_editor-block-gallery
+ */
+
+.wp-block-gallery {
+	&.alignnone,
+	&.aligncenter,
+	&.alignwide {
+		margin-bottom: ( $magic-number * 2 );
+		margin-top: ( $magic-number * 2 );
+	}
+	&.alignleft {
+		margin: ( $magic-number / 4 ) ( $gutter * 2) $magic-number 0;
+	}
+	&.alignright {
+		margin: ( $magic-number / 4 ) 0 $magic-number ( $gutter * 2);
+	}
+	&.alignfull {
+		margin-bottom: ( $magic-number * 3 );
+		margin-top: ( $magic-number * 3 );
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

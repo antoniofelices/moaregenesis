@@ -1,0 +1,18 @@
+/*
+ *
+ * Block Search.
+ * Related /blocks-editor/_editor-block-search
+ */
+
+.wp-block-search {
+	.wp-block-search__label {
+		font-weight: $font-weight-bold;
+	}
+	.wp-block-search__input {
+		width: auto;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

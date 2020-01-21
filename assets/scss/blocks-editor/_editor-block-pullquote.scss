@@ -1,0 +1,103 @@
+/*
+ *
+ * Editor Block Pullquote.
+ * Related /blocks/_block-group
+ */
+
+.editor-styles-wrapper {
+	.wp-block-pullquote {
+		border: none;
+		color: inherit;
+		padding: 0;
+		position: relative;
+		text-align: inherit;
+		blockquote {
+			&::before {
+				color: $brand-secondary;
+				content: "”";
+				display: inline-block;
+				font-size: ( $font-size-enourmos * 2 );
+				line-height: $line-height-xs;
+			}
+			p {
+				font-family: inherit;
+				font-size: $font-size-lg;
+				font-weight: $font-weight-bold;
+				line-height: $line-height-md;
+				max-width: 100%;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	/*
+	 * Cite. Backend doesn't provide cite element
+	 */
+	.wp-block-pullquote {
+		.wp-block-pullquote__citation,
+		.wp-block-pullquote cite,
+		.wp-block-pullquote footer {
+			color: $gray-dark;
+			display: block;
+			font-style: normal;
+			margin-top: ( $magic-number / 2 );
+			text-transform: none;
+		}
+	}
+
+	/*
+	 * Aligns.
+	 */
+	.wp-block-pullquote {
+		&.alignleft,
+		&.alignright {
+			float: none;
+			max-width: calc(100% - 4rem);
+		}
+		&.alignleft {
+			text-align: left;
+			margin-right: $gutter;
+		}
+		&.alignright {
+			text-align: right;
+			margin-left: $gutter;
+		}
+	}
+
+	/*
+	 * Style solid color.
+	 */
+	.wp-block-pullquote.is-style-solid-color {
+		padding: ( $magic-number * 2 ) ( $gutter * 4 );
+		position: relative;
+		blockquote {
+			&::before {
+				color: inherit;
+			}
+		}
+		.wp-block-pullquote__citation,
+		.wp-block-pullquote cite,
+		.wp-block-pullquote footer {
+			color: inherit;
+		}
+	}
+
+	/*
+	 * System.
+	 */
+	.wp-block[data-type="core/pullquote"][data-align="right"],
+	.wp-block[data-type="core/pullquote"][data-align="left"] {
+		height: auto;
+		max-height: none;
+	}
+	.wp-block[data-type="core/pullquote"][data-align="right"] .block-editor-block-list__block-edit,
+	.wp-block[data-type="core/pullquote"][data-align="left"] .block-editor-block-list__block-edit {
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+	}
+
+}

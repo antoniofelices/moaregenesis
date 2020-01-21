@@ -5,20 +5,5 @@
  */
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
-	@include margin-vertical();
-	td,
-	th {
-		padding-left: $gutter;
-		padding-right: $gutter;
-	}
-	td {
-		@include borderB( $color: $gray-light );
-		@include padding-vertical( ( $magic-number / 2 ), ( $magic-number / 2 ) );
-	}
-	th {
-		font-weight: $font-weight-bold;
-	}
+	@extend %table;
 }

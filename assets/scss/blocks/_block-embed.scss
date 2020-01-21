@@ -1,0 +1,16 @@
+/*
+ *
+ * Block Embed.
+ * Related /blocks-editor/_editor-block-embed
+ */
+
+.wp-block-embed {
+	margin-top: $magic-number;
+	.wp-block-embed__wrapper {
+		@extend %embed-responsive;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

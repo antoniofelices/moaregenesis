@@ -4,6 +4,17 @@
 ### Added
 - BrowserSync.
 
+## [1.0.6] - 2020-01-21
+### Added
+- Block styles.
+
+### Remove
+- /plugins/_blocks.scss
+- /plugins/_colors.scss
+
+### Changed
+- style-editor.scss to editor-style-block.scss
+
 ## [1.0.5] - 2019-06-28
 ### Remove
 - Remove dashicons frontend.

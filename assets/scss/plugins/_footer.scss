@@ -42,7 +42,7 @@
 			@extend %list-inline;
 		}
 	}
-	@include breakpoint( $responsive-menu-break ){
+	@include breakpoint( $responsive-menu-break ) {
 		.mg-main-footer {
 			section + section {
 				margin-left: $gutter;

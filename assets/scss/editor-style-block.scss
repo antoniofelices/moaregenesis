@@ -1,0 +1,42 @@
+/**
+ * Moare Genesis.
+ *
+ * This file adds block editor styles.
+ *
+ * @package moaregenesis
+ * @author  Antonio
+ * @license GPL-2.0+
+ * @link    https://studiomoare.com
+ */
+
+
+@import 'variables';
+@import "plugins/mixins";
+
+@import 'plugins/fonts';
+@import 'plugins/classes';
+
+// Blocks editor
+@import 'blocks-editor/editor-general';
+@import 'blocks/colors';
+@import 'blocks-editor/editor-margins';
+@import 'blocks-editor/editor-typography';
+@import 'blocks-editor/editor-font-sizes-classes';
+
+@import 'blocks-editor/editor-block-audio';
+@import 'blocks-editor/editor-block-button';
+@import 'blocks-editor/editor-block-columns';
+@import 'blocks-editor/editor-block-cover';
+@import 'blocks-editor/editor-block-embed';
+@import 'blocks-editor/editor-block-file';
+@import 'blocks-editor/editor-block-gallery';
+@import 'blocks-editor/editor-block-group';
+@import 'blocks-editor/editor-block-pullquote';
+@import 'blocks-editor/editor-block-quote';
+@import 'blocks-editor/editor-block-search';
+@import 'blocks-editor/editor-block-separator';
+@import 'blocks-editor/editor-block-shared-media';
+@import 'blocks-editor/editor-block-shared-widget';
+@import 'blocks-editor/editor-block-table';
+@import 'blocks-editor/editor-block-widget-latest-comments';
+@import 'blocks-editor/editor-block-widget-latest-posts';

@@ -1,0 +1,27 @@
+/*
+ *
+ * Block Media And Text.
+ * No related editor file.
+ */
+
+.wp-block-media-text {
+	.wp-block-media-text__content {
+		padding: ( $magic-number * 2 ) ( $gutter * 2 );
+		p {
+			max-width: none;
+		}
+	}
+}
+
+.wp-block-media-text__content {
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

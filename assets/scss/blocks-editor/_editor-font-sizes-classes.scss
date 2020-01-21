@@ -1,0 +1,29 @@
+/*
+ *
+ * Editor Custom Classes Font Sizes.
+ * Related /blocks/_font-sizes-classes
+ */
+
+.editor-styles-wrapper {
+	p.has-small-font-size {
+		font-size: $font-size-sm;
+	}
+	p.has-normal-font-size,
+	p.has-regular-font-size {
+		font-size: $font-size-base;
+	}
+	p.has-medium-font-size {
+		font-size: $font-size-md;
+	}
+	p.has-large-font-size {
+		font-size: $font-size-lg;
+	}
+	p.has-larger-font-size {
+		font-size: $font-size-h2 !important;
+		line-height: $line-height-md;
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

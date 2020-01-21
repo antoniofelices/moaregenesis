@@ -1,0 +1,36 @@
+/*
+ *
+ * Block button.
+ * Related /blocks-editor/_editor-block-button
+ */
+
+.wp-block-button {
+	margin: ( $magic-number * 2 ) 0;
+	&.is-style-outline {
+		color: $brand-primary;
+	}
+	&.alignleft {
+		text-align: left;
+		margin-right: $gutter;
+	}
+	&.alignright {
+		text-align: right;
+		margin-left: $gutter;
+	}
+	.wp-block-button__link {
+		@include button();
+	}
+}
+
+.is-style-outline {
+	.wp-block-button__link {
+		@extend .inverse-button;
+		&:not(.has-text-color) {
+			color: inherit;
+		}
+	}
+}
+
+@include breakpoint( $responsive-menu-break ) {
+
+}

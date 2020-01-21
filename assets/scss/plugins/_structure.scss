@@ -22,6 +22,10 @@
 
 // Site Inner.
 body:not(.builder) {
+	// Hide overflow-y to fullwidth blocks.
+	.site-container {
+		overflow: hidden;
+	}
 	.site-inner {
 		padding-top: $magic-number;
 		padding-bottom: $magic-number;
