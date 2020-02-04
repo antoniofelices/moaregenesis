@@ -32,7 +32,7 @@ include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Moare Genesis' );
 define( 'CHILD_THEME_URL', 'http://www.studiomoare.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.5' );
+define( 'CHILD_THEME_VERSION', '1.0.6' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array(
