@@ -37,6 +37,15 @@
 	}
 }
 
+// Widgets text, custom html
+.widget_text,
+.widget_custom_html {
+	.textwidget {
+		font-size: $font-size-sm;
+		line-height: $line-height-md;
+	}
+}
+
 // Moare featured content.
 .mb-featured-content {
 	.entry {

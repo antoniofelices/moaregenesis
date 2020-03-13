@@ -32,7 +32,7 @@
 	}
 	.mg-sub-footer {
 		background-color: $bg-subfooter;
-		font-size: $font-size-xs;
+		font-size: $font-size-xs !important;
 		@include borderBT( $color: $gray-dark );
 		section + section {
 			margin-top: ( $magic-number / 2 );

@@ -13,12 +13,13 @@
 	@include borderBT();
 	@include borderBB();
 	h1, h2 {
-		font-size: $font-size-base;
+		font-size: $font-size-sm;
 		text-transform: uppercase;
-		&:before {
-			content: '\e907';
-			font: $font-weight-normal $font-size-xs $font-family-icons;
-			margin-right: ( $gutter / 2 );
+		&:after {
+			content: '\25BA';
+			font-size: $font-size-base;
+			margin-left: ( $gutter / 2 );
+			vertical-align: middle;
 		}
 	}
 	p:last-child {
@@ -39,8 +40,7 @@
 // Author box
 .author-box {
 	font-size: $font-size-sm;
-	margin: 1.5rem 0 3rem;
-	@include margin-vertical( ( $magic-number / 2 ), $magic-number );
+	margin: $magic-number 0 ( $magic-number * 2 );
 	.avatar {
 		max-width: 70px;
 		@include breakpoint( sm ) {

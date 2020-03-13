@@ -97,6 +97,11 @@
 				}
 				// End Submenus
 			}
+			.current-menu-item {
+				a {
+					color: $white;
+				}
+			}
 		}
 	}
 
