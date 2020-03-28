@@ -44,7 +44,7 @@ $gray-lightest:             lighten( $gray, 40% ) !default;
 
 // Body
 // Settings for the `<body>` element.
-$body-bg:                   darken( $white, 3% ) !default;
+$body-bg:                   darken( $white, 1% ) !default;
 $body-color:                $black !default;
 $inverse-bg:                $gray-dark !default;
 $inverse-color:             $gray-lighter !default;
@@ -58,6 +58,7 @@ $link-hover-decoration:     underline !default;
 
 // Fonts
 // Font, line-height, and color for body text, headings, and more.
+// Typography scale Major Second.
 $font-family-sans-serif: sans-serif !default;
 $font-family-serif: serif !default;
 $font-family-icons: 'icomoon' !default;
@@ -79,7 +80,7 @@ $font-size-md:   1.125rem !default;
 $font-size-sm:   .889rem !default;
 $font-size-xs:   .79rem !default;
 
-$font-size-enourmos: 2.28rem !default;
+$font-size-enourmos: 2.281rem !default;
 $font-size-semienourmos: 2.027rem !default;
 $font-size-h1: 1.802rem !default;
 $font-size-h2: 1.602rem !default;

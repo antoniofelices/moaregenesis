@@ -7,9 +7,9 @@
 .site-header {
 	background-color: $bg-header;
 	position: relative;
-	box-shadow: 1px 1px 8px 1px rgba( $gray, 0.25 );
 	// Container
 	> div {
+
 	}
 	// Title section.
 	.title-area{
@@ -37,13 +37,14 @@
 	}
 	// Same #genesis-nav-primary ó .genesis-responsive-menu
 	.nav-primary{
+		box-shadow: 0 10px 10px 1px rgba( $gray, 0.25 );
 		display: none;
 		position: absolute;
-		top: ( $magic-number * 3 );
+		top: ( $magic-number * 3 ) + ( $magic-number / 2 );
 		right: 0;
 		left: 0;
 		z-index: 999;
-		@include borderBB( $width: 4px, $color: darken( $bg-header, 5% ) );
+		@include borderBB( $color: darken( $bg-header, 5% ) );
 		ul.genesis-nav-menu{
 			margin: 0;
 			padding: 0;
@@ -112,10 +113,11 @@
 			display: none;
 		}
 		.nav-primary {
+			border-bottom: none;
+			box-shadow: none;
 			display: block;
 			position: static;
 			width: auto;
-			border-bottom: none;
 			ul.genesis-nav-menu {
 				.menu-item {
 					display: inline-block;

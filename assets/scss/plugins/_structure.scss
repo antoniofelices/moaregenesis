@@ -9,14 +9,10 @@
 	padding-right: $gutter;
 	padding-left: $gutter;
 	> div {
+		padding-bottom: ( $magic-number / 4 );
+		padding-top: ( $magic-number / 4 );
 		@extend %wrap;
 		@include flex ( $justifycontent: space-between, $alignitems: center );
-	}
-	.title-area {
-		flex: 0 1 60%;
-	}
-	.menu-toggle {
-		flex: 0 1 30%;
 	}
 }
 
@@ -109,8 +105,8 @@ body.full-width-content.wrap-content {
 // Narrow.
 body.full-width-content.narrow {
 	.content-sidebar-wrap {
-		@include breakpoint( lg ){
-			width: $grid-max-width-lg;
+		@include breakpoint( $responsive-menu-break ){
+			width: $grid-max-width-md;
 			margin: 0 auto;
 		}
 	}
@@ -136,7 +132,7 @@ body.width-2-entries {
 		@include breakpoint( md ){
 			@include grid();
 			grid-template-columns: 1fr 1fr;
-			grid-template-row: auto;
+			grid-template-rows: auto;
 			grid-template-areas:
 				"header header"
 				"item item";
@@ -150,7 +146,7 @@ body.width-3-entries {
 		@include breakpoint( md ){
 			@include grid();
 			grid-template-columns: 1fr 1fr;
-			grid-template-row: auto;
+			grid-template-rows: auto;
 			grid-template-areas:
 				"header header"
 				"item item";
@@ -195,7 +191,7 @@ body.width-3-entries {
 			grid-template-columns: 32% 32% ( $gutter * 3 ) 1fr;
 			grid-template-areas: "main main . sidebar-1";
 			main{
-				padding-right: ( $gutter * 2 );
+				padding-right: ( $gutter * 3 );
 				@include borderBR();
 			}
 		}
@@ -207,7 +203,7 @@ body.width-3-entries {
 			grid-template-columns: 1fr ( $gutter * 3 ) 32% 32%;
 			grid-template-areas: "sidebar-1 . main main";
 			main{
-				padding-left: ( $gutter * 2 );
+				padding-left: ( $gutter * 3 );
 				@include borderBL();
 			}
 		}

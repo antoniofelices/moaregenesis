@@ -184,13 +184,14 @@
 		padding-top: $magic-number;
 		@include borderBT();
 	}
-	@include breakpoint( lg ) {
+	@include breakpoint( $responsive-menu-break ) {
 		padding-top: $magic-number;
 		padding-bottom: $magic-number;
 		+ .entry {
 			padding-top: ( $magic-number * 2 );
 		}
 		.entry-content {
+			font-size: $font-size-md;
 			.post-image {
 				margin-bottom: 0;
 			}

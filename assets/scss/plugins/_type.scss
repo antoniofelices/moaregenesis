@@ -36,7 +36,7 @@ ul {
 }
 
 p {
-	margin: 0 0 ( $magic-number / 2 );
+	margin: 0 0 $magic-number;
 }
 
 small {
@@ -83,7 +83,7 @@ h6 {
 
 @include breakpoint ( $responsive-menu-break ) {
 	h1 {
-		font-size: $font-size-semienourmos;
+		font-size: $font-size-enourmos;
 	}
 
 	h2 {

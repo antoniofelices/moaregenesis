@@ -74,7 +74,7 @@ body.single {
 	@include breakpoint( lg ) {
 		.content {
 			> .entry {
-				font-size: $font-size-md;
+				font-size: $font-size-h4;
 			}
 		}
 		h1.entry-title {
