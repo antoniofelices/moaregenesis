@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.6
+ * @version 1.0.7
  */
 
 /**
@@ -106,6 +106,20 @@ function mg_all_custom_footer() {
 					'after' => '',
 				) );
 
+				// Site navbar
+				if ( ! genesis_nav_menu_supported( 'subfooter' ) ){
+
+					return;
+
+				} else {
+
+					genesis_nav_menu( array(
+						'theme_location' => 'subfooter',
+						'menu_class'     => 'menu genesis-nav-menu menu-subfooter',
+					) );
+
+				}
+
 				?>
 			</div>
 		</div>
@@ -144,47 +158,5 @@ function mg_all_remove_post_info() {
 
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-
-}
-
-/**
- * Pager: custom pager. All.
- *
- * @since 1.0.0
- */
-function mg_custom_pager(){
-
-	$previouspost = get_previous_post();
-	$nextpost = get_next_post();
-
-	if( $previouspost || $nextpost ){
-
-		echo '<div class="pager">';
-
-			echo '<h2 class="screen-reader-text">'. esc_html__( 'Post navigation', 'moaregenesis' ) .'</h2>';
-
-			if ( !empty( $previouspost ) ):
-
-			?>
-
-				<a href="<?php echo esc_url( get_permalink( $previouspost->ID ) ); ?>"><span><?php esc_html_e( $previouspost->post_title, 'moaregenesis' ); ?></span></a>
-
-			<?php
-
-			endif;
-
-			if ( !empty( $nextpost ) ):
-
-			?>
-
-				<a href="<?php echo esc_url( get_permalink( $nextpost->ID ) ); ?>"><span><?php esc_html_e( $nextpost->post_title, 'moaregenesis' ); ?></span></a>
-
-			<?php
-
-			endif;
-
-		echo '</div>';
-
-	}
 
 }

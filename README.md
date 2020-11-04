@@ -2,3 +2,4 @@
 
 Genesis Framework
 Sass
+Base on Genesis Sample Theme

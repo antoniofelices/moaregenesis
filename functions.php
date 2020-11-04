@@ -9,16 +9,13 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.6
+ * @version 1.0.7
  */
 
 // Start the engine.
-include_once( get_template_directory() . '/lib/init.php' );
+require_once get_template_directory() . '/lib/init.php';
 
-// Setup Theme.
-include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
-
-// Set Localization (do not remove).
+// Set Localization.
 add_action( 'after_setup_theme', 'mg_localization_setup' );
 function mg_localization_setup(){
 
@@ -26,77 +23,48 @@ function mg_localization_setup(){
 
 }
 
-// Gutenberg.
-include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
-
-// Child theme (do not remove).
-define( 'CHILD_THEME_NAME', 'Moare Genesis' );
-define( 'CHILD_THEME_URL', 'https://studiomoare.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.6' );
-
-// Add HTML5 markup structure.
-add_theme_support( 'html5', array(
-	'caption',
-	'comment-form',
-	'comment-list',
-	'gallery',
-	'search-form',
-) );
-
-// Add Accessibility support.
-// Have to use _accesibility.scss file
-add_theme_support( 'genesis-accessibility', array(
-	'404-page',
-	'drop-down-menu',
-	'headings',
-	'search-form',
-	'skip-links'
-) );
-
 /**
- * Remove wraps: header, primary menu.
+ * Add desired theme supports.
  *
- * @since 	1.0.0
- */
-// One by one
-// add_theme_support( 'genesis-structural-wraps', array(
-//     'header',
-//     'menu-primary',
-//     'menu-secondary',
-//     'footer-widgets',
-//     'footer'
-// ) );
-
-// All wraps
-remove_theme_support( 'genesis-structural-wraps' );
-
-/**
- * Add_theme_support custom logo.
- * Same values mg_all_custom_header()
+ * See config file at `config/theme-supports.php`.
  *
- * @since 	1.0.3
+ * @since 1.0.7
  */
-add_theme_support( 'custom-logo', array(
-	'height'      => 75,
-	'width'       => 150,
-	'flex-height' => false,
-	'flex-width'  => false, )
-);
+add_action( 'after_setup_theme', 'mg_theme_support', 9 );
+function mg_theme_support() {
 
-// Add title-tag to Let WordPress Handle the Title Tag
-add_theme_support( 'title-tag' );
+	$theme_supports = genesis_get_config( 'theme-supports' );
 
-// Add viewport meta tag for mobile browsers.
-add_theme_support( 'genesis-responsive-viewport' );
+	foreach ( $theme_supports as $feature => $args ) {
+		add_theme_support( $feature, $args );
+	}
 
-// Add support for after entry widget.
-add_theme_support( 'genesis-after-entry-widget-area' );
+	// If use single elements, comment this and add elements at `config/theme-supports.php`
+	remove_theme_support( 'genesis-structural-wraps' );
 
-// Add support for 2-column footer widgets.
-add_theme_support( 'genesis-footer-widgets', 3 );
+}
+
+// Registers the responsive menus.
+if ( function_exists( 'genesis_register_responsive_menus' ) ) {
+
+	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
+	
+}
 
 // Scripts.
 include_once( get_stylesheet_directory() . '/lib/scripts.php' );
+
+// Block editor.
+include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
+
+// Adds helper functions.
+include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
+
+// Adds image upload and color select to Customizer.
+include_once( get_stylesheet_directory() . '/lib/customize.php' );
+
+// Includes Customizer CSS.
+include_once( get_stylesheet_directory() . '/lib/output.php' );
 
 // Custom fields.
 include_once( get_stylesheet_directory() . '/lib/custom-fields.php' );
@@ -112,6 +80,9 @@ include_once( get_stylesheet_directory() . '/lib/grid.php' );
 
 // Admin.
 include_once( get_stylesheet_directory() . '/lib/admin.php' );
+
+// Custom functions.
+include_once( get_stylesheet_directory() . '/lib/custom-functions.php' );
 
 // Custom.
 include_once( get_stylesheet_directory() . '/lib/custom.php' );

@@ -9,7 +9,7 @@
  * @since 	1.0.2
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.6
+ * @version 1.0.7
  */
 
 add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
@@ -97,6 +97,6 @@ function mg_setup_theme_supported_features() {
 add_action( 'enqueue_block_editor_assets', 'mg_block_editor_styles' );
 function mg_block_editor_styles() {
 
-	wp_enqueue_style( 'mg-block-editor-styles', get_theme_file_uri( '/assets/stylesheets/editor-style-block.css' ), false, CHILD_THEME_VERSION, 'all' );
+	wp_enqueue_style( 'mg-block-editor-styles', get_theme_file_uri( '/assets/stylesheets/editor-style-block.css' ), [], genesis_get_theme_version(), null );
 
 }

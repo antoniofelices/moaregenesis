@@ -4,6 +4,22 @@
 ### Added
 - BrowserSync.
 
+## [1.0.7] - 2020-11-04
+### Added
+- Support to Genesis 3.0.0.
+- Config dir.
+- Basic support Customizer.
+
+### Remove
+- Support to custom fields builder.
+- Theme support genesis-responsive-viewport and title-tag. Genesis 3.0 adds this by default.
+- `tpl_builder.php` template.
+- `responsive-menus.js` file.
+- `theme-defaults.php`file.
+
+### Changed
+- functions.php
+
 ## [1.0.6] - 2020-01-21
 ### Added
 - Block styles.
