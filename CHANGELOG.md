@@ -12,13 +12,13 @@
 
 ### Remove
 - Support to custom fields builder.
-- Theme support genesis-responsive-viewport and title-tag. Genesis 3.0 adds this by default.
+- Theme support `genesis-responsive-viewport` and `title-tag`. Genesis 3.0 adds this by default.
 - `tpl_builder.php` template.
 - `responsive-menus.js` file.
-- `theme-defaults.php`file.
+- `theme-defaults.php` file.
 
 ### Changed
-- functions.php
+- `functions.php` file.
 
 ## [1.0.6] - 2020-01-21
 ### Added
