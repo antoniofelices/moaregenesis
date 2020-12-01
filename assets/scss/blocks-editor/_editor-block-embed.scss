@@ -5,11 +5,8 @@
  */
 
 .editor-styles-wrapper {
-	.wp-block-embed {
-		margin-top: $magic-number;
-		.wp-block-embed__wrapper {
-			@extend %embed-responsive;
-		}
+	.wp-block-embed:not(.alignwide):not(.alignfull) {
+		margin: $magic-number 0;
 	}
 }
 

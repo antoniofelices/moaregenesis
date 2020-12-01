@@ -9,8 +9,20 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.7
+ * @version 1.0.8
  */
+
+// Add wrap to links.
+// All menus.
+add_filter( 'wp_nav_menu_args', 'mg_social_menu_args' );
+function mg_social_menu_args( $args ) {
+
+	$args['link_before'] = '<span>';
+	$args['link_after'] = '</span>';
+
+	return $args;
+
+}
 
 // Reduce the secondary navigation menu to one level depth.
 add_filter( 'wp_nav_menu_args', 'mg_secondary_menu_args' );

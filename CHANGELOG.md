@@ -4,6 +4,17 @@
 ### Added
 - BrowserSync.
 
+## [1.0.8] - 2020-12-01
+### Added
+- Styles block gallery.
+- Styles block lastest posts.
+- Support responsive embeds.
+- Wrap items menu.
+- Some styles.
+
+### Remove
+- `front-page.php` template.
+
 ## [1.0.7] - 2020-11-04
 ### Added
 - Support to Genesis 3.0.0.

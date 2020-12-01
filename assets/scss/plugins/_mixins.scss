@@ -160,6 +160,46 @@
 	}
 }
 
+@mixin social-menu( $color: $gray, $fontsize: $font-size-lg, $paddingy: 0 ) {
+	@extend %list-inline;
+	a {
+		border-bottom: none;
+		color: $color;
+		font: $font-weight-normal $fontsize $font-family-icons;
+		line-height: 1;
+		padding-left: $paddingy;
+		padding-right: $paddingy;
+		text-decoration: none;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		&:hover, &:active, &:focus {
+			color: $color;
+		}
+		span {
+			display: none;
+		}
+	}
+	a[href*="facebook"]:before {
+		content: "\e902";
+	}
+	a[href*="twitter"]:before {
+		content: "\e904";
+	}
+	a[href*="instagram"]:before {
+		content: "\e905";
+	}
+	a[href*="youtube"]:before {
+		content: "\e906";
+	}
+	a[href*="wa.me"]:before,
+	a[href*="whatsapp"]:before {
+		content: "\e903";
+	}
+	> li:first-of-type a {
+		padding-left: 0;
+	}
+}
+
 // Entries default.
 @mixin entries-default() {
 	.entry-image-link {
@@ -233,22 +273,24 @@
 	}
 }
 
-// Grafic resourses. Border after.
-@mixin border-after( $width: 10%, $height: 4px, $color: darken($gray-lighter,5%), $margin-top-bottom: $magic-number ) {
+// Grafic resourses.
+// Border after.
+@mixin border-after( $width: 10%, $height: 4px, $bgcolor: $brand-primary, $margin-y: $magic-number, $margin-x: 0 ) {
 	&:after{
 		content: ' ';
 		display: block;
 		width: $width;
 		height: $height;
-		margin: ( $margin-top-bottom / 2 ) 0;
-		background-color: $color;
+		margin: ( $margin-y / 2 ) 0;
+		background-color: $bgcolor;
 		@include breakpoint( lg ){
-			margin: $margin-top-bottom 0;
+			margin: ( $margin-y / 2 ) $margin-x $margin-y;
 		}
 	}
 }
 
-// Grafic resourses. Filters.
+// Grafic resourses.
+// Filters.
 @mixin image-filter( $filter-type: grayscale, $filter-amount:100% ) {
 	-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
 	filter: $filter-type+unquote('(#{$filter-amount})');

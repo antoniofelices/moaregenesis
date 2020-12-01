@@ -9,7 +9,7 @@
  * @since 	1.0.2
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.7
+ * @version 1.0.8
  */
 
 add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
