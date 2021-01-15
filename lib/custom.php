@@ -9,11 +9,12 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 /**
  * Header: reposition primary menu navigation, add widget area
+ * All.
  *
  * @since 	1.0.0
  */
@@ -28,43 +29,31 @@ function mg_all_custom_header(){
 		<div class="title-area">
 
 		<?php
-
-		// Site title
-		if( function_exists( 'the_custom_logo' ) ) {
-
-			if( has_custom_logo() ) {
-
-				the_custom_logo();
-
-			} else {
-
-				do_action( 'genesis_site_title' );
-
-			}
-
-		}
-
+			// Site title
+			do_action( 'genesis_site_title' );
 		?>
 
 		</div>
 
+		<div class="menus-container">
+
 		<?php
-		// Site navbar
-		if ( ! genesis_nav_menu_supported( 'primary' ) ){
+			// Site navbar
+			if ( ! genesis_nav_menu_supported( 'primary' ) ){
 
-			return;
+				return;
 
-		} else {
+			} else {
 
-			genesis_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_class'     => 'menu genesis-nav-menu',
-			) );
+				genesis_nav_menu( array(
+					'theme_location' => 'primary',
+					'menu_class'     => 'menu genesis-nav-menu',
+				) );
 
-		}
-
+			}
 		?>
 
+		</div>
 	</div>
 
 	<?php
@@ -72,7 +61,8 @@ function mg_all_custom_header(){
 }
 
 /**
- * Custom Footer. All.
+ * Custom Footer.
+ * All.
  *
  * @since 	1.0.0
  */
@@ -129,7 +119,22 @@ function mg_all_custom_footer() {
 }
 
 /**
- * Load all items. Archives cpts and tax.
+ * Remove post-meta.
+ * All.
+ *
+ * @since 	1.0.0
+ */
+// add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
+function mg_all_remove_post_info() {
+
+	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
+}
+
+/**
+ * Load all items.
+ * Archives: cpts and tax.
  *
  * @since 	1.0.4
  */
@@ -149,14 +154,21 @@ function mg_pre_get_posts_cpts_and_tax( $query ){
 }
 
 /**
- * Remove post-meta. All.
- *
+ * Reposition thumbnail image.
+ * Archives: default templates.
+ * Have to put here, not at archive.php
+ * 
  * @since 	1.0.0
  */
-// add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
-function mg_all_remove_post_info() {
+add_action( 'genesis_before_entry', 'mg_archive_default_reposition_thumbnail_image' );
+function mg_archive_default_reposition_thumbnail_image() {
 
-	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	if ( is_author() || is_category() || is_date() || is_tag() || is_home() || is_search() ) {
+
+		// Reposition image
+		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+		add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+
+	}
 
 }

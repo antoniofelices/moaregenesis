@@ -5,11 +5,21 @@
  */
 
 // Main button
-.main-button{
+.main-button {
 	@include button();
 }
 
 // Inverse button
-.inverse-button{
-	@include button( $display: inline-block, $color: $white, $bgcolor: $black, $bordercolor: $black );
+.inverse-button {
+	@include button(
+		$display: inline-block,
+		$color: $white,
+		$bgcolor: $black,
+		$bordercolor: $black
+	);
+}
+
+a.main-button,
+a.inverse-button {
+	text-decoration: none;
 }

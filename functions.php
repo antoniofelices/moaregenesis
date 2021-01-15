@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 // Start the engine.
@@ -25,7 +25,6 @@ function mg_localization_setup(){
 
 /**
  * Add desired theme supports.
- *
  * See config file at `config/theme-supports.php`.
  *
  * @since 1.0.7

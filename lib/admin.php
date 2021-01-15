@@ -9,11 +9,12 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 /**
- * Genesis: remove layouts. All.
+ * Genesis: remove layouts.
+ * All.
  *
  * @since 	1.0.6
  */
@@ -25,7 +26,8 @@
 // genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 /**
- * Genesis: remove metaboxes. Pages and post.
+ * Genesis: remove metaboxes.
+ * Pages and post.
  *
  * @since 	1.0.6
  */

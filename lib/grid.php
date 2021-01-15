@@ -9,11 +9,12 @@
  * @since 	1.0.1
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 /**
- * Force full width layout post type archives, custom taxonomies.
+ * Force full width layout.
+ * Archives: post type archives, custom taxonomies.
  *
  * @since 	1.0.1
  */
@@ -30,6 +31,7 @@ function mg_full_width_layout_archives() {
 
 /**
  * Defines layout 2 width entries body class.
+ * Archives: post type archives, custom taxonomies.
  *
  * @since 1.0.1
  *

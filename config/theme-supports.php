@@ -9,7 +9,7 @@
  * @since 	1.0.7
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 return [
@@ -27,8 +27,8 @@ return [
 		'flex-width'  => true,
 	],
 	'genesis-menus'                   => [
-		'primary'   => __( 'Main Menu', 'territorisxlm' ),
-		'subfooter' => __( 'Sub Footer Menu', 'territorisxlm' ),
+		'primary'     => __( 'Main Menu', 'moaregenesis' ),
+		'subfooter'   => __( 'Sub Footer Menu', 'moaregenesis' ),
 	],
 	'html5'                           => [
 		'caption',

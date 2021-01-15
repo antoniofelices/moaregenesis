@@ -18,23 +18,23 @@
 // Links
 // Fonts
 // Medias
-// Other
+// Header, footer
 
 // Rithms
-$magic-number: 1.5rem !default;
-$gutter: 20px !default;
+$magic-number:              1.5rem !default;
+$gutter:                    1.5rem !default;
 
 // Colors
 // Basics.
-$white:  #fff !default;
-$black:  #000 !default;
+$white:                     #fff !default;
+$black:                     #000 !default;
 
 // Brand color.
 $brand-primary:             blue !default;
 $brand-secondary:           green !default;
 $brand-tertiary:            red !default;
 
-// Grayscale
+// Grayscale.
 $gray:                      grayscale( $brand-primary ) !default;
 $gray-darker:               darken( $gray, 25% ) !default;
 $gray-dark:                 darken( $gray, 15% ) !default;
@@ -59,59 +59,64 @@ $link-hover-decoration:     underline !default;
 // Fonts
 // Font, line-height, and color for body text, headings, and more.
 // Typography scale Major Second.
-$font-family-sans-serif: sans-serif !default;
-$font-family-serif: serif !default;
-$font-family-icons: 'icomoon' !default;
-$font-family-monospace: monospace !default;
-$font-family-base: $font-family-sans-serif !default;
+$font-family-sans-serif:    sans-serif !default;
+$font-family-serif:         serif !default;
+$font-family-icons:         'icomoon' !default;
+$font-family-monospace:     monospace !default;
+$font-family-base:          $font-family-sans-serif !default;
 
-$font-weight-normal: 400 !default;
-$font-weight-bold: 700 !default;
-$font-weight-base: $font-weight-normal !default;
+$font-weight-normal:        400 !default;
+$font-weight-bold:          700 !default;
+$font-weight-base:          $font-weight-normal !default;
 
-$line-height-base: 1.5 !default;
-$line-height-lg: 1.77 !default;
-$line-height-md: 1.35 !default;
-$line-height-xs: 1.1 !default;
+$line-height-base:          1.5 !default;
+$line-height-lg:            1.77 !default;
+$line-height-md:            1.35 !default;
+$line-height-xs:            1.1 !default;
 
-$font-size-base: 1rem !default;
-$font-size-lg:   1.424rem !default;
-$font-size-md:   1.125rem !default;
-$font-size-sm:   .889rem !default;
-$font-size-xs:   .79rem !default;
+$font-size-base:            1rem !default;
+$font-size-lg:              1.424rem !default;
+$font-size-md:              1.125rem !default;
+$font-size-sm:              .889rem !default;
+$font-size-xs:              .79rem !default;
 
-$font-size-enourmos: 2.281rem !default;
-$font-size-semienourmos: 2.027rem !default;
-$font-size-h1: 1.802rem !default;
-$font-size-h2: 1.602rem !default;
-$font-size-h3: 1.424rem !default;
-$font-size-h4: 1.266rem !default;
-$font-size-h5: 1.125rem !default;
-$font-size-h6: 1rem !default;
+$font-size-huge:            3.247rem !default;
+$font-size-larger:          2.281rem !default;
+$font-size-large:           2.027rem !default;
+$font-size-h1:              1.802rem !default;
+$font-size-h2:              1.602rem !default;
+$font-size-h3:              1.424rem !default;
+$font-size-h4:              1.266rem !default;
+$font-size-h5:              1.125rem !default;
+$font-size-h6:              1rem !default;
 
-$headings-margin-bottom: ( $magic-number / 2 ) !default;
-$headings-font-family:   $font-family-sans-serif !default;
-$headings-font-weight:   $font-weight-normal !default;
-$headings-line-height:   $line-height-xs !default;
-$headings-color:         $body-color !default;
+$headings-margin-bottom:    ( $magic-number / 2 ) !default;
+$headings-font-family:      $font-family-sans-serif !default;
+$headings-font-weight:      $font-weight-normal !default;
+$headings-line-height:      $line-height-xs !default;
+$headings-color:            $body-color !default;
+
+// TODO. Deprecated, remove.
+$font-size-enourmos:        $font-size-larger !default;
+$font-size-semienourmos:    $font-size-large !default;
 
 // Medias
 // Bootstrap v4.2.1 (https://getbootstrap.com/)
 // Copyright 2011-2019 The Bootstrap Authors
 // Copyright 2011-2019 Twitter, Inc.
 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-$breakpoints: ( sm: 586px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px );
+$breakpoints: ( sm: 586px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px, xxxl: 1700px );
 
-$responsive-menu-break: 1200px !default;
+$responsive-menu-break:     1200px !default;
 
-$grid-max-width-sm: 34.35rem !default; // 550px
-$grid-max-width-md: 45rem !default; // 720px
-$grid-max-width-lg: 60rem !default; // 960px
-$grid-max-width-xl: 71.25rem !default; // 1140px
-$grid-max-width-xxl: 84.075rem !default; // 1345px
+$grid-max-width-sm:         34.35rem !default; // 550px
+$grid-max-width-md:         45rem !default; // 720px
+$grid-max-width-lg:         60rem !default; // 960px
+$grid-max-width-xl:         71.25rem !default; // 1140px
+$grid-max-width-xxl:        84.075rem !default; // 1345px
 
-// Header, footer
-$bg-header: $gray-lighter !default;
-$bg-footer: $gray-darker !default;
-$bg-footer-color: $white !default;
-$bg-subfooter: $black !default;
+// Header, footer.
+$bg-header:                 $gray-lighter !default;
+$bg-footer:                 $gray-darker !default;
+$bg-footer-color:           $white !default;
+$bg-subfooter:              $black !default;

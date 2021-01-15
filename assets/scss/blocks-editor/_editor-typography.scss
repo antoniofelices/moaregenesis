@@ -23,7 +23,7 @@
 	.editor-post-title__block {
 		.editor-post-title__input {
 			font-weight: $headings-font-weight;
-			font-size: $font-size-semienourmos;
+			font-size: $font-size-large;
 			margin: 0;
 		}
 	}
@@ -33,7 +33,7 @@
 	 * Same selector, properties.
 	 */
 	.has-drop-cap:not(:focus)::first-letter {
-		font-size: $font-size-enourmos;
+		font-size: $font-size-larger;
 		font-weight: $font-weight-bold;
 		margin: 0 ( $gutter / 4 ) 0 0;
 	}
@@ -156,7 +156,7 @@
 		.wp-block {
 
 			h1 {
-				font-size: $font-size-semienourmos;
+				font-size: $font-size-large;
 			}
 
 			h2 {

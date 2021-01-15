@@ -116,7 +116,7 @@
 		margin: 0;
 		padding-top: ( $magic-number / 2 );
 		padding-bottom: ( $magic-number / 2 );
-		@include flex( $justifycontent: start )
+		@include flex( $justifycontent: start );
 		&:before {
 			content: '\e903';
 			color: $gray-light;
@@ -179,16 +179,16 @@
 			display: none;
 		}
 	}
-	a[href*="facebook"]:before {
+	a[href*="facebook.com"]:before {
 		content: "\e902";
 	}
-	a[href*="twitter"]:before {
+	a[href*="twitter.com"]:before {
 		content: "\e904";
 	}
-	a[href*="instagram"]:before {
+	a[href*="instagram.com"]:before {
 		content: "\e905";
 	}
-	a[href*="youtube"]:before {
+	a[href*="youtube.com"]:before {
 		content: "\e906";
 	}
 	a[href*="wa.me"]:before,
@@ -203,6 +203,7 @@
 // Entries default.
 @mixin entries-default() {
 	.entry-image-link {
+		margin-bottom: ( $magic-number / 2 );
 	}
 	.entry-title {
 		margin-top: 0;
@@ -386,7 +387,7 @@
 		display: inline-block;
 		list-style: none;
 		+ li {
-			margin-left: 5px;
+			margin-left: ( $gutter / 6 );
 		}
 	}
 }

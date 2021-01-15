@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.8
+ * @version 1.0.9
  */
 
 /**
@@ -88,7 +88,7 @@ function mg_secondary_queries_cpt( $post_type, $sub_title ) {
 
 							?>
 
-							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+							<a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-image-link"><?php the_post_thumbnail( 'large' ); ?></a>
 
 							<?php
 
@@ -165,7 +165,7 @@ function mg_secondary_queries_tax( $post_type, $post_taxonomy, $slug ) {
 
 							?>
 
-							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+							<a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-image-link"><?php the_post_thumbnail( 'large' ); ?></a>
 
 							<?php
 

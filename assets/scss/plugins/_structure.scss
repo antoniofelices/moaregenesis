@@ -9,15 +9,14 @@
 	padding-right: $gutter;
 	padding-left: $gutter;
 	> div {
-		padding-bottom: ( $magic-number / 4 );
-		padding-top: ( $magic-number / 4 );
+		min-height: ( $magic-number * 3 );
 		@extend %wrap;
 		@include flex ( $justifycontent: space-between, $alignitems: center );
 	}
 }
 
 // Site Inner.
-body:not(.builder) {
+body {
 	// Hide overflow-y to fullwidth blocks.
 	.site-container {
 		overflow: hidden;

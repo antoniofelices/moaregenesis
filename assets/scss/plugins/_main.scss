@@ -7,8 +7,7 @@
 // Main all.
 .breadcrumb {
 	font: $font-weight-normal $font-size-xs $font-family-sans-serif;
-	text-transform: uppercase;
-	@include margin-vertical();
+	margin-bottom: $magic-number;
 }
 
 .entry {
@@ -16,9 +15,8 @@
 	.entry-meta,
 	.post-meta {
 		font-size: $font-size-xs;
-		text-transform: uppercase;
-		margin-top: ( $magic-number * .9 );
-		margin-bottom: ( $magic-number * .9 );
+		margin-top: ( $magic-number / 2 );
+		margin-bottom: ( $magic-number / 2 );
 	}
 }
 

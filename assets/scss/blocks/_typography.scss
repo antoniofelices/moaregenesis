@@ -20,7 +20,7 @@
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-size: $font-size-enourmos;
+	font-size: $font-size-larger;
 	font-weight: $font-weight-bold;
 	margin: 0 ( $gutter / 4 ) 0 0;
 }

@@ -4,6 +4,13 @@
 ### Added
 - BrowserSync.
 
+## [1.0.9] - 2021-01-15
+### Added
+- Load custom fonts backend.
+- Reposition thumbnail image default templates.
+- Styles. Change urls social-menu mixin.
+- Some styles.
+
 ## [1.0.8] - 2020-12-01
 ### Added
 - Styles block gallery.

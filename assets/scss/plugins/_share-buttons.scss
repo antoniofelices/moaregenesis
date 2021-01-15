@@ -5,12 +5,13 @@
  */
 
 .mg-social-share {
-	.social {
-		@extend %list-inline;
-		a {
-			font-size: $font-size-xs;
-			@include button( $color: $gray );
-			padding: ( $magic-number / 4 );
-		}
+	ul {
+		@include social-menu();
+	}
+}
+
+.menu-social-container {
+	ul {
+		@include social-menu( $color: $link-color, $paddingy: ( $gutter / 4 ) );
 	}
 }
