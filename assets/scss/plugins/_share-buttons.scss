@@ -10,6 +10,8 @@
 	}
 }
 
+div[class*="menu-social"],
+nav[class*="menu-social"],
 .menu-social-container {
 	ul {
 		@include social-menu( $color: $link-color, $paddingy: ( $gutter / 4 ) );

@@ -32,10 +32,14 @@
 	}
 	.mg-sub-footer {
 		background-color: $bg-subfooter;
-		font-size: $font-size-xs !important;
+		color: $bg-subfooter-color;
 		@include borderBT( $color: $gray-dark );
 		section + section {
 			margin-top: ( $magic-number / 2 );
+		}
+		h3, h4, a, p {
+			color: $bg-subfooter-color;
+			font-size: $font-size-xs;
 		}
 		ul,
 		.menu {

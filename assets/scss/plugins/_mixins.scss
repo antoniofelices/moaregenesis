@@ -87,7 +87,18 @@
 }
 
 // Buttons
-@mixin button( $fontsize: $font-size-xs, $fontfamily: $font-family-sans-serif, $display: inline-block, $color: $body-color, $bgcolor: transparent, $width: auto, $bordercolor: $body-color, $padding: ( $magic-number / 2 ), $hovercolor: $white, $hoverbgcolor: $link-hover-color ) {
+@mixin button(
+	$fontsize: $font-size-xs,
+	$fontfamily: $font-family-sans-serif,
+	$display: inline-block,
+	$color: $body-color,
+	$bgcolor: transparent,
+	$width: auto,
+	$bordercolor: $body-color,
+	$padding: ( $magic-number / 2 ),
+	$hovercolor: $white,
+	$hoverbgcolor: $link-hover-color 
+	) {
 	font-size: $fontsize;
 	font-family: $fontfamily;
 	display: $display;

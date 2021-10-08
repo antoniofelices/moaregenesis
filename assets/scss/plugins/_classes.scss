@@ -25,6 +25,15 @@
 	line-height: $line-height-md;
 }
 
+// Lists
+.main-list {
+	@include main-list();
+}
+
+.main-menu {
+	@include main-menu();
+}
+
 // Images
 .img-full-height {
 	@include breakpoint( $responsive-menu-break ) {

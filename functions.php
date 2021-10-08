@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.9
+ * @version 1.0.10
  */
 
 // Start the engine.
@@ -42,6 +42,14 @@ function mg_theme_support() {
 	remove_theme_support( 'genesis-structural-wraps' );
 
 }
+
+/** 
+ * Enable the block-based widget editor
+ * 
+ * @since 1.0.10
+ */
+
+// add_filter( 'use_widgets_block_editor', '__return_true' );
 
 // Registers the responsive menus.
 if ( function_exists( 'genesis_register_responsive_menus' ) ) {

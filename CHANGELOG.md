@@ -3,6 +3,15 @@
 ## [Unreleased]
 ### Added
 - BrowserSync.
+- Add AMP support ¿? 
+
+## [1.0.10] - 2021-10-08
+### Added
+- Enable Block-Based Widget Editor.
+- Classes styling lists.
+
+### Remove
+- Blocks `margin-top` and `margin-bottom`.
 
 ## [1.0.9] - 2021-01-15
 ### Added
