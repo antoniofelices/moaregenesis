@@ -5,7 +5,7 @@
  */
 
 .site-header {
-	background-color: $bg-header;
+	background-color: $header-bg;
 	position: relative;
 	// Container
 	> div {
@@ -13,8 +13,12 @@
 	}
 	// Title section.
 	.title-area{
-		a{
+		a {
+			color: $header-color;
 			display: inline-block;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
 		}
 		.site-title {
 			margin: 0;
@@ -44,7 +48,7 @@
 		right: 0;
 		left: 0;
 		z-index: 999;
-		@include borderBB( $color: darken( $bg-header, 5% ) );
+		@include borderBB( $color: darken( $header-bg, 5% ) );
 		ul.genesis-nav-menu{
 			margin: 0;
 			padding: 0;
@@ -58,10 +62,11 @@
 					width: 100%;
 					border: none;
 					text-transform: uppercase;
-					background-color: $bg-header;
-					color: $body-color;
+					background-color: $header-bg;
+					color: $header-color;
 					&:hover, &:active, &:focus {
-						color: $link-hover-color;
+						color: $header-color;
+						text-decoration: none;
 					}
 				}
 				/* Submenus
@@ -100,7 +105,8 @@
 			}
 			.current-menu-item {
 				a {
-					color: $white;
+					color: $header-color;
+					@include borderBB();
 				}
 			}
 		}
@@ -149,7 +155,7 @@
 						a {
 							padding: ( $magic-number / 2 ) $gutter;
 							width: 100%;
-							background-color: $bg-header;
+							background-color: $header-bg;
 						}
 					}
 				}

@@ -25,7 +25,7 @@
 		line-height: $line-height-xs;
 	}
 	.has-huge-font-size {
-		font-size: $font-size-h1;
+		font-size: $font-size-h1 !important;
 		line-height: $line-height-xs;
 	}
 }
@@ -44,7 +44,7 @@
 			line-height: $line-height-xs;
 		}
 		.has-huge-font-size {
-			font-size: $font-size-huge;
+			font-size: $font-size-huge !important;
 			line-height: $line-height-xs;
 		}
 	}

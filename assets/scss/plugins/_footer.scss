@@ -5,16 +5,16 @@
  */
 
 .site-footer {
-	color: $bg-footer-color;
+	color: $footer-color;
 	overflow: hidden;
 	h3, h4, a {
-		color: $bg-footer-color;
+		color: $footer-color;
 	}
 	p {
 		margin-bottom: 0;
 	}
 	.mg-main-footer {
-		background-color: $bg-footer;
+		background-color: $footer-bg;
 		section + section {
 			margin-top: ( $magic-number * 2 );
 		}
@@ -31,14 +31,14 @@
 		}
 	}
 	.mg-sub-footer {
-		background-color: $bg-subfooter;
-		color: $bg-subfooter-color;
+		background-color: $subfooter-bg;
+		color: $subfooter-color;
 		@include borderBT( $color: $gray-dark );
 		section + section {
 			margin-top: ( $magic-number / 2 );
 		}
 		h3, h4, a, p {
-			color: $bg-subfooter-color;
+			color: $subfooter-color;
 			font-size: $font-size-xs;
 		}
 		ul,

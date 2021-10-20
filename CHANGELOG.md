@@ -5,6 +5,19 @@
 - BrowserSync.
 - Add AMP support ¿? 
 
+## [1.0.11] - 2021-10-20
+### Added
+- Change default layout.
+
+### Remove
+- `tpl_full-width-narrow.php` file.
+- `tpl_full-width-wrap.php` file.
+- Favicon file.
+
+### Changed
+- Margins Block Nesting Alignment `_margins.scss`.
+- Rename header and footer variables `_variables_scss`, `header_scss`, `_footer_scss`. 
+
 ## [1.0.10] - 2021-10-08
 ### Added
 - Enable Block-Based Widget Editor.

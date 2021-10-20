@@ -116,8 +116,9 @@ $grid-max-width-xl:         71.25rem !default; // 1140px
 $grid-max-width-xxl:        84.075rem !default; // 1345px
 
 // Header, footer.
-$bg-header:                 $gray-lighter !default;
-$bg-footer:                 $gray-darker !default;
-$bg-footer-color:           $white !default;
-$bg-subfooter:              $black !default;
-$bg-subfooter-color:        $white !default;
+$header-bg:                 $gray-lighter !default;
+$header-color:              $black !default;
+$footer-bg:                 $gray-lightest !default;
+$footer-color:              $black !default;
+$subfooter-bg:              $black !default;
+$subfooter-color:           $white !default;

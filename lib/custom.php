@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.10
+ * @version 1.0.11
  */
 
 /**
@@ -116,6 +116,46 @@ function mg_all_custom_footer() {
 	</footer>
 
 	<?php
+}
+
+/**
+ * Change layout default to full width.
+ * All.
+ *
+ * @since 1.0.11
+ */
+add_action( 'genesis_meta', 'mg_all_layout_default_full_width' );
+function mg_all_layout_default_full_width() {
+
+	// Force full width content layout.
+	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+
+}
+
+/**
+ * Add body class.
+ * All.
+ *
+ * @since 1.0.11
+ *
+ * @param array $classes Current classes.
+ * @return array $classes Updated class array.
+ */
+add_filter( 'body_class', 'mg_all_add_class_wrap_to_body_class' );
+function mg_all_add_class_wrap_to_body_class( $classes ) {
+
+	$classes[] = 'wrap-content';
+
+	if( is_singular() ) {
+
+		$classes[] = 'narrow';
+
+	}
+
+	return $classes;
+
 }
 
 /**

@@ -4,26 +4,30 @@
  * Related /blocks/_font-sizes-classes
  */
 
-.editor-styles-wrapper {
-	p.has-small-font-size {
-		font-size: $font-size-sm;
-	}
-	p.has-normal-font-size,
-	p.has-regular-font-size {
-		font-size: $font-size-base;
-	}
-	p.has-medium-font-size {
-		font-size: $font-size-md;
-	}
-	p.has-large-font-size {
-		font-size: $font-size-lg;
-	}
-	p.has-larger-font-size {
-		font-size: $font-size-h2 !important;
-		line-height: $line-height-md;
-	}
-}
-
 @include breakpoint( $responsive-menu-break ) {
-
+	.editor-styles-wrapper {
+		.has-smallest-font-size {
+			font-size: $font-size-xs !important;
+		}
+		.has-small-font-size {
+			font-size: $font-size-sm !important;
+		}
+		.has-normal-font-size,
+		.has-regular-font-size,
+		.has-medium-font-size {
+			font-size: $font-size-base !important;
+		}
+		.has-large-font-size {
+			font-size: $font-size-large !important;
+			line-height: $line-height-xs;
+		}
+		.has-larger-font-size {
+			font-size: $font-size-larger !important;
+			line-height: $line-height-xs;
+		}
+		.has-huge-font-size {
+			font-size: $font-size-huge !important;
+			line-height: $line-height-xs;
+		}
+	}
 }

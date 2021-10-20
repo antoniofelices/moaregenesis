@@ -9,7 +9,7 @@
  * @since 	1.0.2
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.10
+ * @version 1.0.11
  */
 
 add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
@@ -80,8 +80,14 @@ function mg_setup_theme_supported_features() {
 		array(
 			'name' => esc_attr__( 'larger', 'moaregenesis' ),
 			'shortName' => __( 'XL', 'moaregenesis' ),
-			'size' => 37,
+			'size' => 24,
 			'slug' => 'larger'
+		),
+		array(
+			'name' => esc_attr__( 'huge', 'moaregenesis' ),
+			'shortName' => __( 'XXL', 'moaregenesis' ),
+			'size' => 26,
+			'slug' => 'huge'
 		)
 	) );
 
