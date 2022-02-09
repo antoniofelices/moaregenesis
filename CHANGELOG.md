@@ -3,7 +3,28 @@
 ## [Unreleased]
 ### Added
 - BrowserSync.
-- Add AMP support ¿? 
+- Clean scss files.
+
+## [2.0.0] - 2022-02-09
+### Added
+- `theme.json` file.
+
+### Remove
+- `block-editor.php` file.
+- `_block-columns.scss` file.
+- `_block-cover.scss` file.
+- `_block-embed.scss` file.
+- `_block-group.scss` file.
+- `_block-media-text` file.
+- `_blocks/block-separator` file.
+- `_colors.scss` file.
+- `_font-sizes-classes.scss` file.
+- `_typography.scss` file.
+- blocks editor dir.
+
+### Changed
+- Grid to default flex system. Blocks columns, gallery.
+- Clean scss files.
 
 ## [1.0.11] - 2021-10-20
 ### Added

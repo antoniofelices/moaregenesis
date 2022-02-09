@@ -1,75 +1,13 @@
 /*
  *
  * Block Gallery.
- * Related /blocks-editor/_editor-block-gallery
  */
 
 .wp-block-gallery {
-	&.alignnone,
-	&.aligncenter,
-	&.alignwide {
-		margin-bottom: ( $magic-number * 2 );
-		margin-top: ( $magic-number * 2 );
-	}
 	&.alignleft {
-		margin: ( $magic-number / 4 ) ( $gutter * 2) $magic-number 0;
+		margin-right: $gutter;
 	}
 	&.alignright {
-		margin: ( $magic-number / 4 ) 0 $magic-number ( $gutter * 2);
-	}
-	&.alignfull {
-		margin-bottom: ( $magic-number * 3 );
-		margin-top: ( $magic-number * 3 );
-	}
-	// add
-	&.columns-1,
-	&.columns-2,
-	&.columns-3,
-	&.columns-4,
-	&.columns-5,
-	&.columns-6 {
-		.blocks-gallery-grid {
-			@include grid();
-			grid-template-rows: auto;
-			.blocks-gallery-item {
-				margin: 0;
-				width: 100%;
-			}
-		}
-	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-	.wp-block-gallery {
-		&.columns-1 {
-			.blocks-gallery-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-		&.columns-2 {
-			.blocks-gallery-grid {
-				grid-template-columns: repeat(2, 1fr [col-start]);
-			}
-		}
-		&.columns-3 {
-			.blocks-gallery-grid {
-				grid-template-columns: repeat(3, 1fr [col-start]);
-			}
-		}
-		&.columns-4 {
-			.blocks-gallery-grid {
-				grid-template-columns: repeat(4, 1fr [col-start]);
-			}
-		}
-		&.columns-5 {
-			.blocks-gallery-grid {
-				grid-template-columns: repeat(5, 1fr [col-start]);
-			}
-		}
-		&.columns-6 {
-			.blocks-gallery-grid {
-				grid-template-columns: repeat(6, 1fr [col-start]);
-			}
-		}
+		margin-left: $gutter;
 	}
 }

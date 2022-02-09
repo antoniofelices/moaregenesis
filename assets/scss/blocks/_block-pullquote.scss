@@ -1,7 +1,6 @@
 /*
  *
  * Block Pullquote.
- * Related /blocks-editor/_editor-block-pullquote
  */
 
 .wp-block-pullquote {
@@ -39,8 +38,10 @@
 	cite {
 		color: $gray-dark;
 		display: block;
+		font-size: $font-size-xs;
 		font-style: normal;
 		margin-top: ( $magic-number / 2 );
+		text-transform: capitalize;
 	}
 }
 
@@ -78,8 +79,4 @@
 	cite {
 		color: inherit;
 	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-
 }

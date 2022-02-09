@@ -5,7 +5,7 @@ Description: Moare basic theme. Built using SASS. Studio Moare use thistheme as 
 Author: antonio felices
 Author URI: https://studiomoare.com
 
-Version: 1.0.11
+Version: 2.0.0
 
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
@@ -16,7 +16,7 @@ License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Text Domain: moaregenesis
-Requires at least: 5.4
+Requires at least: 5.9
 Requires PHP: 5.6
 */
 

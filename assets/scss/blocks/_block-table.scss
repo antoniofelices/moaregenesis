@@ -1,14 +1,7 @@
 /*
  *
  * Block Table.
- * Related /blocks-editor/_editor-block-table
  */
-
-.wp-block-table {
-	/*
-	 * Styles from table.
-	 */
-}
 
 .wp-block-table.is-style-stripes {
 	table {
@@ -17,8 +10,4 @@
 	tbody tr:nth-child(odd) {
 		background: $gray-lighter;
 	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-
 }

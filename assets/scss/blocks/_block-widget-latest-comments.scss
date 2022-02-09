@@ -1,7 +1,6 @@
 /*
  *
  * Block Widget Latest Comments.
- * Related /blocks-editor/_editor-block-widget-latest-comments
  */
 
 .wp-block-latest-comments {
@@ -37,12 +36,4 @@
 			margin: initial;
 		}
 	}
-}
-
-
-
-
-
-@include breakpoint( $responsive-menu-break ) {
-
 }

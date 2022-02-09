@@ -1,7 +1,6 @@
 /*
  *
  * Block Shared Media.
- * Related /blocks-editor/_editor-block-shared-media
  */
 
 .wp-block-embed,
@@ -13,8 +12,4 @@
 		margin-top: ( $magic-number / 2 );
 		text-align: center;
 	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-
 }

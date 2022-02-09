@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.11
+ * @version 2.0.0
  */
 
 // Start the engine.
@@ -43,15 +43,36 @@ function mg_theme_support() {
 
 }
 
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @since 2.0.0
+ *
+ * @return void
+ */
+add_action( 'after_setup_theme', 'mg_setup_theme_supported_features' );
+function mg_setup_theme_supported_features() {
+
+	// Add support for other block styles.
+	// add_theme_support( 'wp-block-styles' );
+
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'assets/stylesheets/editor-style-block.css' );
+
+}
+
 /** 
  * Enable the block-based widget editor
  * 
  * @since 1.0.10
  */
-
 // add_filter( 'use_widgets_block_editor', '__return_true' );
 
-// Registers the responsive menus.
+/** 
+ * Registers the responsive menus.
+ * 
+ * @since 1.0.10
+ */
 if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 
 	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
@@ -60,9 +81,6 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 
 // Scripts.
 include_once( get_stylesheet_directory() . '/lib/scripts.php' );
-
-// Block editor.
-include_once( get_stylesheet_directory() . '/lib/block-editor.php' );
 
 // Adds helper functions.
 include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );

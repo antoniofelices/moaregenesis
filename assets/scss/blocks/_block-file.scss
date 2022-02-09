@@ -1,7 +1,6 @@
 /*
  *
  * Block File.
- * Related /blocks-editor/_editor-block-file
  */
 
 .wp-block-file {
@@ -12,8 +11,4 @@
 	.wp-block-file__button {
 		@include button();
 	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-
 }

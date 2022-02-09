@@ -1,0 +1,193 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": false,
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"color": {
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [],
+			"gradients": [],
+			"link": false,
+			"palette": [
+				{
+					"slug": "background",
+					"color": "#f1f1f1",
+					"name": "Background"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
+				},
+				{
+					"slug": "primary",
+					"color": "#ff0000",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#00ff00",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#0000ff",
+					"name": "Tertiary"
+				}
+			]
+		},
+		"custom": {
+			"typography": {
+				"adaptiveRatio": "0.8",
+				"lineHeight": {
+					"small": "1.1",
+					"normal": "1.5",
+					"large": "1.7"
+				},
+				"rootSize": "1rem",
+				"scale": "1.125"
+
+			},
+			"magicNumber": "1.5rem",
+			"gutter": "1.5rem"
+		},
+		"layout": {
+			"contentSize": "60vw",
+			"wideSize": "90vw"
+		},
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"units": [
+				"px",
+				"rem",
+				"vh",
+				"vw",
+				"%"
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fontStyle": false,
+			"fontWeight": true,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": true,
+			"dropCap": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "sans-serif",
+					"name": "Sans serif",
+					"slug": "sans-serif"
+				},
+				{
+					"fontFamily": "sans-serif",
+					"name": "Sans serif 2",
+					"slug": "sans-serif-2"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Extra small",
+					"size": "calc(var(--wp--preset--font-size--small) / var(--wp--custom--typography--scale))",
+					"slug": "extra-small"
+				},
+				{
+					"name": "Small",
+					"size": "calc(var(--wp--preset--font-size--normal) / var(--wp--custom--typography--scale))",
+					"slug": "small"
+				},
+				{
+					"name": "Normal",
+					"size": "var(--wp--custom--typography--root-size)",
+					"slug": "normal"
+				},
+				{
+					"name": "Large",
+					"size": "calc(var(--wp--preset--font-size--medium) * var(--wp--custom--typography--scale))",
+					"slug": "large"
+				},
+				{
+					"name": "X large",
+					"size": "calc(var(--wp--preset--font-size--large) * calc(var(--wp--custom--typography--scale)*2))",
+					"slug": "x-large"
+				},
+				{
+					"name": "Gigantic",
+					"size": "calc(var(--wp--preset--font-size--x-large) * var(--wp--custom--typography--scale))",
+					"slug": "gigantic"
+				}
+			]
+		},
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"textTransform": false,
+					"fontWeight": false
+				}
+			},
+			"core/button": {
+				"border": {
+					"radius": false
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--black)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--magic-number)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--sans-serif)",
+			"lineHeight": "var(--wp--custom--typography--line-height--normal)",
+			"fontSize": "var(--wp--preset--font-size--normal)"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--sans-serif-2)"
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"color": "var(--wp--preset--color--black)",
+					"radius": "0px",
+					"style": "solid",
+					"width": "1px"
+				},
+				"color": {
+					"background": "transparent",
+					"text": "var(--wp--preset--color--black)"
+				}
+			}
+		}
+	}
+}

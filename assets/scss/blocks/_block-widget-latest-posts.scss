@@ -1,7 +1,6 @@
 /*
  *
  * Block Widget Latest Posts.
- * Related /blocks-editor/_editor-block-widget-latest-posts
  */
 
 .wp-block-latest-posts:not(.is-grid) {
@@ -22,52 +21,10 @@
 			color: $gray;
 			font-size: $font-size-xs;
 		}
-		
 		.wp-block-latest-posts__post-excerpt {
 			font-size: $font-size-sm;
 			line-height: $line-height-md;
 			margin: ( $magic-number / 4 ) 0 $magic-number;
-		}
-	}
-}
-
-.wp-block-latest-posts.is-grid {
-	@include grid( $grid-gap-vertical: 0 );
-	grid-template-rows: auto;
-	&.columns-1,
-	&.columns-2,
-	&.columns-3,
-	&.columns-4,
-	&.columns-5,
-	&.columns-6 {
-		li {
-			width: 100%;
-		}
-	}
-}
-
-@include breakpoint( $responsive-menu-break ) {
-	.wp-block-latest-posts.is-grid {
-		&.columns-1 {
-			grid-template-columns: 1fr;
-		}
-		&.columns-2 {
-			grid-template-columns: repeat(2, 1fr [col-start]);
-		}
-		&.columns-3 {
-			grid-template-columns: repeat(3, 1fr [col-start]);
-		}
-		&.columns-4 {
-			grid-template-columns: repeat(4, 1fr [col-start]);
-		}
-		&.columns-5 {
-			grid-template-columns: repeat(5, 1fr [col-start]);
-		}
-		&.columns-6 {
-			grid-template-columns: repeat(6, 1fr [col-start]);
-		}
-		li {
-			margin: 0;
 		}
 	}
 }

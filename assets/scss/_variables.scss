@@ -26,13 +26,13 @@ $gutter:                    1.5rem !default;
 
 // Colors
 // Basics.
-$white:                     #fff !default;
-$black:                     #000 !default;
+$white:                     #ffffff !default;
+$black:                     #000000 !default;
 
 // Brand color.
-$brand-primary:             blue !default;
-$brand-secondary:           green !default;
-$brand-tertiary:            red !default;
+$brand-primary:             #ff0000 !default;
+$brand-secondary:           #00ff00 !default;
+$brand-tertiary:            #0000ff !default;
 
 // Grayscale.
 $gray:                      grayscale( $brand-primary ) !default;
