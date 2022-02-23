@@ -48,6 +48,21 @@
 					"slug": "tertiary",
 					"color": "#0000ff",
 					"name": "Tertiary"
+				},
+				{
+					"slug": "gray",
+					"color": "#535353",
+					"name": "Gray"
+				},
+				{
+					"slug": "gray-dark",
+					"color": "#2d2d2d",
+					"name": "Gray dark"
+				},
+				{
+					"slug": "gray-lighter",
+					"color": "#c6c6c6",
+					"name": "Gray lighter"
 				}
 			]
 		},
@@ -93,14 +108,19 @@
 			"dropCap": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "sans-serif",
+					"fontFamily": "\"Sans serif\" sans-serif",
 					"name": "Sans serif",
 					"slug": "sans-serif"
 				},
 				{
-					"fontFamily": "sans-serif",
+					"fontFamily": "\"Sans serif 2\" sans-serif",
 					"name": "Sans serif 2",
 					"slug": "sans-serif-2"
+				},
+				{
+					"fontFamily": "\"Serif\" serif",
+					"name": "Serif",
+					"slug": "serif"
 				}
 			],
 			"fontSizes": [
@@ -111,13 +131,13 @@
 				},
 				{
 					"name": "Small",
-					"size": "calc(var(--wp--preset--font-size--normal) / var(--wp--custom--typography--scale))",
+					"size": "calc(var(--wp--preset--font-size--medium) / var(--wp--custom--typography--scale))",
 					"slug": "small"
 				},
 				{
-					"name": "Normal",
+					"name": "Medium",
 					"size": "var(--wp--custom--typography--root-size)",
-					"slug": "normal"
+					"slug": "medium"
 				},
 				{
 					"name": "Large",
