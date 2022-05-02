@@ -6,7 +6,7 @@
 
 .entry-comments{
 	ol{
-		@extend %list-unstyled;
+		@include list-unstyled();
 	}
 	.comment-header {
 		margin-bottom: $magic-number;
@@ -19,8 +19,14 @@
 		float: left;
 		margin: 0 $gutter 0 0;
 	}
-	.says,
-	.comment-meta,
+	.says {
+		font-size: $font-size-sm;
+		margin: 0;
+	}
+	.comment-meta {
+		font-size: $font-size-sm;
+		margin: 0;
+	}
 	.comment-edit-link {
 		font-size: $font-size-sm;
 		margin: 0;
@@ -28,8 +34,10 @@
 	.comment-reply {
 		clear: both;
 	}
-	li.pingback,
-	li.comment > article {
+	.pingback {
+		margin-bottom: $magic-number;
+	}
+	.comment > article {
 		margin-bottom: $magic-number;
 	}
 	ul.children {

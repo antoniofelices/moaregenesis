@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 /**
@@ -21,7 +21,7 @@
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'mg_all_custom_header', 10 );
-function mg_all_custom_header(){
+function mg_all_custom_header() {
 
 	?>
 
@@ -119,22 +119,6 @@ function mg_all_custom_footer() {
 }
 
 /**
- * Change layout default to full width.
- * All.
- *
- * @since 1.0.11
- */
-add_action( 'genesis_meta', 'mg_all_layout_default_full_width' );
-function mg_all_layout_default_full_width() {
-
-	// Force full width content layout.
-	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-
-}
-
-/**
  * Add body class.
  * All.
  *
@@ -143,14 +127,12 @@ function mg_all_layout_default_full_width() {
  * @param array $classes Current classes.
  * @return array $classes Updated class array.
  */
-add_filter( 'body_class', 'mg_all_add_class_wrap_to_body_class' );
-function mg_all_add_class_wrap_to_body_class( $classes ) {
+add_filter( 'body_class', 'mg_archives_add_class_wrap_to_body_class' );
+function mg_archives_add_class_wrap_to_body_class( $classes ) {
 
-	$classes[] = 'wrap-content';
-
-	if( is_singular() ) {
-
-		$classes[] = 'narrow';
+	if( is_archive() ) {
+	
+		$classes[] = 'wrap-content';
 
 	}
 
@@ -169,6 +151,48 @@ function mg_all_remove_post_info() {
 
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
+}
+
+/**
+ * Add body class.
+ * Singulars.
+ *
+ * @since 2.0.1
+ *
+ * @param array $classes Current classes.
+ * @return array $classes Updated class array.
+ */
+add_filter( 'body_class', 'mg_singulars_add_class_wrap_to_body_class' );
+function mg_singulars_add_class_wrap_to_body_class( $classes ) {
+
+	if( is_singular() ) {
+
+		$classes[] = 'narrow-content';
+
+	}
+
+	return $classes;
+
+}
+
+/**
+ * Change layout default to full width.
+ * Singulars.
+ *
+ * @since 1.0.11
+ */
+add_action( 'genesis_meta', 'mg_singulars_layout_default_full_width' );
+function mg_singulars_layout_default_full_width() {
+
+	// remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+
+	if( is_singular() ) {
+
+		// Force full width content layout.
+		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+	}
 
 }
 

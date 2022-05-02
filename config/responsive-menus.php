@@ -7,7 +7,7 @@
  * @since   1.0.7
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 /**
@@ -15,8 +15,16 @@
  */
 return [
 	'script' => [
-		'menuClasses' => [
-			'others' => [ '.nav-primary' ],
+		'mainMenu'         => __( '<span class="screen-reader-text">Menu</span>' ),
+		'menuIconClass'    => '',
+		'menuClasses'      => [
+			// 'combine' => [
+			// 	'.nav-primary',
+			// 	'.nav-lang'
+			// ],
+			'others' => [
+				'.nav-primary'
+			],
 		],
 	],
 	'extras' => [

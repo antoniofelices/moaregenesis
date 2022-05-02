@@ -47,7 +47,7 @@
 
 // Moare featured content.
 .mb-featured-content {
-	.entry {
+	.secondary-entry {
 		.entry-title {
 			font-size: $font-size-h4;
 			font-weight: $font-weight-normal;
@@ -58,21 +58,26 @@
 			line-height: $line-height-md;
 		}
 	}
-	.container-grid {
-		@include breakpoint( md ){
+	@include breakpoint( md ) {
+		.container-grid {
 			@include grid();
 			grid-template-rows: auto;
 			grid-template-columns: repeat(2, 1fr [col]);
 		}
-		@include breakpoint( lg ){
-			@include grid();
-			grid-template-columns: repeat(3, 1fr [col]);
+		.secondary-entry {
+			margin-top: 0;
+			.entry-title {
+				font-size: $font-size-h2;
+			}
+			.entry-content {
+				font-size: $font-size-md;
+			}
 		}
 	}
-	.container {
-		.entry {
-			+ .entry {
-				margin-top: $magic-number;
+	@include breakpoint( $responsive-menu-break ) {
+		.secondary-entry {
+			.entry-title {
+				font-size: $font-size-large;
 			}
 		}
 	}

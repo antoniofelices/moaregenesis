@@ -4,8 +4,9 @@
  *
  */
 
+// General
 .clearfix {
-	@extend %clearfix;
+	@include clearfix();
 }
 
 .dontshow {
@@ -25,6 +26,12 @@
 	line-height: $line-height-md;
 }
 
+.sub-title {
+	font: $font-weight-bold $font-size-base $headings-font-family;
+	padding-bottom: ( $magic-number / 4 );
+	@include borderBB();
+}
+
 // Lists
 .main-list {
 	@include main-list();
@@ -32,6 +39,14 @@
 
 .main-menu {
 	@include main-menu();
+}
+
+.list-unstyled {
+	@include list-unstyled();
+}
+
+.list-inline {
+	@include list-inline();
 }
 
 // Images

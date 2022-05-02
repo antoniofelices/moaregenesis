@@ -5,7 +5,19 @@
  */
 
 // Archive/Author Box
-.archive-description,
+.archive-description {
+	margin-bottom: $magic-number;
+	padding-top: ( $magic-number / 2 );
+	padding-bottom: ( $magic-number / 2 );
+	@include borderBT();
+	@include borderBB();
+	h1, h2 {
+		font-size: $font-size-sm;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
 .author-box {
 	margin-bottom: $magic-number;
 	padding-top: ( $magic-number / 2 );
@@ -14,16 +26,9 @@
 	@include borderBB();
 	h1, h2 {
 		font-size: $font-size-sm;
-		text-transform: uppercase;
-		&:after {
-			content: '\25BA';
-			font-size: $font-size-base;
-			margin-left: ( $gutter / 2 );
-			vertical-align: middle;
-		}
 	}
 	p:last-child {
-	 	margin-bottom: 0;
+		margin-bottom: 0;
 	}
 }
 
@@ -38,13 +43,15 @@
 }
 
 // Author box
-.author-box {
-	font-size: $font-size-sm;
-	margin: $magic-number 0 ( $magic-number * 2 );
-	.avatar {
-		max-width: 70px;
-		@include breakpoint( sm ) {
-			max-width: 100%;
-		}
-	}
-}
+// .author-box {
+// 	font-size: $font-size-sm;
+// 	margin: $magic-number 0 ( $magic-number * 2 );
+// 	.avatar {
+// 		max-width: 70px;
+// 	}
+// 	@include breakpoint( sm ) {
+// 		.avatar {
+// 			max-width: 100%;
+// 		}
+// 	}
+// }

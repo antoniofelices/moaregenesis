@@ -9,7 +9,7 @@
  * @since 	1.0.1
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 /**
@@ -42,11 +42,11 @@ add_filter( 'body_class', 'mg_width_entry_class' );
 function mg_width_entry_class( $classes ) {
 
 	if ( is_post_type_archive() ) {
-		$classes[] = 'width-2-entries';
+		$classes[] = 'grid-entries width-5-entries';
 	}
 
 	if ( is_tax() ) {
-		$classes[] = 'width-3-entries';
+		$classes[] = 'width-entries width-3-entries';
 	}
 
 	return $classes;

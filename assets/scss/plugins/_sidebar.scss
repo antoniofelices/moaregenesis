@@ -31,17 +31,17 @@
 			line-height: $line-height-md;
 		}
 	}
-	.mb-featured-content,
-	.featured-content {
-		background-color: lighten( $gray-lightest, 5% );
-		padding: $magic-number;
-		.container-grid {
-			.entry-title {
-				font-size: $font-size-sm;
-			}
-			@include breakpoint( lg ){
-				grid-template-columns: repeat(2, 1fr [col]);
-			}
-		}
-	}
+	// .mb-featured-content,
+	// .featured-content {
+	// 	background-color: lighten( $gray-lightest, 5% );
+	// 	padding: $magic-number;
+	// 	.container-grid {
+	// 		.entry-title {
+	// 			font-size: $font-size-sm;
+	// 		}
+	// 		@include breakpoint( lg ){
+	// 			grid-template-columns: repeat(2, 1fr [col]);
+	// 		}
+	// 	}
+	// }
 }

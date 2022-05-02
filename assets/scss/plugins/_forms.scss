@@ -39,6 +39,15 @@ input[type="submit"],
 	@extend .main-button;
 }
 
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+legend,
+label {
+}
+
 // Search Form
 .genesis-nav-menu,
 .widget_search {

@@ -4,17 +4,6 @@
  *
  */
 
-// Site Header.
-.site-header {
-	padding-right: $gutter;
-	padding-left: $gutter;
-	> div {
-		min-height: ( $magic-number * 3 );
-		@extend %wrap;
-		@include flex ( $justifycontent: space-between, $alignitems: center );
-	}
-}
-
 // Hide overflow-y to fullwidth blocks.
 body {
 	.site-container {
@@ -27,36 +16,6 @@ body:not(.genesis-title-hidden) {
 	.site-inner {
 		padding-top: $magic-number;
 		padding-bottom: $magic-number;
-		@include breakpoint( lg ) {
-			padding-top: ( $magic-number * 2 );
-			padding-bottom: ( $magic-number * 2 );
-		}
-	}
-	main.content {
-		@include padding-horizontal();
-	}
-}
-
-
-// Genesis footer widgets.
-// This widget area is not inside footer. Is between site-inner and footer.
-.footer-widgets{
-	@include padding-vertical();
-	@include padding-horizontal();
-	@include breakpoint( lg ){
-		@include flex ( $justifycontent: space-between, $alignitems: baseline );
-		.footer-widgets-1,
-		.footer-widgets-2,
-		.footer-widgets-3 {
-			margin-left: 2.564102564102564%;
-			width: 31.623931623931625%;
-		}
-		.footer-widgets-1 {
-			margin-left: 0;
-		}
-	}
-	.widget {
-		margin-bottom: ( $magic-number * 2 );
 	}
 }
 
@@ -65,61 +24,62 @@ body:not(.genesis-title-hidden) {
 	.mg-main-footer {
 		padding-bottom: ( $magic-number * 3 );
 		padding-top: ( $magic-number * 3 );
-		@include padding-horizontal();
 	}
 	.mg-sub-footer {
 		padding-bottom: $magic-number;
 		padding-top: $magic-number;
-		@include padding-horizontal();
-	}
-	@include breakpoint( lg ) {
-		.mg-main-footer {
-			> .wrap {
-				@include flex ( $justifycontent: space-between, $alignitems: normal );
-			}
-		}
-		.mg-sub-footer {
-			> .wrap {
-				@include flex ( $justifycontent: space-between, $alignitems: center );
-			}
-		}
 	}
 }
 
 // Wrap.
 .wrap {
-	@extend %wrap;
+	@include wrap();
+}
+
+// Narrow.
+.narrow {
+	@include narrow();
 }
 
 // Full width.
-body.full-width-content {
-	.content-sidebar-wrap {
-		width: 100%;
-	}
-}
+// body.full-width-content {
+// 	.content-sidebar-wrap {
+// 		width: 100%;
+// 	}
+// }
 
 // Full width with wrap.
-body.full-width-content.wrap-content {
-	.content {
-		@extend %wrap;
+body.content-sidebar {
+	.content-sidebar-wrap {
+		@include wrap();
+	}
+}
+body.sidebar-content {
+	.content-sidebar-wrap {
+		@include wrap();
+	}
+}
+body.sidebar-content-sidebar {
+	.content-sidebar-wrap {
+		@include wrap();
+	}
+}
+body.wrap-content {
+	.content-sidebar-wrap {
+		@include wrap();
 	}
 }
 
 // Narrow.
-body.full-width-content.narrow {
+body.narrow-content {
 	.content-sidebar-wrap {
-		@include breakpoint( $responsive-menu-break ){
-			width: $grid-max-width-md;
-			margin: 0 auto;
-		}
+		@include narrow();
 	}
 }
 
 // Layouts entries.
-body.width-2-entries,
-body.width-3-entries {
+body.grid-entries {
 	.content {
-		@extend %wrap;
 		.archive-description {
 			grid-area: header;
 		}
@@ -129,50 +89,87 @@ body.width-3-entries {
 	}
 }
 
-// Layouts entries. Two width entry.
-body.width-2-entries {
+// Layouts entries. Three, Four, Five width entry.
+body.grid-entries {
 	.content {
-		@include breakpoint( md ){
-			@include grid();
-			grid-template-columns: 1fr 1fr;
+		@include grid();
+		grid-template-columns: repeat(2, 1fr [col-start]);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"header header"
+			"item item";
+	}
+}
+
+// 768px
+@include breakpoint( md ){
+
+	// Layouts entries. Two width entry.
+	body.width-2-entries {
+		.content {
+			@include grid( $grid-gap-horizontal: ( $magic-number * 2 ), $grid-gap-vertical: ( $magic-number * 2 ) );
+			grid-template-columns: repeat(2, 1fr [col-start]);
 			grid-template-rows: auto;
 			grid-template-areas:
 				"header header"
 				"item item";
 		}
 	}
+
 }
 
-// Layouts entries. Tree width entry.
-body.width-3-entries {
-	.content {
-		@include breakpoint( md ){
-			@include grid();
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto;
-			grid-template-areas:
-				"header header"
-				"item item";
+// 1200px
+@include breakpoint( $responsive-menu-break ) {
+
+	// Site Inner. 
+	body:not(.genesis-title-hidden) {
+		.site-inner {
+			padding-top: ( $magic-number * 2 );
+			padding-bottom: ( $magic-number * 2 );
 		}
-		@include breakpoint( lg ){
-			grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	// Narrow.
+	body.narrow-content {
+		.entry > .entry-content {
+			margin: 0 auto;
+		}
+	}
+
+	// Layouts entries. Tree width entry.
+	body.width-3-entries {
+		.content {
+			grid-template-columns: repeat(3, 1fr [col-start]);
 			grid-template-areas:
 				"header header header"
 				"item item item";
 		}
 	}
-}
 
-// Main - aside.
-@include breakpoint( lg ) {
+	// Layouts entries. Four width entry.
+	body.width-4-entries {
+		.content {
+			grid-template-columns: repeat(4, 1fr [col-start]);
+			grid-template-areas:
+				"header header header header"
+				"item item item item";
+		}
+	}
 
+	// Layouts entries. Five width entry.
+	body.width-5-entries {
+		.content {
+			grid-template-columns: repeat(5, 1fr [col-start]);
+			grid-template-areas:
+				"header header header header header"
+				"item item item item item";
+		}
+	}
+	
 	body.content-sidebar,
 	body.sidebar-content,
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
-			margin: 0 auto;
-			max-width: $grid-max-width-lg;
-			width: 100%;
 			main {
 				grid-area: main;
 				max-width: 100%;
@@ -190,10 +187,10 @@ body.width-3-entries {
 
 	body.content-sidebar {
 		.content-sidebar-wrap {
-			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 32% 32% ( $gutter * 3 ) 1fr;
+			@include grid( $grid-gap-vertical: 0, $grid-gap-horizontal: 0 );
+			grid-template-columns: 1fr 1fr ( $gutter * 3 ) ( $gutter * 14 );
 			grid-template-areas: "main main . sidebar-1";
-			main{
+			main {
 				padding-right: ( $gutter * 3 );
 				@include borderBR();
 			}
@@ -202,10 +199,10 @@ body.width-3-entries {
 
 	body.sidebar-content {
 		.content-sidebar-wrap {
-			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 1fr ( $gutter * 3 ) 32% 32%;
+			@include grid( $grid-gap-vertical: 0, $grid-gap-horizontal: 0 );
+			grid-template-columns: ( $gutter * 15 ) ( $gutter * 3 ) 1fr 1fr;
 			grid-template-areas: "sidebar-1 . main main";
-			main{
+			main {
 				padding-left: ( $gutter * 3 );
 				@include borderBL();
 			}
@@ -214,12 +211,12 @@ body.width-3-entries {
 
 	body.sidebar-content-sidebar {
 		.content-sidebar-wrap {
-			@include grid( $grid-gap-vertical: 0,  $grid-gap-horizontal: 0 );
-			grid-template-columns: 1fr ( $gutter * 2 ) 1fr 1fr ( $gutter * 2 ) 1fr;
+			@include grid( $grid-gap-vertical: 0, $grid-gap-horizontal: 0 );
+			grid-template-columns: ( $gutter * 10 ) $gutter 1fr 1fr $gutter ( $gutter * 10 );
 			grid-template-areas: "sidebar-1 . main main . sidebar-2";
-			main{
-				padding-right: ( $gutter * 2 );
-				padding-left: ( $gutter * 2 );
+			main {
+				padding-right: $gutter;
+				padding-left: $gutter;
 				@include borderBR();
 				@include borderBL();
 			}
@@ -228,82 +225,24 @@ body.width-3-entries {
 
 }
 
-@include breakpoint( xl ) {
-	body.content-sidebar,
-	body.sidebar-content,
-	body.sidebar-content-sidebar {
-		.content-sidebar-wrap {
-			max-width: $grid-max-width-xl;
-		}
-	}
-}
-
+// 1400px
 @include breakpoint( xxl ) {
-	body.content-sidebar,
-	body.sidebar-content,
-	body.sidebar-content-sidebar {
+
+	body.content-sidebar {
 		.content-sidebar-wrap {
-			max-width: $grid-max-width-xxl;
+			grid-template-columns: 1fr 1fr ( $gutter * 2 ) ( $gutter * 16 );
 		}
 	}
+
 }
 
-// Columns.
-@include breakpoint( lg ){
+// 1700px
+@include breakpoint( xxxl ) {
 
-	.row{
-		@include flex( $justifycontent: flex-start, $alignitems: flex-start );
-		flex-wrap: wrap;
-	}
-
-	.five-sixths,
-	.four-sixths,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fourths,
-	.three-sixths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		margin-left: 2.564102564102564%;
-	}
-
-	.one-half,
-	.three-sixths,
-	.two-fourths {
-		width: 48.717948717948715%;
-	}
-
-	.one-third,
-	.two-sixths {
-		width: 31.623931623931625%;
-	}
-
-	.four-sixths,
-	.two-thirds {
-		width: 65.81196581196582%;
-	}
-
-	.one-fourth {
-		width: 23.076923076923077%;
-	}
-
-	.three-fourths {
-		width: 74.35897435897436%;
-	}
-
-	.one-sixth {
-		width: 14.52991452991453%;
-	}
-
-	.five-sixths {
-		width: 82.90598290598291%;
-	}
-
-	.first {
-		margin-left: 0;
+	body.content-sidebar {
+		.content-sidebar-wrap {
+			grid-template-columns: 1fr 1fr ( $gutter * 3 ) ( $gutter * 20 );
+		}
 	}
 
 }

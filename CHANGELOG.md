@@ -3,7 +3,21 @@
 ## [Unreleased]
 ### Added
 - BrowserSync.
-- Clean scss files.
+- `modern-normalize` or `sanitize` ¿?
+
+## [2.0.1] - 2022-05-02
+### Added
+- `grid-entries` class.
+
+### Remove
+- Normalize css.
+
+### Changed
+- Clean selectors scss files.
+- Wrap to mixin.
+- Clearfix to mixin.
+- Lists to mixin.
+- Class `wrap-content` and `narrow-content`. 
 
 ## [2.0.0] - 2022-02-09
 ### Added

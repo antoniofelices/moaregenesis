@@ -7,10 +7,14 @@
 .site-header {
 	background-color: $header-bg;
 	position: relative;
+
 	// Container
 	> div {
-
+		min-height: ( $magic-number * 3 );
+		@include wrap();
+		@include flex ( $justifycontent: space-between, $alignitems: center );
 	}
+	
 	// Title section.
 	.title-area{
 		a {
@@ -24,142 +28,168 @@
 			margin: 0;
 		}
 	}
+
 	// Hamburger icon. Same level title-area and nav-primary.
 	.menu-toggle {
-		z-index: 1000;
-		@include borderB( $color: $body-color );
+		background-color: transparent;
+		border: none;
+		margin-right: ( $gutter / 4 );
+		padding: ( $gutter / 4 );
+		z-index: 99;
 		&:before {
+			content: url("../images/icon-menu.svg");
+		}
+		&.activated::before {
+			content: url("../images/icon-cross.svg");
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+
+	// Same #genesis-nav-primary ó .genesis-responsive-menu
+	.nav-primary{
+		background-color: $header-bg;
+		display: none;
+		height: calc(100vh - #{ ( $magic-number * 3 ) } );
+		position: absolute;
+		top: ( $magic-number * 3 );
+		right: 0;
+		left: 0;
+		z-index: 999;
+		@include borderBB( $color: darken( $header-bg, 5% ) );
+	}
+
+	// Menu List (ul element)
+	ul.genesis-nav-menu{
+		margin: 0;
+		padding: 0;
+	}
+
+	// Menu items.
+	.menu-item {
+		display: block;
+		position: relative;
+		a {
+			border: none;
+			color: $header-color;
+			display: block;
+			font: $font-weight-bold $font-size-xs $font-family-sans-serif;
+			padding: ( $magic-number / 2 ) $gutter;
+			text-transform: uppercase;
+			width: 100%;
+			&:hover, &:active, &:focus {
+				color: $header-color;
+				text-decoration: none;
+			}
+		}
+	}
+	.menu-item.contain-button {
+		a {
+			@include button( $color: $white, $bgcolor: transparent, $bordercolor: $white, $paddingx: ( $gutter / 2 ) );
+			line-height: .75;
+			width: 100%;
+		}
+	}
+	.current-menu-item {
+		a {
+			color: $header-color;
+			@include borderBB();
+		}
+	}
+
+	// Submenus
+	.sub-menu-toggle {
+		padding: ( $magic-number / 4 ) ( $magic-number / 2 );
+		position: absolute;
+		right: $gutter;
+		top: 0;
+		z-index: 100;
+		border-color: $gray;
+		&::before {
 			font-size: $font-size-base;
-			content: '\2630';
+			content: '\2228';
 			display: inline-block;
-			margin-right: ( $gutter / 2 );
-			vertical-align: bottom;
+			transform: rotate(0);
+			transition: transform .25s ease-in-out;
 		}
 		&.activated::before {
 			content: '\00D7';
 		}
 	}
-	// Same #genesis-nav-primary ó .genesis-responsive-menu
-	.nav-primary{
-		box-shadow: 0 10px 10px 1px rgba( $gray, 0.25 );
+	.sub-menu {
 		display: none;
-		position: absolute;
-		top: ( $magic-number * 3 ) + ( $magic-number / 2 );
-		right: 0;
-		left: 0;
-		z-index: 999;
-		@include borderBB( $color: darken( $header-bg, 5% ) );
-		ul.genesis-nav-menu{
-			margin: 0;
-			padding: 0;
-			.menu-item {
-				display: block;
-				position: relative;
-				a {
-					font: $font-weight-bold $font-size-xs $font-family-sans-serif;
-					padding: ( $magic-number / 2 ) $gutter;
-					display: block;
-					width: 100%;
-					border: none;
-					text-transform: uppercase;
-					background-color: $header-bg;
-					color: $header-color;
-					&:hover, &:active, &:focus {
-						color: $header-color;
-						text-decoration: none;
-					}
-				}
-				/* Submenus
-				 * Only if i have two or more level depth
-				 */
-				.sub-menu-toggle {
-					padding: ( $magic-number / 4 ) ( $magic-number / 2 );
-					position: absolute;
-					right: $gutter;
-					top: 0;
-					z-index: 100;
-					border-color: $gray;
-					&::before {
-						font-size: $font-size-base;
-						content: '\2228';
-						display: inline-block;
-						transform: rotate(0);
-						transition: transform .25s ease-in-out;
-					}
-					&.activated::before {
-						content: '\00D7';
-					}
-				}
-				.sub-menu {
-					display: none;
-					opacity: 1;
-					position: static;
-					width: 100%;
-					margin: 0;
-					padding: 0;
-					a {
-						word-wrap: break-word;
-					}
-				}
-				// End Submenus
-			}
-			.current-menu-item {
-				a {
-					color: $header-color;
-					@include borderBB();
-				}
-			}
+		opacity: 1;
+		position: static;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		a {
+			word-wrap: break-word;
 		}
 	}
 
-	// Desktop displays
-	@include breakpoint( $responsive-menu-break ) {
-		box-shadow: none;
+}
+
+// Desktop displays
+@include breakpoint( $responsive-menu-break ) {
+	
+	.site-header {
+		padding-right: 0;
+		padding-left: 0;
+
+		// Hamburger icon. Same level title-area and nav-primary.
 		.menu-toggle {
 			display: none;
 		}
+
+		// Same #genesis-nav-primary ó .genesis-responsive-menu
 		.nav-primary {
+			background-color: transparent;
 			border-bottom: none;
 			box-shadow: none;
 			display: block;
+			height: auto;
 			position: static;
 			width: auto;
-			ul.genesis-nav-menu {
-				.menu-item {
-					display: inline-block;
-					a {
-						display: inline;
-						background-color: transparent;
-						padding-right: 0;
-						padding-left: 0;
-					}
-					+.menu-item {
-						margin-left: $gutter;
-					}
-					// Submenus
-					.sub-menu-toggle {
-						display: none;
-					}
-					.sub-menu {
-						position: absolute;
-						left: 0;
-						width: 200px;
-						z-index: 999;
-						a,
-						.menu-item {
-							display: block;
-							+ .menu-item {
-								margin-left: 0;
-							}
-						}
-						a {
-							padding: ( $magic-number / 2 ) $gutter;
-							width: 100%;
-							background-color: $header-bg;
-						}
-					}
-				}
+		}
+
+		// Menu items.
+		.menu-item {
+			display: inline-block;
+			a {
+				display: inline;
+				padding-right: 0;
+				padding-left: 0;
+			}
+			+ .menu-item {
+				margin-left: $gutter;
 			}
 		}
+
+		// Submenus
+		.sub-menu-toggle {
+			display: none;
+		}
+		.sub-menu {
+			position: absolute;
+			left: 0;
+			width: 200px;
+			z-index: 999;
+			a,
+			.menu-item {
+				display: block;
+				+ .menu-item {
+					margin-left: 0;
+				}
+			}
+			a {
+				padding: ( $magic-number / 2 ) $gutter;
+				width: 100%;
+				background-color: $header-bg;
+			}
+		}
+
 	}
+
 }

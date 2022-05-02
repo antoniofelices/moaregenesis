@@ -90,26 +90,28 @@
 @mixin button(
 	$fontsize: $font-size-xs,
 	$fontfamily: $font-family-sans-serif,
+	$fontweight: $font-weight-normal,
 	$display: inline-block,
 	$color: $body-color,
 	$bgcolor: transparent,
 	$width: auto,
 	$bordercolor: $body-color,
-	$padding: ( $magic-number / 2 ),
+	$paddingx: $gutter,
+	$paddingy: ( $magic-number / 4 ),
 	$hovercolor: $white,
 	$hoverbgcolor: $link-hover-color 
 	) {
+	background-color: $bgcolor;
+	border-radius: 0;
+	color: $color;
+	display: $display;
 	font-size: $fontsize;
 	font-family: $fontfamily;
-	display: $display;
-	color: $color;
-	background-color: $bgcolor;
-	width: $width;
-	text-align: center;
-	text-transform: uppercase;
+	font-weight: $fontweight;
+	padding: $paddingy $paddingx;
 	transition: all .3s ease;
-	padding: $padding;
-	border-radius: 0;
+	text-align: center;
+	width: $width;
 	@include borderB( $color: $bordercolor );
 	&:hover, &:active, &:focus {
 		color: $hovercolor;
@@ -173,7 +175,7 @@
 }
 
 @mixin social-menu( $color: $gray, $fontsize: $font-size-lg, $paddingy: 0 ) {
-	@extend %list-inline;
+	@include list-inline();
 	a {
 		border-bottom: none;
 		color: $color;
@@ -215,7 +217,7 @@
 // Entries default.
 @mixin entries-default() {
 	.entry-image-link {
-		margin-bottom: ( $magic-number / 2 );
+		margin-bottom: $magic-number;
 	}
 	.entry-title {
 		margin-top: 0;
@@ -225,23 +227,27 @@
 		}
 	}
 	.entry-content {
-		@extend %clearfix;
+		@include clearfix();
+		p {
+			margin-bottom: 0;
+		}
 		.post-image {
 			margin-bottom: $magic-number;
 		}
 	}
 	.entry-footer {
-		@extend %clearfix;
+		@include clearfix();
 	}
 	+ .entry {
-		padding-top: $magic-number;
+		margin-top: ( $magic-number * 1.5 );
+		padding-top: ( $magic-number * 2 );
 		@include borderBT();
 	}
 	@include breakpoint( $responsive-menu-break ) {
 		padding-top: $magic-number;
 		padding-bottom: $magic-number;
 		+ .entry {
-			padding-top: ( $magic-number * 2 );
+			margin-top: 0;
 		}
 		.entry-content {
 			font-size: $font-size-md;
@@ -256,7 +262,7 @@
 @mixin entries-grid() {
 	overflow: hidden;
 	margin-bottom: ( $magic-number / 2 );
-	@extend %clearfix;
+	@include clearfix();
 	.entry-image-link {
 		display: block;
 		overflow: hidden;
@@ -315,6 +321,71 @@
 	transition: $properties $time;
 }
 
+// Clearfix
+@mixin clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Wrap
+@mixin wrap() {
+	@include padding-horizontal();
+	@include breakpoint( md ) {
+		margin: 0 auto;
+		max-width: $grid-max-width-md;
+		width: 100%;
+	}
+	@include breakpoint( lg ){
+		max-width: $grid-max-width-lg;
+	}
+	@include breakpoint( xl ){
+		max-width: $grid-max-width-xl;
+	}
+	@include breakpoint( xxl ){
+		max-width: $grid-max-width-xxl;
+	}
+}
+
+// Narrow
+@mixin narrow() {
+	padding: 0 $gutter;
+	@include breakpoint( $responsive-menu-break ){
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		width: ( $gutter * 30 );
+	}
+}
+
+// List unstyled.
+@mixin list-unstyled() {
+	margin-left: 0;
+	padding-left: 0;
+	li {
+		list-style: none;
+	}
+}
+
+// List inline.
+@mixin list-inline() {
+	margin: 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		list-style: none;
+		+ li {
+			margin-left: ( $gutter / 6 );
+		}
+	}
+}
+
 // Embeds responsive
 //
 // Credit: Nicolas Gallagher and SUIT CSS.
@@ -349,59 +420,6 @@
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
-}
-
-// Clearfix
-%clearfix {
-	*zoom: 1;
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
-
-// Wrap
-%wrap {
-	@include breakpoint( md ) {
-		margin: 0 auto;
-		max-width: $grid-max-width-md;
-		width: 100%;
-	}
-	@include breakpoint( lg ){
-		max-width: $grid-max-width-lg;
-	}
-	@include breakpoint( xl ){
-		max-width: $grid-max-width-xl;
-	}
-	@include breakpoint( xxl ){
-		max-width: $grid-max-width-xxl;
-	}
-}
-
-// List unstyled.
-%list-unstyled {
-	margin-left: 0;
-	padding-left: 0;
-	li {
-		list-style: none;
-	}
-}
-
-// List inline.
-%list-inline {
-	margin: 0;
-	padding: 0;
-	li {
-		display: inline-block;
-		list-style: none;
-		+ li {
-			margin-left: ( $gutter / 6 );
-		}
-	}
 }
 
 // Featured paragraph.

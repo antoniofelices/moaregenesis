@@ -17,7 +17,7 @@
 			"defaultPalette": false,
 			"duotone": [],
 			"gradients": [],
-			"link": false,
+			"link": true,
 			"palette": [
 				{
 					"slug": "background",
@@ -69,6 +69,10 @@
 		"custom": {
 			"typography": {
 				"adaptiveRatio": "0.8",
+				"fontWeight": {
+					"normal": "400",
+					"bold": "700"
+				},
 				"lineHeight": {
 					"small": "1.1",
 					"normal": "1.5",
@@ -82,8 +86,8 @@
 			"gutter": "1.5rem"
 		},
 		"layout": {
-			"contentSize": "60vw",
-			"wideSize": "90vw"
+			"contentSize": "50vw",
+			"wideSize": "60vw"
 		},
 		"spacing": {
 			"blockGap": true,
@@ -108,17 +112,17 @@
 			"dropCap": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Sans serif\" sans-serif",
+					"fontFamily": "\"Sans serif\", sans-serif",
 					"name": "Sans serif",
 					"slug": "sans-serif"
 				},
 				{
-					"fontFamily": "\"Sans serif 2\" sans-serif",
+					"fontFamily": "\"Sans serif 2\", sans-serif",
 					"name": "Sans serif 2",
 					"slug": "sans-serif-2"
 				},
 				{
-					"fontFamily": "\"Serif\" serif",
+					"fontFamily": "\"Serif\", serif",
 					"name": "Serif",
 					"slug": "serif"
 				}
@@ -146,12 +150,12 @@
 				},
 				{
 					"name": "X large",
-					"size": "calc(var(--wp--preset--font-size--large) * calc(var(--wp--custom--typography--scale)*2))",
+					"size": "clamp(1.602rem, 2.027rem, 5vw)",
 					"slug": "x-large"
 				},
 				{
 					"name": "Gigantic",
-					"size": "calc(var(--wp--preset--font-size--x-large) * var(--wp--custom--typography--scale))",
+					"size": "clamp(2.027rem, 4.11rem, 10vw)",
 					"slug": "gigantic"
 				}
 			]
@@ -191,7 +195,23 @@
 			},
 			"h1": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--sans-serif-2)"
+					"fontSize": "var(--wp--preset--font-size--gigantic)",
+					"lineHeight": "var(--wp--custom--typography--line-height--small)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"lineHeight": "var(--wp--custom--typography--line-height--small)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"lineHeight": "var(--wp--custom--typography--line-height--small)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"lineHeight": "var(--wp--custom--typography--line-height--small)"
 				}
 			}
 		},

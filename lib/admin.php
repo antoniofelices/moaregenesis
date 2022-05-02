@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 /**
@@ -20,10 +20,10 @@
  */
 // genesis_unregister_layout( 'full-width-content' );
 // genesis_unregister_layout( 'content-sidebar' );
-// genesis_unregister_layout( 'sidebar-content' );
-// genesis_unregister_layout( 'content-sidebar-sidebar' );
-// genesis_unregister_layout( 'sidebar-sidebar-content' );
-// genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 /**
  * Genesis: remove metaboxes.

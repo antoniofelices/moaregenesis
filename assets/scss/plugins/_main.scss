@@ -12,7 +12,11 @@
 
 .entry {
 	text-rendering: optimizeLegibility;
-	.entry-meta,
+	.entry-meta {
+		font-size: $font-size-xs;
+		margin-top: ( $magic-number / 2 );
+		margin-bottom: ( $magic-number / 2 );
+	}
 	.post-meta {
 		font-size: $font-size-xs;
 		margin-top: ( $magic-number / 2 );
@@ -21,46 +25,86 @@
 }
 
 // Main archives and search results.
-body.blog,
-body.date,
-body.category,
-body.tag,
-body.search,
-body.search-results,
+body.blog {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
+body.date {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
+body.category {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
+body.tag {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
+body.search {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
+body.search-results {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-default();
+	}
+}
 body.author {
 	.archive-title {
 		margin: 0;
 	}
-	.content {
-		.entry {
-			@include entries-default();
-		}
+	.entry {
+		@include entries-default();
 	}
 }
 
 // Main archives grid.
-body.width-2-entries,
+body.width-2-entries {
+	.archive-title {
+		margin: 0;
+	}
+	.entry {
+		@include entries-grid();
+	}
+}
 body.width-3-entries {
 	.archive-title {
 		margin: 0;
 	}
-	.content {
-		.entry {
-			@include entries-grid();
-		}
+	.entry {
+		@include entries-grid();
 	}
 }
 
 // Main singles and pages.
-body.page:not(.home),
-body.single {
+body.page {
 	.content {
 		margin-bottom: $magic-number;
-		> .entry {
-			.entry-content {
-				@extend %clearfix;
-			}
-		}
+		@include clearfix();
 	}
 	h1.entry-title {
 		@include border-after();
@@ -69,7 +113,7 @@ body.single {
 		clear: both;
 		margin-top: $magic-number;
 	}
-	@include breakpoint( lg ) {
+	@include breakpoint( $responsive-menu-break ) {
 		.content {
 			> .entry {
 				font-size: $font-size-h4;
@@ -80,12 +124,44 @@ body.single {
 		}
 		.after-entry-widget-area {
 			margin-top: ( $magic-number * 2 );
-			.mb-featured-content {
-				.container {
-					@include grid();
-					grid-template-columns: repeat( 3, 1fr [col] );
-				}
+			// .mb-featured-content {
+			// 	.container {
+			// 		@include grid();
+			// 		grid-template-columns: repeat( 3, 1fr [col] );
+			// 	}
+			// }
+		}
+	}
+}
+body.single {
+	.content {
+		margin-bottom: $magic-number;
+		@include clearfix();
+	}
+	h1.entry-title {
+		@include border-after();
+	}
+	.after-entry-widget-area {
+		clear: both;
+		margin-top: $magic-number;
+	}
+	@include breakpoint( $responsive-menu-break ) {
+		.content {
+			> .entry {
+				font-size: $font-size-h4;
 			}
+		}
+		h1.entry-title {
+			margin-top: 0;
+		}
+		.after-entry-widget-area {
+			margin-top: ( $magic-number * 2 );
+			// .mb-featured-content {
+			// 	.container {
+			// 		@include grid();
+			// 		grid-template-columns: repeat( 3, 1fr [col] );
+			// 	}
+			// }
 		}
 	}
 }

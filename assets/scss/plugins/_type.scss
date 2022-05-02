@@ -7,6 +7,8 @@
 
 // Typography
 a {
+	color: $link-color;
+	text-decoration: $link-decoration;
 	&:hover, &:active, &:focus {
 		color: $link-hover-color;
 		text-decoration: $link-hover-decoration;
@@ -49,15 +51,12 @@ h4,
 h5,
 h6 {
 	color: $headings-color;
-	font-family: $headings-font-family;
-	font-weight: $headings-font-weight;
-	line-height: $headings-line-height;
 	@include margin-vertical( $magic-number, ( $magic-number / 2 ) );
 }
 
-h1 {
-	font-size: $font-size-h1;
-}
+// h1 {
+// 	font-size: $font-size-h1;
+// }
 
 h2 {
 	font-size: $font-size-h2;
@@ -80,9 +79,9 @@ h6 {
 }
 
 @include breakpoint ( $responsive-menu-break ) {
-	h1 {
-		font-size: $font-size-larger;
-	}
+	// h1 {
+	// 	font-size: $font-size-larger;
+	// }
 
 	h2 {
 		font-size: $font-size-h1;
