@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 /**
@@ -76,42 +76,14 @@ function mg_all_custom_footer() {
 
 	<footer class="site-footer">
 		<div class="mg-main-footer">
-			<div class="wrap">
-				<?php
+			<?php
 
-				genesis_widget_area( 'footer', array(
-					'before' => '',
-					'after' => '',
-				) );
+			genesis_widget_area( 'footer', array(
+				'before' => '',
+				'after' => '',
+			) );
 
-				?>
-			</div>
-		</div>
-		<div class="mg-sub-footer">
-			<div class="wrap">
-				<?php
-
-				genesis_widget_area( 'subfooter', array(
-					'before' => '',
-					'after' => '',
-				) );
-
-				// Site navbar
-				if ( ! genesis_nav_menu_supported( 'subfooter' ) ){
-
-					return;
-
-				} else {
-
-					genesis_nav_menu( array(
-						'theme_location' => 'subfooter',
-						'menu_class'     => 'menu genesis-nav-menu menu-subfooter',
-					) );
-
-				}
-
-				?>
-			</div>
+			?>
 		</div>
 	</footer>
 
@@ -119,8 +91,38 @@ function mg_all_custom_footer() {
 }
 
 /**
- * Add body class.
+ * Remove post-meta.
  * All.
+ *
+ * @since 	1.0.0
+ */
+// add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
+function mg_all_remove_post_info() {
+
+	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
+}
+
+/**
+ * Change layout default to full width.
+ * All.
+ *
+ * @since 2.0.2
+ */
+add_action( 'genesis_meta', 'mg_all_layout_default_full_width' );
+function mg_all_layout_default_full_width() {
+
+	// Force full width content layout.
+	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+
+}
+
+/**
+ * Add body class.
+ * Archives.
  *
  * @since 1.0.11
  *
@@ -137,20 +139,6 @@ function mg_archives_add_class_wrap_to_body_class( $classes ) {
 	}
 
 	return $classes;
-
-}
-
-/**
- * Remove post-meta.
- * All.
- *
- * @since 	1.0.0
- */
-// add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
-function mg_all_remove_post_info() {
-
-	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 }
 
@@ -173,26 +161,6 @@ function mg_singulars_add_class_wrap_to_body_class( $classes ) {
 	}
 
 	return $classes;
-
-}
-
-/**
- * Change layout default to full width.
- * Singulars.
- *
- * @since 1.0.11
- */
-add_action( 'genesis_meta', 'mg_singulars_layout_default_full_width' );
-function mg_singulars_layout_default_full_width() {
-
-	// remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-
-	if( is_singular() ) {
-
-		// Force full width content layout.
-		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-	}
 
 }
 
@@ -227,7 +195,13 @@ function mg_pre_get_posts_cpts_and_tax( $query ){
 add_action( 'genesis_before_entry', 'mg_archive_default_reposition_thumbnail_image' );
 function mg_archive_default_reposition_thumbnail_image() {
 
-	if ( is_author() || is_category() || is_date() || is_tag() || is_home() || is_search() ) {
+	if ( 
+		is_author() || 
+		is_category() || 
+		is_date() || 
+		is_tag() || 
+		is_home() || 
+		is_search() ) {
 
 		// Reposition image
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );

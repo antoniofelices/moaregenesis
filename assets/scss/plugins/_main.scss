@@ -14,13 +14,13 @@
 	text-rendering: optimizeLegibility;
 	.entry-meta {
 		font-size: $font-size-xs;
-		margin-top: ( $magic-number / 2 );
-		margin-bottom: ( $magic-number / 2 );
+		margin-top: calc($magic-number / 2);
+		margin-bottom: calc($magic-number / 2);
 	}
 	.post-meta {
 		font-size: $font-size-xs;
-		margin-top: ( $magic-number / 2 );
-		margin-bottom: ( $magic-number / 2 );
+		margin-top: calc($magic-number / 2);
+		margin-bottom: calc($magic-number / 2);
 	}
 }
 
@@ -83,15 +83,7 @@ body.author {
 }
 
 // Main archives grid.
-body.width-2-entries {
-	.archive-title {
-		margin: 0;
-	}
-	.entry {
-		@include entries-grid();
-	}
-}
-body.width-3-entries {
+body.grid-entries {
 	.archive-title {
 		margin: 0;
 	}
@@ -124,12 +116,6 @@ body.page {
 		}
 		.after-entry-widget-area {
 			margin-top: ( $magic-number * 2 );
-			// .mb-featured-content {
-			// 	.container {
-			// 		@include grid();
-			// 		grid-template-columns: repeat( 3, 1fr [col] );
-			// 	}
-			// }
 		}
 	}
 }
@@ -156,12 +142,6 @@ body.single {
 		}
 		.after-entry-widget-area {
 			margin-top: ( $magic-number * 2 );
-			// .mb-featured-content {
-			// 	.container {
-			// 		@include grid();
-			// 		grid-template-columns: repeat( 3, 1fr [col] );
-			// 	}
-			// }
 		}
 	}
 }

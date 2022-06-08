@@ -20,7 +20,7 @@
 			list-style: none;
 		}
 		li + li {
-			margin-left: ( $gutter / 4 );
+			margin-left: calc($gutter / 4);
 		}
 	}
 	a{
@@ -28,7 +28,7 @@
 		color: $body-color;
 		font-size: $font-size-xs;
 		display: block;
-		padding: ( $magic-number / 2 ) ( $magic-number / 2 );
+		padding: calc($magic-number / 2) calc($magic-number / 2);
 		&:hover, &:active, &:focus {
 			background-color: $link-hover-color;
 			color: $white;

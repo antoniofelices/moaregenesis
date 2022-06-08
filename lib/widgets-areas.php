@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 // Unregister widget areas.
@@ -25,10 +25,4 @@ genesis_register_widget_area( array(
 	'id'          => 'footer',
 	'name'        => __( 'Footer', 'moaregenesis' ),
 	'description' => __( 'Widget area to footer section.', 'moaregenesis' ),
-) );
-
-genesis_register_widget_area( array(
-	'id'          => 'subfooter',
-	'name'        => __( 'Sub Footer', 'moaregenesis' ),
-	'description' => __( 'Widget area to sub footer section.', 'moaregenesis' ),
 ) );

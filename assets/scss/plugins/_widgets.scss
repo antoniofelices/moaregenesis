@@ -14,8 +14,8 @@
 
 .widget-title {
 	font-size: $font-size-xs;
-	margin-bottom: ( $magic-number / 2 );
-	padding-bottom: ( $magic-number / 2 );
+	margin-bottom: calc($magic-number / 2);
+	padding-bottom: calc($magic-number / 2);
 	text-transform: uppercase;
 	@include borderBB();
 }
@@ -51,7 +51,7 @@
 		.entry-title {
 			font-size: $font-size-h4;
 			font-weight: $font-weight-normal;
-			margin: ( $magic-number / 2 ) 0;
+			margin: calc($magic-number / 2) 0;
 		}
 		.entry-content {
 			font-size: $font-size-sm;

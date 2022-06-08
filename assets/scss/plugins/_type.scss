@@ -51,7 +51,7 @@ h4,
 h5,
 h6 {
 	color: $headings-color;
-	@include margin-vertical( $magic-number, ( $magic-number / 2 ) );
+	@include margin-vertical( $magic-number, calc($magic-number / 2) );
 }
 
 // h1 {

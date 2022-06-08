@@ -9,7 +9,7 @@
  * @since 	1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 // Start the engine.
@@ -66,7 +66,7 @@ function mg_setup_theme_supported_features() {
  * 
  * @since 1.0.10
  */
-// add_filter( 'use_widgets_block_editor', '__return_true' );
+add_filter( 'use_widgets_block_editor', '__return_true' );
 
 /** 
  * Registers the responsive menus.
@@ -105,6 +105,9 @@ include_once( get_stylesheet_directory() . '/lib/grid.php' );
 
 // Admin.
 include_once( get_stylesheet_directory() . '/lib/admin.php' );
+
+// Patterns.
+include_once( get_stylesheet_directory() . '/lib/patterns.php' );
 
 // Custom functions.
 include_once( get_stylesheet_directory() . '/lib/custom-functions.php' );

@@ -39,7 +39,7 @@ img.centered,
 
 img.alignnone,
 .alignnone {
-	margin-bottom: ( $magic-number / 2 );
+	margin-bottom: calc($magic-number / 2);
 }
 
 a.alignleft,
@@ -126,7 +126,7 @@ img.alignright,
 .gallery img {
 	height: auto;
 	width: auto;
-	padding: ( $gutter / 2 );
+	padding: calc($gutter / 2);
 	@include borderB();
 }
 

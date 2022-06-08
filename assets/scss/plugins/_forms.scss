@@ -10,7 +10,7 @@ textarea {
 	background-color: $white;
 	border-radius: 0;
 	width: 100%;
-	padding: ( $magic-number / 2 );
+	padding: calc($magic-number / 2);
 	@include borderB( $color: $gray-lighter );
 }
 

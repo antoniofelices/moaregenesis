@@ -80,13 +80,12 @@
 				},
 				"rootSize": "1rem",
 				"scale": "1.125"
-
 			},
 			"magicNumber": "1.5rem",
 			"gutter": "1.5rem"
 		},
 		"layout": {
-			"contentSize": "50vw",
+			"contentSize": "40vw",
 			"wideSize": "60vw"
 		},
 		"spacing": {
@@ -106,7 +105,7 @@
 			"fontStyle": false,
 			"fontWeight": true,
 			"letterSpacing": false,
-			"lineHeight": false,
+			"lineHeight": true,
 			"textDecoration": false,
 			"textTransform": true,
 			"dropCap": false,

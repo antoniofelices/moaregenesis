@@ -8,14 +8,14 @@
 		margin-top: 0;
 	}
 	li {
-		margin-top: ( $magic-number / 2 );
+		margin-top: calc($magic-number / 2);
 	}
 }
 
 .wp-block-latest-posts {
 	li {
 		margin-top: $magic-number;
-		padding-top: ( $magic-number / 2 );
+		padding-top: calc($magic-number / 2);
 		@include borderBT();
 		.wp-block-latest-posts__post-date {
 			color: $gray;
@@ -24,7 +24,7 @@
 		.wp-block-latest-posts__post-excerpt {
 			font-size: $font-size-sm;
 			line-height: $line-height-md;
-			margin: ( $magic-number / 4 ) 0 $magic-number;
+			margin: calc($magic-number / 4) 0 $magic-number;
 		}
 	}
 }

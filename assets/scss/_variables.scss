@@ -90,13 +90,13 @@ $font-size-h4:              1.266rem !default;
 $font-size-h5:              1.125rem !default;
 $font-size-h6:              1rem !default;
 
-$headings-margin-bottom:    ( $magic-number / 2 ) !default;
+$headings-margin-bottom:    calc($magic-number / 2) !default;
 $headings-font-family:      $font-family-sans-serif !default;
 $headings-font-weight:      $font-weight-normal !default;
 $headings-line-height:      $line-height-xs !default;
 $headings-color:            $body-color !default;
 
-// TODO. Deprecated, remove.
+// TODO: Remove. Deprecated.
 $font-size-enourmos:        $font-size-larger !default;
 $font-size-semienourmos:    $font-size-large !default;
 
@@ -125,7 +125,3 @@ $grid-max-width-xxxl:       calc(100vw - #{ ( $gutter * 8 ) } ) !default;
 // Header, footer.
 $header-bg:                 $gray-lighter !default;
 $header-color:              $black !default;
-$footer-bg:                 $gray-lightest !default;
-$footer-color:              $black !default;
-$subfooter-bg:              $black !default;
-$subfooter-color:           $white !default;

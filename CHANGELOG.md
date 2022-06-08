@@ -5,9 +5,27 @@
 - BrowserSync.
 - `modern-normalize` or `sanitize` ¿?
 
+## [2.0.2] - 2022-06-08
+### Added
+- Gulp.
+- Some patterns.
+- `patterns` file.
+
+### Remove
+- Grunt.
+- Sub footer Widget area.
+- Sass variables footer and subfooter.
+
+### Changed
+- Grunt to Gulp.
+- Division on sass. All ( x / x ) to cacl( x / x )
+
+### Fixed
+- Class grid-entries on `grid` file.
+
 ## [2.0.1] - 2022-05-02
 ### Added
-- `grid-entries` class.
+- Change default layout. All full width no sidebar.
 
 ### Remove
 - Normalize css.

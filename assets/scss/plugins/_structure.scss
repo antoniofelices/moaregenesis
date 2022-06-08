@@ -19,18 +19,6 @@ body:not(.genesis-title-hidden) {
 	}
 }
 
-// Site Footer.
-.site-footer {
-	.mg-main-footer {
-		padding-bottom: ( $magic-number * 3 );
-		padding-top: ( $magic-number * 3 );
-	}
-	.mg-sub-footer {
-		padding-bottom: $magic-number;
-		padding-top: $magic-number;
-	}
-}
-
 // Wrap.
 .wrap {
 	@include wrap();

@@ -40,7 +40,7 @@
 		display: block;
 		font-size: $font-size-xs;
 		font-style: normal;
-		margin-top: ( $magic-number / 2 );
+		margin-top: calc($magic-number / 2);
 		text-transform: capitalize;
 	}
 }
