@@ -77,7 +77,7 @@
 }
 
 // Gutters
-@mixin padding-horizontal( $right: $gutter, $left: $gutter ) {
+@mixin padding-horizontal( $right: calc($gutter / 2), $left: calc($gutter / 2) ) {
 	padding-right: $right;
 	padding-left: $left;
 	@include breakpoint( $responsive-menu-break ) {
@@ -88,18 +88,18 @@
 
 // Buttons
 @mixin button(
-	$fontsize: $font-size-xs,
-	$fontfamily: $font-family-sans-serif,
-	$fontweight: $font-weight-normal,
-	$display: inline-block,
-	$color: $body-color,
 	$bgcolor: transparent,
-	$width: auto,
 	$bordercolor: $body-color,
+	$color: $body-color,
+	$display: inline-block,
+	$fontfamily: $font-family-sans-serif,
+	$fontsize: $font-size-xs,
+	$fontweight: $font-weight-normal,
+	$hovercolor: $white,
+	$hoverbgcolor: $link-hover-color,
 	$paddingx: $gutter,
 	$paddingy: calc($magic-number / 4),
-	$hovercolor: $white,
-	$hoverbgcolor: $link-hover-color 
+	$width: auto
 	) {
 	background-color: $bgcolor;
 	border-radius: 0;
@@ -114,9 +114,9 @@
 	width: $width;
 	@include borderB( $color: $bordercolor );
 	&:hover, &:active, &:focus {
-		color: $hovercolor;
 		background-color: $hoverbgcolor;
 		border-color: darken( $hoverbgcolor, 10% );
+		color: $hovercolor;
 		text-decoration: none;
 	}
 }
@@ -354,11 +354,10 @@
 
 // Narrow
 @mixin narrow() {
-	padding: 0 $gutter;
+	@include padding-horizontal();
 	@include breakpoint( $responsive-menu-break ){
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0;
 		width: ( $gutter * 30 );
 	}
 }
