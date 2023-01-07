@@ -6,14 +6,15 @@
  */
 
 // Typography
-a {
-	color: $link-color;
-	text-decoration: $link-decoration;
-	&:hover, &:active, &:focus {
-		color: $link-hover-color;
-		text-decoration: $link-hover-decoration;
-	}
-}
+// If need border bottom, have to add styles here.
+// a {
+// 	color: $link-color;
+// 	text-decoration: $link-decoration;
+// 	&:hover, &:active, &:focus {
+// 		color: $link-hover-color;
+// 		text-decoration: $link-hover-decoration;
+// 	}
+// }
 
 b,
 strong {

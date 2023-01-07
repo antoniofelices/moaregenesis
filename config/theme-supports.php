@@ -6,10 +6,10 @@
  *
  * @package moaregenesis
  * @author  Antonio
- * @since 	1.0.7
+ * @since   1.0.7
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 return [

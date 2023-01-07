@@ -60,10 +60,10 @@
 // Vertical rhythms
 @mixin padding-vertical( $top: $magic-number, $bottom: $magic-number ) {
 	padding-top: $top;
-	padding-bottom:  $bottom;
+	padding-bottom: $bottom;
 	@include breakpoint( lg ) {
-		padding-top: ( $top * 2 );
-		padding-bottom: ( $bottom * 2 );
+		padding-top: calc($top * 2);
+		padding-bottom: calc($bottom * 2);
 	}
 }
 
@@ -71,8 +71,8 @@
 	margin-top: $top;
 	margin-bottom: $bottom;
 	@include breakpoint( lg ) {
-		margin-top: ( $top * 2 );
-		margin-bottom: ( $bottom * 2 );
+		margin-top: calc($top * 2);
+		margin-bottom: calc($bottom * 2);
 	}
 }
 
@@ -132,7 +132,7 @@
 		padding-bottom: calc($magic-number / 2);
 		@include flex( $justifycontent: start );
 		&:before {
-			content: '\e903';
+			content: url("../images/arrow-right.svg");
 			color: $gray-light;
 			font: normal $font-size-base $font-family-icons;
 			line-height: $line-height-xs;
@@ -281,6 +281,10 @@
 		}
 	}
 	.entry-content {
+		font-size: $font-size-sm;
+		p {
+			border-bottom: 0;
+		}
 	}
 	.entry-footer {
 	}
@@ -337,7 +341,8 @@
 @mixin wrap() {
 	@include padding-horizontal();
 	@include breakpoint( md ) {
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 		max-width: $grid-max-width-md;
 		width: 100%;
 	}
@@ -349,6 +354,9 @@
 	}
 	@include breakpoint( xxl ){
 		max-width: $grid-max-width-xxl;
+	}
+	@include breakpoint( xxxl ){
+		max-width: $grid-max-width-xxxl;
 	}
 }
 

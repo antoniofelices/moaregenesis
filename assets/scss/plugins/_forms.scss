@@ -64,3 +64,16 @@ label {
 		right: 0;
 	}
 }
+
+.search-form {
+	position: relative;
+	input[type="search"] {
+		padding-right: 6rem;
+	}
+	input[type="submit"] {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+}

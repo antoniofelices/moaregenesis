@@ -6,17 +6,17 @@
  *
  * @package moaregenesis
  * @author  Antonio
- * @since 	1.0.0
+ * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 /**
  * Header: reposition primary menu navigation, add widget area
  * All.
  *
- * @since 	1.0.0
+ * @since 1.0.0
  */
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -64,7 +64,7 @@ function mg_all_custom_header() {
  * Custom Footer.
  * All.
  *
- * @since 	1.0.0
+ * @since 1.0.0
  */
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
@@ -94,7 +94,7 @@ function mg_all_custom_footer() {
  * Remove post-meta.
  * All.
  *
- * @since 	1.0.0
+ * @since 1.0.0
  */
 // add_action ( 'genesis_before_loop', 'mg_all_remove_post_info' );
 function mg_all_remove_post_info() {
@@ -145,16 +145,17 @@ function mg_archives_add_class_wrap_to_body_class( $classes ) {
 /**
  * Add body class.
  * Singulars.
+ * Error page.
  *
  * @since 2.0.1
  *
  * @param array $classes Current classes.
  * @return array $classes Updated class array.
  */
-add_filter( 'body_class', 'mg_singulars_add_class_wrap_to_body_class' );
-function mg_singulars_add_class_wrap_to_body_class( $classes ) {
+add_filter( 'body_class', 'mg_singulars_error_page_add_class_narrow_content_to_body_class' );
+function mg_singulars_error_page_add_class_narrow_content_to_body_class( $classes ) {
 
-	if( is_singular() ) {
+	if( is_singular() || is_404() ) {
 
 		$classes[] = 'narrow-content';
 
@@ -168,20 +169,20 @@ function mg_singulars_add_class_wrap_to_body_class( $classes ) {
  * Load all items.
  * Archives: cpts and tax.
  *
- * @since 	1.0.4
+ * @since 1.0.4
  */
 add_action( 'pre_get_posts', 'mg_pre_get_posts_cpts_and_tax' );
 function mg_pre_get_posts_cpts_and_tax( $query ){
 
-		if ( $query->is_main_query() && !is_admin() ) {
+	if ( $query->is_main_query() && !is_admin() ) {
 
-			if ( $query->is_tax() || $query->is_post_type_archive() ) {
+		if ( $query->is_tax() || $query->is_post_type_archive() ) {
 
-				$query->set( 'posts_per_page', 99 );
-
-			}
+			$query->set( 'posts_per_page', 99 );
 
 		}
+
+	}
 
 }
 
@@ -190,18 +191,21 @@ function mg_pre_get_posts_cpts_and_tax( $query ){
  * Archives: default templates.
  * Have to put here, not at archive.php
  * 
- * @since 	1.0.0
+ * @since 1.0.0
  */
-add_action( 'genesis_before_entry', 'mg_archive_default_reposition_thumbnail_image' );
-function mg_archive_default_reposition_thumbnail_image() {
+add_action( 'genesis_before_entry', 'mg_archives_reposition_thumbnail_image' );
+function mg_archives_reposition_thumbnail_image() {
 
-	if ( 
-		is_author() || 
-		is_category() || 
-		is_date() || 
-		is_tag() || 
-		is_home() || 
-		is_search() ) {
+	if (
+		is_author() ||
+		is_category() ||
+		is_date() ||
+		is_home() ||
+		is_tag() ||
+		is_post_type_archive() ||
+		is_tax() ||
+		is_search()
+	) {
 
 		// Reposition image
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );

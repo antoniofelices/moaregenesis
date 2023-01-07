@@ -10,9 +10,9 @@
 
 	// Container
 	> div {
-		min-height: ( $magic-number * 3 );
+		min-height: calc($magic-number * 3);
 		@include wrap();
-		@include flex ( $justifycontent: space-between, $alignitems: center );
+		@include flex( $justifycontent: space-between, $alignitems: center );
 	}
 	
 	// Title section.
@@ -22,6 +22,9 @@
 			display: inline-block;
 			&:hover, &:active, &:focus {
 				text-decoration: none;
+			}
+			&:focus {
+				outline: none;
 			}
 		}
 		.site-title {
@@ -33,8 +36,8 @@
 	.menu-toggle {
 		background-color: transparent;
 		border: none;
-		margin-right: calc($gutter / 4);
-		padding: calc($gutter / 4);
+		// margin-right: calc($gutter / 4);
+		// padding: calc($gutter / 4);
 		z-index: 99;
 		&:before {
 			content: url("../images/icon-menu.svg");
@@ -53,7 +56,7 @@
 		display: none;
 		height: calc(100vh - #{ ( $magic-number * 3 ) } );
 		position: absolute;
-		top: ( $magic-number * 3 );
+		top: calc($magic-number * 3);
 		right: 0;
 		left: 0;
 		z-index: 999;
@@ -75,12 +78,15 @@
 			color: $header-color;
 			display: block;
 			font: $font-weight-bold $font-size-xs $font-family-sans-serif;
-			padding: calc($magic-number / 2) $gutter;
+			padding: calc($magic-number / 2);
 			text-transform: uppercase;
 			width: 100%;
 			&:hover, &:active, &:focus {
 				color: $header-color;
 				text-decoration: none;
+			}
+			&:focus {
+				outline: none;
 			}
 		}
 	}
@@ -100,12 +106,12 @@
 
 	// Submenus
 	.sub-menu-toggle {
+		border-color: transparent;
 		padding: calc($magic-number / 4) calc($magic-number / 2);
 		position: absolute;
 		right: $gutter;
 		top: 0;
 		z-index: 100;
-		border-color: $gray;
 		&::before {
 			font-size: $font-size-base;
 			content: '\2228';

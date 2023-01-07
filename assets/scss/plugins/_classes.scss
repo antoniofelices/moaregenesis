@@ -13,13 +13,6 @@
 	@extend %dontshow;
 }
 
-.contains-image {
-	display: block;
-	&:hover, &:active, &:focus {
-		border: none;
-	}
-}
-
 // Typography
 .lead {
 	font: $font-weight-normal $font-size-lg $font-family-base;
@@ -30,6 +23,14 @@
 	font: $font-weight-bold $font-size-base $headings-font-family;
 	padding-bottom: calc($magic-number / 4);
 	@include borderBB();
+}
+
+.font-family-sans-serif {
+	font-family: $font-family-sans-serif;
+}
+
+.font-family-serif {
+	font-family: $font-family-serif;
 }
 
 // Lists
@@ -50,6 +51,13 @@
 }
 
 // Images
+.contains-image {
+	display: block;
+	&:hover, &:active, &:focus {
+		border: none;
+	}
+}
+
 .img-full-height {
 	@include breakpoint( $responsive-menu-break ) {
 		img {

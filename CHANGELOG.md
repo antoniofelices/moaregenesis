@@ -5,6 +5,26 @@
 - BrowserSync.
 - `modern-normalize` or `sanitize` ¿?
 
+## [2.0.3] - 2023-01-07
+### Added
+- Patterns dir.
+- Load custom fonts from local fonts dir.
+- `archive.php` file.
+
+### Remove
+- `appearance.php` file.
+- `customize.php` file.
+- `helper-functions.php` file.
+- `output.php` file.
+- Load fonts from google fonts.
+
+### Changed
+- Patterns now on dir patterns, as a single file.
+
+### Fixed
+- Tabs.
+- Grid styles.
+
 ## [2.0.2] - 2022-06-08
 ### Added
 - Gulp.

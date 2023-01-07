@@ -6,17 +6,17 @@
  *
  * @package moaregenesis
  * @author  Antonio
- * @since 	1.0.1
+ * @since   1.0.1
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 /**
  * Force full width layout.
  * Archives: post type archives, custom taxonomies.
  *
- * @since 	1.0.1
+ * @since 1.0.1
  */
 add_action( 'genesis_meta', 'mg_full_width_layout_archives' );
 function mg_full_width_layout_archives() {

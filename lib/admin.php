@@ -6,17 +6,17 @@
  *
  * @package moaregenesis
  * @author  Antonio
- * @since 	1.0.0
+ * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 /**
  * Genesis: remove layouts.
  * All.
  *
- * @since 	1.0.6
+ * @since 1.0.6
  */
 // genesis_unregister_layout( 'full-width-content' );
 // genesis_unregister_layout( 'content-sidebar' );
@@ -29,7 +29,7 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
  * Genesis: remove metaboxes.
  * Pages and post.
  *
- * @since 	1.0.6
+ * @since 1.0.6
  */
 add_action( 'admin_menu' , 'mg_remove_genesis_metaboxes' );
 function mg_remove_genesis_metaboxes() {

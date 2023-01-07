@@ -6,10 +6,10 @@
  *
  * @package moaregenesis
  * @author  Antonio
- * @since 	1.0.0
+ * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 // Start the engine.
@@ -81,15 +81,6 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 
 // Scripts.
 include_once( get_stylesheet_directory() . '/lib/scripts.php' );
-
-// Adds helper functions.
-include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
-
-// Adds image upload and color select to Customizer.
-include_once( get_stylesheet_directory() . '/lib/customize.php' );
-
-// Includes Customizer CSS.
-include_once( get_stylesheet_directory() . '/lib/output.php' );
 
 // Custom fields.
 include_once( get_stylesheet_directory() . '/lib/custom-fields.php' );

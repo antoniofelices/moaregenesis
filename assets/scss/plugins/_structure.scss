@@ -66,16 +66,19 @@ body.narrow-content {
 }
 
 // Layouts entries.
-body.grid-entries {
-	.content {
-		.archive-description {
-			grid-area: header;
-		}
-		.item {
-			grid-area: item;
-		}
-	}
-}
+// If have archive description or breadcrumb, have to uncomment:
+// - This
+// - grid-template-areas
+// body.grid-entries {
+// 	.content {
+// 		.archive-description {
+// 			grid-area: header;
+// 		}
+// 		.breadcrumb {
+// 			grid-area: breadcrumb;
+// 		}
+// 	}
+// }
 
 // Layouts entries. Three, Four, Five width entry.
 body.grid-entries {
@@ -83,9 +86,9 @@ body.grid-entries {
 		@include grid();
 		grid-template-columns: repeat(2, 1fr [col-start]);
 		grid-template-rows: auto;
-		grid-template-areas:
-			"header header"
-			"item item";
+		// grid-template-areas:
+		// 	"header header"
+		// 	"breadcrumb breadcrumb";
 	}
 }
 
@@ -98,9 +101,9 @@ body.grid-entries {
 			@include grid( $grid-gap-horizontal: ( $magic-number * 2 ), $grid-gap-vertical: ( $magic-number * 2 ) );
 			grid-template-columns: repeat(2, 1fr [col-start]);
 			grid-template-rows: auto;
-			grid-template-areas:
-				"header header"
-				"item item";
+			// grid-template-areas:
+			// 	"header header"
+			// 	"breadcrumb breadcrumb";
 		}
 	}
 
@@ -128,9 +131,9 @@ body.grid-entries {
 	body.width-3-entries {
 		.content {
 			grid-template-columns: repeat(3, 1fr [col-start]);
-			grid-template-areas:
-				"header header header"
-				"item item item";
+			// grid-template-areas:
+			// 	"header header header"
+			// 	"breadcrumb breadcrumb breadcrumb";
 		}
 	}
 
@@ -138,9 +141,9 @@ body.grid-entries {
 	body.width-4-entries {
 		.content {
 			grid-template-columns: repeat(4, 1fr [col-start]);
-			grid-template-areas:
-				"header header header header"
-				"item item item item";
+			// grid-template-areas:
+			// 	"header header header header"
+			// 	"breadcrumb breadcrumb breadcrumb breadcrumb";
 		}
 	}
 
@@ -148,9 +151,9 @@ body.grid-entries {
 	body.width-5-entries {
 		.content {
 			grid-template-columns: repeat(5, 1fr [col-start]);
-			grid-template-areas:
-				"header header header header header"
-				"item item item item item";
+			// grid-template-areas:
+			// 	"header header header header header"
+			// 	"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb";
 		}
 	}
 	
