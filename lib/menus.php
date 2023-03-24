@@ -9,7 +9,7 @@
  * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 // Add wrap to links.

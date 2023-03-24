@@ -5,6 +5,14 @@
 - BrowserSync.
 - `modern-normalize` or `sanitize` ¿?
 
+## [2.0.4] - 2023-03-24
+### Remove
+- Styles from scss files.
+- `_fonts.scss` file.
+
+### Changed
+- Styles `theme.json`.
+
 ## [2.0.3] - 2023-01-07
 ### Added
 - Patterns dir.
@@ -55,7 +63,7 @@
 - Wrap to mixin.
 - Clearfix to mixin.
 - Lists to mixin.
-- Class `wrap-content` and `narrow-content`. 
+- Class `wrap-content` and `narrow-content`.
 
 ## [2.0.0] - 2022-02-09
 ### Added
@@ -89,7 +97,7 @@
 
 ### Changed
 - Margins Block Nesting Alignment `_margins.scss`.
-- Rename header and footer variables `_variables_scss`, `header_scss`, `_footer_scss`. 
+- Rename header and footer variables `_variables_scss`, `header_scss`, `_footer_scss`.
 
 ## [1.0.10] - 2021-10-08
 ### Added

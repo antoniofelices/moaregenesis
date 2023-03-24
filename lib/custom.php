@@ -9,7 +9,7 @@
  * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 /**
@@ -132,8 +132,8 @@ function mg_all_layout_default_full_width() {
 add_filter( 'body_class', 'mg_archives_add_class_wrap_to_body_class' );
 function mg_archives_add_class_wrap_to_body_class( $classes ) {
 
-	if( is_archive() ) {
-	
+	if ( is_archive() ) {
+
 		$classes[] = 'wrap-content';
 
 	}
@@ -155,7 +155,7 @@ function mg_archives_add_class_wrap_to_body_class( $classes ) {
 add_filter( 'body_class', 'mg_singulars_error_page_add_class_narrow_content_to_body_class' );
 function mg_singulars_error_page_add_class_narrow_content_to_body_class( $classes ) {
 
-	if( is_singular() || is_404() ) {
+	if ( is_singular() || is_404() ) {
 
 		$classes[] = 'narrow-content';
 
@@ -190,7 +190,7 @@ function mg_pre_get_posts_cpts_and_tax( $query ){
  * Reposition thumbnail image.
  * Archives: default templates.
  * Have to put here, not at archive.php
- * 
+ *
  * @since 1.0.0
  */
 add_action( 'genesis_before_entry', 'mg_archives_reposition_thumbnail_image' );

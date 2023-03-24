@@ -6,8 +6,8 @@
  * Keywords: Sub Footer 00
  */
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}},"backgroundColor":"black","className":"mg-pattern-sub-footer-00 "} -->
-<div class="wp-block-group alignfull mg-pattern-sub-footer-00 has-black-background-color has-background" style="padding-top:1.5rem;padding-bottom:1.5rem"><!-- wp:columns {"className":"mb-0 wrap"} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}}},"backgroundColor":"black","className":"mg-pattern-sub-footer-00 "} -->
+<div class="wp-block-group alignfull mg-pattern-sub-footer-00 has-black-background-color has-background" style="padding-top:1rem;padding-bottom:1rem"><!-- wp:columns {"className":"mb-0 wrap"} -->
 <div class="wp-block-columns mb-0 wrap"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:list {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","className":"font-sans-serif list-inline my-0 ","fontSize":"small"} -->
 <ul class="font-sans-serif list-inline my-0 has-white-color has-text-color has-link-color has-small-font-size"><!-- wp:list-item -->

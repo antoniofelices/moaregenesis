@@ -4,10 +4,6 @@
  */
 
 .wp-block-file {
-	@include flex( $justifycontent: space-between, $alignitems: center );
-	a:not(.wp-block-file__button):not(:last-child) {
-		margin-right: ( $gutter * 3 );
-	}
 	.wp-block-file__button {
 		@include button();
 	}

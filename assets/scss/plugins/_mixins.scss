@@ -366,7 +366,17 @@
 	@include breakpoint( $responsive-menu-break ){
 		margin-left: auto;
 		margin-right: auto;
-		width: ( $gutter * 30 );
+		width: calc($gutter * 45);
+	}
+}
+
+// Narrow with out margin
+@mixin narrow-without-margins() {
+	@include breakpoint( md ){
+		max-width: calc($gutter * 45);
+	}
+	@include breakpoint( $responsive-menu-break ){
+		max-width: calc($gutter * 60);
 	}
 }
 

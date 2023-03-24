@@ -21,8 +21,8 @@
 // Header, footer
 
 // Rithms
-$magic-number:              1.5rem !default;
-$gutter:                    1.5rem !default;
+$magic-number:              1rem !default;
+$gutter:                    1rem !default;
 
 // Colors
 // Basics.
@@ -70,9 +70,10 @@ $font-weight-bold:          700 !default;
 $font-weight-base:          $font-weight-normal !default;
 
 $line-height-base:          1.5 !default;
-$line-height-lg:            1.77 !default;
+$line-height-lg:            1.7 !default;
 $line-height-md:            1.35 !default;
-$line-height-xs:            1.1 !default;
+$line-height-sm:            1.1 !default;
+$line-height-xs:            1 !default;
 
 $font-size-base:            1rem !default;
 $font-size-lg:              1.424rem !default;

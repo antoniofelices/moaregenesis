@@ -9,7 +9,7 @@
  * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 // Start the engine.
@@ -61,22 +61,22 @@ function mg_setup_theme_supported_features() {
 
 }
 
-/** 
+/**
  * Enable the block-based widget editor
- * 
+ *
  * @since 1.0.10
  */
 add_filter( 'use_widgets_block_editor', '__return_true' );
 
-/** 
+/**
  * Registers the responsive menus.
- * 
+ *
  * @since 1.0.10
  */
 if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 
 	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
-	
+
 }
 
 // Scripts.

@@ -11,7 +11,7 @@ body {
 	}
 }
 
-// Site Inner. 
+// Site Inner.
 body:not(.genesis-title-hidden) {
 	.site-inner {
 		padding-top: $magic-number;
@@ -27,6 +27,11 @@ body:not(.genesis-title-hidden) {
 // Narrow.
 .narrow {
 	@include narrow();
+}
+
+// Narrow without margins.
+.narrow-without-margins {
+	@include narrow-without-margins();
 }
 
 // Full width.
@@ -112,7 +117,7 @@ body.grid-entries {
 // 1200px
 @include breakpoint( $responsive-menu-break ) {
 
-	// Site Inner. 
+	// Site Inner.
 	body:not(.genesis-title-hidden) {
 		.site-inner {
 			padding-top: ( $magic-number * 2 );
@@ -156,7 +161,7 @@ body.grid-entries {
 			// 	"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb";
 		}
 	}
-	
+
 	body.content-sidebar,
 	body.sidebar-content,
 	body.sidebar-content-sidebar {

@@ -9,7 +9,7 @@
  * @since   1.0.0
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 // Enqueue Scripts and Styles.
@@ -17,8 +17,8 @@ add_action( 'wp_enqueue_scripts', 'mg_enqueue_scripts_styles' );
 function mg_enqueue_scripts_styles() {
 
 	wp_enqueue_style(
-		'mainstyles', 
-		get_stylesheet_directory_uri() . "/assets/stylesheets/main.css", 
+		'mainstyles',
+		get_stylesheet_directory_uri() . "/assets/stylesheets/main.css",
 		[],
 		genesis_get_theme_version()
 	);

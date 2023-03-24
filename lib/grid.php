@@ -9,7 +9,7 @@
  * @since   1.0.1
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 /**
@@ -21,7 +21,7 @@
 add_action( 'genesis_meta', 'mg_full_width_layout_archives' );
 function mg_full_width_layout_archives() {
 
-	if( is_post_type_archive() || is_tax() ){
+	if ( is_post_type_archive() || is_tax() ) {
 
 		add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
