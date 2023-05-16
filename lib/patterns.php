@@ -9,7 +9,7 @@
  * @since   2.0.2
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 1.0.11
+ * @version 2.0.5
  */
 
 add_action( 'init', 'mg_register_block_categories' );

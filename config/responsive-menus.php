@@ -7,7 +7,7 @@
  * @since   1.0.7
  * @license GPL-2.0+
  * @link    http://studiomoare.com/
- * @version 2.0.4
+ * @version 2.0.5
  */
 
 /**

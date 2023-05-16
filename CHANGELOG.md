@@ -5,6 +5,20 @@
 - BrowserSync.
 - `modern-normalize` or `sanitize` ¿?
 
+## [2.0.5] - 2023-05-16
+### Remove
+- `_block-audio.scss` file.
+- `_block-pullquote.scss` file.
+- `_block-quote.scss` file.
+- `_block-search.scss` file.
+- `_block-shared-media.scss` file.
+- `_block-widget-latest-posts.scss` file.
+
+### Changed
+- Add styles to `theme.json`.
+- Add negative margin styles.
+- Remove styles.
+
 ## [2.0.4] - 2023-03-24
 ### Remove
 - Styles from scss files.

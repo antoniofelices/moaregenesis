@@ -32,3 +32,32 @@ figure {
 	margin-left: 0;
 	max-width: 100%;
 }
+
+summary {
+	@include borderBT();
+	&::marker {
+		content: '';
+	}
+	&:focus {
+		outline: none;
+	}
+	h2, h3, h4 {
+		font-size: var(--wp--custom--typography--root-size);
+		margin-top: var(--wp--custom--magic-number);
+		margin-bottom: var(--wp--custom--magic-number);
+		@include flex( $justifycontent: space-between );
+		&:after {
+			content: '+';
+		}
+	}
+}
+
+details[open] {
+	summary {
+		h2, h3, h4 {
+			&:after {
+				content: '-';
+			}
+		}
+	}
+}

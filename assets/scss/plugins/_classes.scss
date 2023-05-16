@@ -134,3 +134,24 @@
 	padding-bottom: 0 !important;
 	padding-top: 0 !important;
 }
+
+.mn {
+	position: relative;
+	z-index: 99;
+}
+
+.mnt-1 {
+	margin-top: -($magic-number) !important;
+}
+
+.mnt-2 {
+	margin-top: -(calc($magic-number * 2)) !important;
+}
+
+.mnt-3 {
+	margin-top: -(calc($magic-number * 3)) !important;
+}
+
+.mnt-4 {
+	margin-top: -(calc($magic-number * 4)) !important;
+}

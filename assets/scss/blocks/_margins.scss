@@ -8,9 +8,6 @@
 	margin-right: calc(50% - 50vw);
 	width: 100vw;
 	max-width: 100vw;
-	img {
-		width: 100vw !important;
-	}
 }
 
 @include breakpoint( $responsive-menu-break ) {
