@@ -14,6 +14,6 @@ div[class*="menu-social"],
 nav[class*="menu-social"],
 .menu-social-container {
 	ul {
-		@include social-menu( $color: $link-color, $paddingy: calc($gutter / 4) );
+		@include social-menu( $color: var(--wp--preset--color--link-color), $paddingy: calc($gutter / 4) );
 	}
 }

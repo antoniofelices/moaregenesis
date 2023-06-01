@@ -15,14 +15,14 @@
  */
 .wp-block-latest-comments__comment-date {
 	color: $gray;
-	font-size: $font-size-xs;
+	font-size: var(--wp--preset--font-size--extra-small);
 }
 
 /*
  * Excerpt.
  */
 .wp-block-latest-comments__comment-excerpt p {
-	font-size: $font-size-xs;
+	font-size: var(--wp--preset--font-size--extra-small);
 	line-height: inherit;
 	margin: inherit;
 }

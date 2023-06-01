@@ -5,6 +5,13 @@
 - BrowserSync.
 - `modern-normalize` or `sanitize` ¿?
 
+## [2.0.6] - 2023-06-01
+### Added
+- CSS variables.
+
+### Changed
+- Sass variables to CSS variables.
+
 ## [2.0.5] - 2023-05-16
 ### Remove
 - `_block-audio.scss` file.
@@ -60,7 +67,7 @@
 
 ### Changed
 - Grunt to Gulp.
-- Division on sass. All ( x / x ) to cacl( x / x )
+- Division on sass. All ( x / x ) to calc( x / x )
 
 ### Fixed
 - Class grid-entries on `grid` file.

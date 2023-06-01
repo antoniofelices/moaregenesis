@@ -13,9 +13,9 @@
 .inverse-button {
 	@include button(
 		$display: inline-block,
-		$color: $white,
-		$bgcolor: $black,
-		$bordercolor: $black
+		$color: var(--wp--preset--color--white),
+		$bgcolor: var(--wp--preset--color--black),
+		$bordercolor: var(--wp--preset--color--black)
 	);
 }
 

@@ -24,18 +24,18 @@
 		}
 	}
 	a{
-		background-color: $gray-lighter;
-		color: $body-color;
-		font-size: $font-size-xs;
+		background-color: var(--wp--preset--color--gray-lighter);
+		color: var(--wp--preset--color--text-color);
+		font-size: var(--wp--preset--font-size--extra-small);
 		display: block;
 		padding: calc($magic-number / 2) calc($magic-number / 2);
 		&:hover, &:active, &:focus {
-			background-color: $link-hover-color;
-			color: $white;
+			background-color: var(--wp--preset--color--link-color);
+			color: var(--wp--preset--color--white);
 		}
 	}
 	li.active a {
-		font-weight: $font-weight-bold;
+		font-weight: var(--wp--custom--typography--font-weight--bold);
 	}
 	@include breakpoint( lg ){
 		.pagination-next {

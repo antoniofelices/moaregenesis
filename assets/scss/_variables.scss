@@ -14,94 +14,22 @@
 //
 // Rithms
 // Colors
-// Body
-// Links
-// Fonts
 // Medias
-// Header, footer
 
 // Rithms
 $magic-number:              1rem !default;
 $gutter:                    1rem !default;
 
-// Colors
-// Basics.
-$white:                     #ffffff !default;
-$black:                     #000000 !default;
-
 // Brand color.
 $brand-primary:             #ff0000 !default;
-$brand-secondary:           #00ff00 !default;
-$brand-tertiary:            #0000ff !default;
-$brand-quarter:             #fec900 !default;
-$brand-fifth:               #ff8b70 !default;
 
 // Grayscale.
 $gray:                      grayscale( $brand-primary ) !default;
-$gray-darker:               darken( $gray, 25% ) !default;
-$gray-dark:                 darken( $gray, 15% ) !default;
-$gray-light:                lighten( $gray, 20% ) !default;
-$gray-lighter:              lighten( $gray, 30% ) !default;
-$gray-lightest:             lighten( $gray, 40% ) !default;
-
-// Body
-// Settings for the `<body>` element.
-$body-bg:                   darken( $white, 1% ) !default;
-$body-color:                $black !default;
-$inverse-bg:                $gray-dark !default;
-$inverse-color:             $gray-lighter !default;
-
-// Links
-// Style anchor elements.
-$link-color:                $brand-primary !default;
-$link-decoration:           none !default;
-$link-hover-color:          darken( $link-color, 15% ) !default;
-$link-hover-decoration:     underline !default;
-
-// Fonts
-// Font, line-height, and color for body text, headings, and more.
-// Typography scale Major Second.
-$font-family-sans-serif:    sans-serif !default;
-$font-family-serif:         serif !default;
-$font-family-icons:         'icomoon' !default;
-$font-family-monospace:     monospace !default;
-$font-family-base:          $font-family-sans-serif !default;
-
-$font-weight-normal:        400 !default;
-$font-weight-bold:          700 !default;
-$font-weight-base:          $font-weight-normal !default;
-
-$line-height-base:          1.5 !default;
-$line-height-lg:            1.7 !default;
-$line-height-md:            1.35 !default;
-$line-height-sm:            1.1 !default;
-$line-height-xs:            1 !default;
-
-$font-size-base:            1rem !default;
-$font-size-lg:              1.424rem !default;
-$font-size-md:              1.125rem !default;
-$font-size-sm:              .889rem !default;
-$font-size-xs:              .79rem !default;
-
-$font-size-huge:            3.247rem !default;
-$font-size-larger:          2.281rem !default;
-$font-size-large:           2.027rem !default;
-$font-size-h1:              1.802rem !default;
-$font-size-h2:              1.602rem !default;
-$font-size-h3:              1.424rem !default;
-$font-size-h4:              1.266rem !default;
-$font-size-h5:              1.125rem !default;
-$font-size-h6:              1rem !default;
-
-$headings-margin-bottom:    calc($magic-number / 2) !default;
-$headings-font-family:      $font-family-sans-serif !default;
-$headings-font-weight:      $font-weight-normal !default;
-$headings-line-height:      $line-height-xs !default;
-$headings-color:            $body-color !default;
-
-// TODO: Remove. Deprecated.
-$font-size-enourmos:        $font-size-larger !default;
-$font-size-semienourmos:    $font-size-large !default;
+// $gray-darker:               darken( $gray, 35% ) !default; //#
+// $gray-dark:                 darken( $gray, 25% ) !default; //#
+// $gray-light:                lighten( $gray, 20% ) !default; //#
+// $gray-lighter:              lighten( $gray, 30% ) !default; //#
+// $gray-lightest:             lighten( $gray, 35% ) !default; //#
 
 // Medias
 // Bootstrap v4.2.1 (https://getbootstrap.com/)

@@ -88,6 +88,16 @@
 					"slug": "gray-lightest",
 					"color": "#edeced",
 					"name": "Gray lightest"
+				},
+				{
+					"slug": "text-color",
+					"color": "#000000",
+					"name": "text-color"
+				},
+				{
+					"slug": "link-color",
+					"color": "#000000",
+					"name": "link-color"
 				}
 			]
 		},
@@ -99,7 +109,7 @@
 					"bold": "700"
 				},
 				"lineHeight": {
-					"xsmall": "1",
+					"extra-small": "1",
 					"small": "1.1",
 					"medium": "1.35",
 					"normal": "1.5",
@@ -124,27 +134,27 @@
 			},
 			"spacingSizes": [
 				{
-					"size": "clamp(1, 2vw, 2rem)",
+					"size": "clamp(1rem, 2vw, 2rem)",
 					"slug": "30",
 					"name": "1"
 				},
 				{
-					"size": "clamp(2rem, 3vw, 3rem)",
+					"size": "clamp(1rem, 3vw, 3rem)",
 					"slug": "40",
 					"name": "2"
 				},
 				{
-					"size": "clamp(3rem, 4vw, 4rem)",
+					"size": "clamp(1rem, 4vw, 4rem)",
 					"slug": "50",
 					"name": "3"
 				},
 				{
-					"size": "clamp(4rem, 5vw, 5rem)",
+					"size": "clamp(1rem, 5vw, 5rem)",
 					"slug": "60",
 					"name": "4"
 				},
 				{
-					"size": "clamp(5rem, 6vw, 6rem)",
+					"size": "clamp(1rem, 6vw, 6rem)",
 					"slug": "70",
 					"name": "5"
 				}
@@ -237,6 +247,12 @@
 				},
 				{
 					"fluid": false,
+					"name": "Base",
+					"size": "1rem",
+					"slug": "base"
+				},
+				{
+					"fluid": false,
 					"name": "Medium",
 					"size": "1.266rem",
 					"slug": "medium"
@@ -271,12 +287,6 @@
 			]
 		},
 		"blocks": {
-			"core/heading": {
-				"typography": {
-					"textTransform": false,
-					"fontWeight": false
-				}
-			},
 			"core/button": {
 				"border": {
 					"radius": false
@@ -298,15 +308,24 @@
 			},
 			"core/separator": {
 				"border": {
+					"bottom": {
+						"width": "0"
+					},
+					"left": {
+						"width": "0"
+					},
 					"top": {
 						"width": "1px"
+					},
+					"right": {
+						"width": "0"
 					}
 				}
 			}
 		},
 		"color": {
 			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--black)"
+			"text": "var(--wp--preset--color--text-color)"
 		},
 		"elements": {
 			"button": {

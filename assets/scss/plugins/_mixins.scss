@@ -92,11 +92,11 @@
 	$bordercolor: var(--wp--preset--color--primary),
 	$color: var(--wp--preset--color--white),
 	$display: inline-block,
-	$fontfamily: $font-family-sans-serif,
+	$fontfamily: var(--wp--preset--font-family--sans-serif),
 	$fontsize: clamp(0.875rem, 0.875rem + ((1vw - 0.48rem) * 0.24), 1rem),
-	$fontweight: $font-weight-normal,
+	$fontweight: var(--wp--custom--typography--font-weight--normal),
 	$hovercolor: var(--wp--preset--color--white),
-	$hoverbgcolor: $link-hover-color,
+	$hoverbgcolor: var(--wp--preset--color--link-color),
 	$paddingx: calc(0.667em + 2px) calc(1.333em + 2px),
 	$paddingy: calc(0.667em + 2px) calc(1.333em + 2px),
 	$width: auto
@@ -115,7 +115,7 @@
 	@include borderB( $color: $bordercolor );
 	&:hover, &:active, &:focus {
 		background-color: $hoverbgcolor;
-		border-color: darken( $hoverbgcolor, 10% );
+		border-color: $hoverbgcolor;
 		color: $hovercolor;
 		text-decoration: none;
 	}
@@ -133,14 +133,13 @@
 		@include flex( $justifycontent: start );
 		&:before {
 			content: url("../images/arrow-right.svg");
-			color: $gray-light;
-			font: normal $font-size-base $font-family-icons;
-			line-height: $line-height-xs;
+			color: var(--wp--preset--color--gray-light);
+			line-height: var(--wp--custom--typography--line-height--extra-small);
 			margin-right: calc($gutter / 2);
 		}
 		a {
-			color: $body-color;
-			font-size: $font-size-sm;
+			color: var(--wp--preset--color--text-color);
+			font-size: var(--wp--preset--font-size--small);
 		}
 	}
 }
@@ -154,11 +153,11 @@
 			display: block;
 			padding: calc($magic-number / 2);
 			@include borderB();
-			font-size: $font-size-sm;
-			font-weight: $font-weight-bold;
-			color: $body-color;
+			font-size: var(--wp--preset--font-size--small);
+			font-weight: var(--wp--custom--typography--font-weight--bold);
+			color: var(--wp--preset--color--text-color);
 			&:hover, &:active, &:focus {
-				color: $white;
+				color: var(--wp--preset--color--white);
 				background-color: $brand-primary;
 			}
 		}
@@ -169,17 +168,17 @@
 		}
 	}
 	li.current-menu-item a {
-		color: $white;
+		color: var(--wp--preset--color--white);
 		background-color: $brand-primary;
 	}
 }
 
-@mixin social-menu( $color: $gray, $fontsize: $font-size-lg, $paddingy: 0 ) {
+@mixin social-menu( $color: var(--wp--preset--color--gray), $fontsize: var(--wp--preset--font-size--medium), $paddingy: 0 ) {
 	@include list-inline();
 	a {
 		border-bottom: none;
 		color: $color;
-		font: $font-weight-normal $fontsize $font-family-icons;
+		font: var(--wp--custom--typography--font-weight--normal) $fontsize 'icomoon';
 		line-height: 1;
 		padding-left: $paddingy;
 		padding-right: $paddingy;
@@ -223,7 +222,7 @@
 		margin-top: 0;
 		margin-bottom: calc($magic-number / 2);
 		a {
-			color: $body-color;
+			color: var(--wp--preset--color--text-color);
 		}
 	}
 	.entry-content {
@@ -250,7 +249,7 @@
 			margin-top: 0;
 		}
 		.entry-content {
-			font-size: $font-size-md;
+			font-size: var(--wp--preset--font-size--medium);
 			.post-image {
 				margin-bottom: 0;
 			}
@@ -272,16 +271,16 @@
 		}
 	}
 	.entry-title {
-		font: $font-weight-bold $font-size-base $font-family-sans-serif;
-		line-height: $line-height-md;
+		font: var(--wp--custom--typography--font-weight--bold) var(--wp--preset--font-size--base) var(--wp--preset--font-family--sans-serif);
+		line-height: var(--wp--custom--typography--line-height--medium);
 		margin: 0;
 		text-transform: uppercase;
 		a {
-			color: $body-color;
+			color: var(--wp--preset--color--text-color);
 		}
 	}
 	.entry-content {
-		font-size: $font-size-sm;
+		font-size: var(--wp--preset--font-size--small);
 		p {
 			border-bottom: 0;
 		}
@@ -441,8 +440,8 @@
 // Featured paragraph.
 %paragraph-meta {
 	margin: 0;
-	font-family: $font-weight-bold;
-	font-size: $font-size-sm;
+	font-family: var(--wp--custom--typography--font-weight--bold);
+	font-size: var(--wp--preset--font-size--small);
 	padding: calc($magic-number / 4) 0;
 }
 
@@ -457,12 +456,12 @@
 	td,
 	th {
 		padding: calc($magic-number / 4) $gutter;
-		@include borderB( $color: $gray-light );
+		@include borderB( $color: var(--wp--preset--color--gray-light) );
 	}
 	th {
-		background-color: $gray-dark;
-		color: $white;
-		font-weight: $font-weight-bold;
+		background-color: var(--wp--preset--color--gray-dark);
+		color: var(--wp--preset--color--white);
+		font-weight: var(--wp--custom--typography--font-weight--bold);
 		text-align: left;
 	}
 }

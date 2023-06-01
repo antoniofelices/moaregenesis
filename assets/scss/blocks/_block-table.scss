@@ -8,6 +8,6 @@
 		border-collapse: inherit;
 	}
 	tbody tr:nth-child(odd) {
-		background: $gray-lighter;
+		background: var(--wp--preset--color--gray-lighter);
 	}
 }

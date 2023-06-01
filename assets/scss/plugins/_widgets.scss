@@ -13,10 +13,9 @@
 }
 
 .widget-title {
-	font-size: $font-size-xs;
+	font-size: var(--wp--preset--font-size--extra-small);
 	margin-bottom: calc($magic-number / 2);
 	padding-bottom: calc($magic-number / 2);
-	text-transform: uppercase;
 	@include borderBB();
 }
 
@@ -40,8 +39,8 @@
 .widget_text,
 .widget_custom_html {
 	.textwidget {
-		font-size: $font-size-sm;
-		line-height: $line-height-md;
+		font-size: var(--wp--preset--font-size--small);
+		line-height: var(--wp--custom--typography--line-height--medium);
 	}
 }
 
@@ -49,13 +48,13 @@
 .mb-featured-content {
 	.secondary-entry {
 		.entry-title {
-			font-size: $font-size-h4;
-			font-weight: $font-weight-normal;
+			font-size: var(--wp--preset--font-size--medium);
+			font-weight: var(--wp--custom--typography--font-weight--normal);
 			margin: calc($magic-number / 2) 0;
 		}
 		.entry-content {
-			font-size: $font-size-sm;
-			line-height: $line-height-md;
+			font-size: var(--wp--preset--font-size--small);
+			line-height: var(--wp--custom--typography--line-height--medium);
 		}
 	}
 	@include breakpoint( md ) {
@@ -67,17 +66,17 @@
 		.secondary-entry {
 			margin-top: 0;
 			.entry-title {
-				font-size: $font-size-h2;
+				font-size: var(--wp--preset--font-size--medium);
 			}
 			.entry-content {
-				font-size: $font-size-md;
+				font-size: var(--wp--preset--font-size--medium);
 			}
 		}
 	}
 	@include breakpoint( $responsive-menu-break ) {
 		.secondary-entry {
 			.entry-title {
-				font-size: $font-size-large;
+				font-size: var(--wp--preset--font-size--medium);
 			}
 		}
 	}

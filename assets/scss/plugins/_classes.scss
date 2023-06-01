@@ -22,22 +22,22 @@
 
 // Typography
 .lead {
-	font: $font-weight-normal $font-size-lg $font-family-base;
-	line-height: $line-height-md;
+	font: var(--wp--custom--typography--font-weight--normal) var(--wp--preset--font-size--medium) var(--wp--preset--font-family--sans-serif);
+	line-height: var(--wp--custom--typography--line-height--medium);
 }
 
 .sub-title {
-	font: $font-weight-bold $font-size-base $headings-font-family;
+	font: var(--wp--custom--typography--font-weight--bold) var(--wp--preset--font-size--base) var(--wp--preset--font-family--sans-serif);
 	padding-bottom: calc($magic-number / 4);
 	@include borderBB();
 }
 
 .font-family-sans-serif {
-	font-family: $font-family-sans-serif;
+	font-family: var(--wp--preset--font-family--sans-serif);
 }
 
 .font-family-serif {
-	font-family: $font-family-serif;
+	font-family: var(--wp--preset--font-family--serif);
 }
 
 // Lists
@@ -154,4 +154,20 @@
 
 .mnt-4 {
 	margin-top: -(calc($magic-number * 4)) !important;
+}
+
+.mnb-1 {
+	margin-bottom: -($magic-number) !important;
+}
+
+.mnb-2 {
+	margin-bottom: -(calc($magic-number * 2)) !important;
+}
+
+.mnb-3 {
+	margin-bottom: -(calc($magic-number * 3)) !important;
+}
+
+.mnb-4 {
+	margin-bottom: -(calc($magic-number * 4)) !important;
 }

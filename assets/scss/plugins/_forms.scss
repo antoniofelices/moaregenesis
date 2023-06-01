@@ -7,11 +7,11 @@
 input,
 select,
 textarea {
-	background-color: $white;
+	background-color: var(--wp--preset--color--white);
 	border-radius: 0;
 	width: 100%;
 	padding: calc($magic-number / 2);
-	@include borderB( $color: $gray-lighter );
+	@include borderB( $color: var(--wp--preset--color--gray-lighter) );
 }
 
 input,

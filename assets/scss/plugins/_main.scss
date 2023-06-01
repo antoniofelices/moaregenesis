@@ -6,19 +6,19 @@
 
 // Main all.
 .breadcrumb {
-	font: $font-weight-normal $font-size-xs $font-family-sans-serif;
+	font: var(--wp--custom--typography--font-weight--normal) var(--wp--preset--font-size--extra-small) var(--wp--preset--font-family--sans-serif);
 	margin-bottom: $magic-number;
 }
 
 .entry {
 	text-rendering: optimizeLegibility;
 	.entry-meta {
-		font-size: $font-size-xs;
+		font-size: var(--wp--preset--font-size--extra-small);
 		margin-top: calc($magic-number / 2);
 		margin-bottom: calc($magic-number / 2);
 	}
 	.post-meta {
-		font-size: $font-size-xs;
+		font-size: var(--wp--preset--font-size--extra-small);
 		margin-top: calc($magic-number / 2);
 		margin-bottom: calc($magic-number / 2);
 	}
@@ -108,7 +108,7 @@ body.page {
 	@include breakpoint( $responsive-menu-break ) {
 		.content {
 			> .entry {
-				font-size: $font-size-h4;
+				font-size: var(--wp--preset--font-size--medium);
 			}
 		}
 		h1.entry-title {
@@ -134,7 +134,7 @@ body.single {
 	@include breakpoint( $responsive-menu-break ) {
 		.content {
 			> .entry {
-				font-size: $font-size-h4;
+				font-size: var(--wp--preset--font-size--medium);
 			}
 		}
 		h1.entry-title {

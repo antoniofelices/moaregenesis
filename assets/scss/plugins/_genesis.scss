@@ -12,7 +12,7 @@
 	@include borderBT();
 	@include borderBB();
 	h1, h2 {
-		font-size: $font-size-sm;
+		font-size: var(--wp--preset--font-size--small);
 	}
 	p:last-child {
 		margin-bottom: 0;
@@ -25,7 +25,7 @@
 	@include borderBT();
 	@include borderBB();
 	h1, h2 {
-		font-size: $font-size-sm;
+		font-size: var(--wp--preset--font-size--small);
 	}
 	p:last-child {
 		margin-bottom: 0;
@@ -44,7 +44,7 @@
 
 // Author box
 // .author-box {
-// 	font-size: $font-size-sm;
+// 	font-size: var(--wp--preset--font-size--small);
 // 	margin: $magic-number 0 ( $magic-number * 2 );
 // 	.avatar {
 // 		max-width: 70px;

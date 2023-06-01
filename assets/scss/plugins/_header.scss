@@ -71,12 +71,11 @@
 	// Menu items.
 	.menu-item {
 		display: block;
-		position: relative;
 		a {
 			border: none;
 			color: var(--wp--preset--color--black);
 			display: block;
-			font: $font-weight-bold $font-size-xs $font-family-sans-serif;
+			font: var(--wp--custom--typography--font-weight--bold) var(--wp--preset--font-size--extra-small) var(--wp--preset--font-family--sans-serif);
 			padding: calc($magic-number / 2);
 			width: 100%;
 			&:hover, &:active, &:focus {
@@ -90,15 +89,9 @@
 	}
 	.menu-item.contain-button {
 		a {
-			@include button( $color: $white, $bgcolor: transparent, $bordercolor: $white, $paddingx: calc($gutter / 2) );
+			@include button( $color: var(--wp--preset--color--white), $bgcolor: transparent, $bordercolor: var(--wp--preset--color--white), $paddingx: calc($gutter / 2) );
 			line-height: .75;
 			width: 100%;
-		}
-	}
-	.current-menu-item {
-		a {
-			color: var(--wp--preset--color--black);
-			@include borderBB();
 		}
 	}
 
@@ -165,6 +158,7 @@
 		// Menu items.
 		.menu-item {
 			display: inline-block;
+			position: relative;
 			a {
 				display: inline;
 				padding-right: 0;
@@ -174,6 +168,12 @@
 				margin-left: $gutter;
 			}
 		}
+		.current-menu-item {
+			a {
+				color: var(--wp--preset--color--black);
+				@include borderBB();
+			}
+		}
 
 		// Submenus
 		.sub-menu-toggle {
@@ -181,8 +181,9 @@
 		}
 		.sub-menu {
 			position: absolute;
-			left: 0;
-			width: 200px;
+			right: 0;
+			top: calc($magic-number * 2);
+			width: 10vw;
 			z-index: 999;
 			a,
 			.menu-item {
